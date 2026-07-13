@@ -1,4 +1,7 @@
+import Footer from "@/components/Footer";
 import "./globals.css";
+import Header from "@/components/Header";
+import MainLayout from "./MainLayout";
 
 
 
@@ -22,7 +25,17 @@ export default function RootLayout({ children }) {
    </head>
 
 
-      <body>{children}</body>
+      <body className="bg-[#FFF9E6]">
+         <MainLayout>
+         <Header />
+        {children}
+         <Footer />
+         </MainLayout>
+        
+        
+
+
+      </body>
     </html>
   );
 }
