@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const getInitialCart = () => {
-//   if (typeof window === "undefined") return [];
+  if (typeof window === "undefined") return [];
 
   try {
     const savedCart = localStorage.getItem("Cart");
