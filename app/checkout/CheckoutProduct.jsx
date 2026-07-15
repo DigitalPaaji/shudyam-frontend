@@ -394,6 +394,9 @@ handelSubmitPayment()
               <p className="text-2xl font-semibold text-gray-950">
                 {formatPrice(grandTotal)}
               </p>
+
+
+              
             </div>
 
             {formError && (

@@ -101,7 +101,7 @@ const ProductCard = ({ product ,wishlist,dispatch}) => {
   return (
     <Link href={`/product/${product.slug}`} className="best-seller-card group h-full will-change-transform">
       {/* Product image */}
-      <div className="relative aspect-[1/1.08] overflow-hidden border border-[#760209]/30 bg-[#fff9e7]">
+      <div className="relative  overflow-hidden border border-[#760209]/30 bg-[#fff9e7]">
        {/* <button
                        type="button"
                        aria-label="Toggle wishlist"

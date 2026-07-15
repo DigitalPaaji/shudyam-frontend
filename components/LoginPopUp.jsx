@@ -52,8 +52,8 @@ const dispatch= useDispatch()
         toast.success(
           response.data.message || "Logged in successfully"
         );
-
-       dispatch(toggle(false));
+location.reload()
+      //  dispatch(toggle(false));
       }
     } catch (error) {
       toast.error(
@@ -75,7 +75,7 @@ const dispatch= useDispatch()
         className="absolute inset-0 cursor-default"
       />
 
-      {/* Popup */}
+      
       <div className="relative z-10 max-h-[94vh] w-full max-w-[430px] overflow-y-auto custom-scrollbar2 rounded-2xl border border-white/10 bg-[#181311] text-[#f5eee8] shadow-[0_25px_80px_rgba(0,0,0,0.55)]">
         {/* Top accent */}
         <div className="h-1 w-full bg-[#a9613f]" />
