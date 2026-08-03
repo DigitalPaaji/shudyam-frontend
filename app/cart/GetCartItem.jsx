@@ -6,6 +6,7 @@ import Link from "next/link";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   FiAlertCircle,
+  FiArrowLeft,
   FiArrowRight,
   FiMinus,
   FiPlus,
@@ -16,6 +17,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useDispatch } from "react-redux";
 import { removeinCart } from "@/components/store/userSlice";
+import { useRouter } from "next/navigation";
 
 axios.defaults.withCredentials = true;
 gsap.registerPlugin(useGSAP);
@@ -43,6 +45,7 @@ const getImageUrl = (image) => {
 const GetCartItem = () => {
   const pageRef = useRef(null);
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const [cartData, setCartData] = useState(initialCartData);
   const [isLoading, setIsLoading] = useState(true);
@@ -94,7 +97,7 @@ const GetCartItem = () => {
       setError(
         error.response?.data?.message ||
           error.message ||
-          "Something went wrong while loading your cart"
+          "Something went wrong while loading your cart",
       );
     } finally {
       if (showLoader) setIsLoading(false);
@@ -143,14 +146,14 @@ const GetCartItem = () => {
       scope: pageRef,
       dependencies: [cartData.cartItems.length, isLoading],
       revertOnUpdate: true,
-    }
+    },
   );
 
   const getSelectedVariant = (item) => {
     const variantId = item.productvarient || item.variantid || item.variantId;
 
     return item.product?.variants?.find(
-      (variant) => String(variant._id) === String(variantId)
+      (variant) => String(variant._id) === String(variantId),
     );
   };
 
@@ -180,16 +183,19 @@ const GetCartItem = () => {
 
   const handleDecrease = async (item) => {
     if (item.quantity <= 1) {
-      handleRemove(item);
+      await handleRemove(item);
       return;
     }
 
     try {
       setActionLoadingId(item._id);
 
-      const response = await axios.get(`${base_url}/cart/decrement/${item._id}`, {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        `${base_url}/cart/decrement/${item._id}`,
+        {
+          withCredentials: true,
+        },
+      );
 
       const data = response.data;
 
@@ -216,7 +222,30 @@ const GetCartItem = () => {
 
       dispatch(removeinCart());
 
-      await fetchCart({ showLoader: false });
+      // Update the UI directly after a successful delete. This also handles
+      // the final cart item correctly without depending on a second API fetch.
+      setCartData((previous) => {
+        const removedItem = previous.cartItems.find(
+          (cartItem) => cartItem._id === item._id,
+        );
+        const cartItems = previous.cartItems.filter(
+          (cartItem) => cartItem._id !== item._id,
+        );
+
+        return {
+          cartItems,
+          count: cartItems.length,
+          grandTotal: Math.max(
+            0,
+            Number(previous.grandTotal) -
+              Number(
+                removedItem?.total ||
+                  Number(removedItem?.price || 0) *
+                    Number(removedItem?.quantity || 0),
+              ),
+          ),
+        };
+      });
     } catch (error) {
       console.error("Remove cart error:", error);
       alert(error.response?.data?.message || "Failed to remove item");
@@ -231,30 +260,42 @@ const GetCartItem = () => {
 
   if (error) {
     return (
-      <div className="flex min-h-[70vh] items-center justify-center bg-[#f8f7f4] px-4">
-        <div className="w-full max-w-md rounded-2xl border border-red-200 bg-red-50 p-8 text-center">
-          <FiAlertCircle className="mx-auto mb-4 text-4xl text-red-500" />
-
-          <h2 className="text-xl font-semibold text-gray-900">
-            Unable to load cart
-          </h2>
-
-          <p className="mt-2 text-sm text-gray-600">{error}</p>
-
+      <div className="min-h-[70vh] bg-[#f8f7f4] px-4 py-8">
+        <div className="mx-auto mb-8 max-w-7xl">
           <button
             type="button"
-            onClick={() => fetchCart({ showLoader: true })}
-            className="mt-6 rounded-full bg-gray-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-gray-700"
+            onClick={() => router.back()}
+            className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition hover:border-gray-900 hover:text-gray-950"
           >
-            Try Again
+            <FiArrowLeft /> Back
           </button>
+        </div>
+
+        <div className="mx-auto flex max-w-7xl items-center justify-center">
+          <div className="w-full max-w-md rounded-2xl border border-red-200 bg-red-50 p-8 text-center">
+            <FiAlertCircle className="mx-auto mb-4 text-4xl text-red-500" />
+
+            <h2 className="text-xl font-semibold text-gray-900">
+              Unable to load cart
+            </h2>
+
+            <p className="mt-2 text-sm text-gray-600">{error}</p>
+
+            <button
+              type="button"
+              onClick={() => fetchCart({ showLoader: true })}
+              className="mt-6 rounded-full bg-gray-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-gray-700"
+            >
+              Try Again
+            </button>
+          </div>
         </div>
       </div>
     );
   }
 
   if (!cartData.cartItems.length) {
-    return <EmptyCart />;
+    return <EmptyCart onBack={() => router.back()} />;
   }
 
   const totalItems = cartData.cartItems.reduce((total, item) => {
@@ -263,10 +304,18 @@ const GetCartItem = () => {
 
   return (
     <main
-      // ref={pageRef}
-      className=" bg-[#f8f7f4] px-4 py-10 sm:px-6 lg:px-12 lg:py-16"
+      ref={pageRef}
+      className="min-h-screen bg-[#f8f7f4] px-4 py-8 sm:px-6 lg:px-12 lg:py-12"
     >
       <div className="mx-auto max-w-7xl">
+        <button
+          type="button"
+          onClick={() => router.back()}
+          className="mb-7 inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition hover:border-gray-900 hover:text-gray-950"
+        >
+          <FiArrowLeft /> Back
+        </button>
+
         <div className="cart-heading mb-8 flex flex-col justify-between gap-3 border-b border-gray-200 pb-6 sm:flex-row sm:items-end">
           <div>
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#8b5e3c]">
@@ -480,30 +529,42 @@ const GetCartItem = () => {
   );
 };
 
-const EmptyCart = () => {
+const EmptyCart = ({ onBack }) => {
   return (
-    <div className="flex min-h-[75vh] items-center justify-center bg-[#f8f7f4] px-4">
-      <div className="max-w-md text-center">
-        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-sm">
-          <FiShoppingBag className="text-3xl text-[#8b5e3c]" />
-        </div>
-
-        <h2 className="mt-6 text-2xl font-semibold text-gray-950">
-          Your cart is empty
-        </h2>
-
-        <p className="mt-2 text-sm leading-6 text-gray-500">
-          Add some beautiful copper products to your cart and they will appear
-          here.
-        </p>
-
-        <Link
-          href="/products"
-          className="mt-7 inline-flex items-center gap-2 rounded-full bg-gray-950 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#8b5e3c]"
+    <div className="min-h-[75vh] bg-[#f8f7f4] px-4 py-8">
+      <div className="mx-auto max-w-7xl">
+        <button
+          type="button"
+          onClick={onBack}
+          className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition hover:border-gray-900 hover:text-gray-950"
         >
-          Start Shopping
-          <FiArrowRight />
-        </Link>
+          <FiArrowLeft /> Back
+        </button>
+      </div>
+
+      <div className="mx-auto flex min-h-[60vh] max-w-md items-center justify-center text-center">
+        <div>
+          <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-sm">
+            <FiShoppingBag className="text-3xl text-[#8b5e3c]" />
+          </div>
+
+          <h2 className="mt-6 text-2xl font-semibold text-gray-950">
+            Your cart is empty
+          </h2>
+
+          <p className="mt-2 text-sm leading-6 text-gray-500">
+            Add some beautiful copper products to your cart and they will appear
+            here.
+          </p>
+
+          <Link
+            href="/products"
+            className="mt-7 inline-flex items-center gap-2 rounded-full bg-gray-950 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#8b5e3c]"
+          >
+            Start Shopping
+            <FiArrowRight />
+          </Link>
+        </div>
       </div>
     </div>
   );
