@@ -13,7 +13,7 @@ const dispatch =useDispatch()
 
   return (
     <div className='min-h-screen'>
-        <div className="h-14 bg-gradient-to-r from-[#210102] via-[#62080d] to-[#210102] sm:h-16" />
+        <div className=" bg-gradient-to-r from-[#210102] via-[#62080d] to-[#210102] h-[75px]" />
         
      {isUser ? <GetCartItem /> : <GetCartLocal /> }
 

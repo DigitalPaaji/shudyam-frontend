@@ -21,6 +21,7 @@ import {
 import { base_url, img_url } from "@/components/utile";
 import { useDispatch, useSelector } from "react-redux";
 import { toggle } from "@/components/store/toggleUser";
+import { toast } from "react-toastify";
 
 const initialCartData = {
   cart: [],
@@ -52,7 +53,7 @@ const getImageUrl = (image) => {
   return `${img_url}${image}`;
 };
 
-const CheckoutProduct = ({ product,setCheckoutData ,handelSubmitPayment}) => {
+const CheckoutProduct = ({ product,setCheckoutData ,handelSubmitPayment,checkoutData}) => {
   const [cartData, setCartData] = useState(initialCartData);
   const [paymentMethod, setPaymentMethod] = useState("COD");
 const {isUser} = useSelector(state=>state.user)
@@ -63,7 +64,11 @@ const dispatch = useDispatch()
 
   const [error, setError] = useState("");
   const [formError, setFormError] = useState("");
-
+const [couponCode, setCouponCode] = useState("");
+const [couponLoading, setCouponLoading] = useState(false);
+const [couponMessage, setCouponMessage] = useState("");
+const [couponError, setCouponError] = useState("");
+const [appliedCoupon, setAppliedCoupon] = useState(null);
  
   const parsedProducts = useMemo(() => {
     if (Array.isArray(product)) {
@@ -178,58 +183,13 @@ handelSubmitPayment()
 
 }
 
- 
-//   const handlePlaceOrder = async () => {
-//     if (!validateCheckout()) return;
-
-//     try {
-//       setIsPlacingOrder(true);
-//       setFormError("");
-
-//       const orderPayload = {
-//         shippingAddress: address,
-//         paymentMethod,
-
-//         items: cartData.cart.map((item) => ({
-//           productid: item.productid,
-//           variantid: item.variantid,
-//           quantity: item.quantity,
-//         })),
-//       };
-
-//       console.log("Order payload:", orderPayload);
-
-//       /*
-//       const response = await axios.post(
-//         `${base_url}/order/create`,
-//         orderPayload,
-//         {
-//           withCredentials: true,
-//         }
-//       );
-
-//       if (response.data.success) {
-//         // router.push(`/order-success/${response.data.order._id}`);
-//       }
-//       */
-//     } catch (error) {
-//       setFormError(
-//         error.response?.data?.message ||
-//           "Unable to place your order. Please try again."
-//       );
-//     } finally {
-//       setIsPlacingOrder(false);
-//     }
-//   };
-
 
 
 
   const shippingCharge = 0;
-  const discount = 0;
+ 
 
-  const grandTotal =
-    cartData.subtotal + shippingCharge - discount;
+  const grandTotal =   cartData.subtotal + shippingCharge - checkoutData.discount;
 
   if (isLoading) {
     return <CheckoutLoading />;
@@ -292,6 +252,48 @@ handelSubmitPayment()
     );
   }
 
+
+const handelCouponCode = async()=>{
+  try {
+    const amount = cartData.subtotal;
+    const response = await axios.post(`${base_url}/coupon/apply`,{couponcode:couponCode,amount })
+     
+    const data = await response.data;
+    if(data.success){
+    setCheckoutData({    couponCode: couponCode.trim(),
+        discount: data.pricing.discountAmount,
+        totalPrice: data.pricing.payableAmount,})
+           setCouponMessage(data.message);
+                 setAppliedCoupon(data.coupon);
+
+        toast.success(data.message)
+      }else{
+
+        toast.error(data.message)
+      }
+      console.log(data)
+      
+    } catch (error) {
+         setAppliedCoupon(null);
+          setCouponError(
+      error.response?.data?.message || "Invalid coupon code."
+    );
+      toast.error(error.responsedata.message)
+  }
+}
+
+const removeCoupon = () => {
+  setAppliedCoupon(null);
+  setCouponCode("");
+  setCouponMessage("");
+  setCouponError("");
+
+  setCheckoutData({
+ couponCode: "",
+    discount: 0,
+    totalPrice: checkoutData.price,
+  });
+};
   return (
     <main className="">
       <div className="">
@@ -316,7 +318,7 @@ handelSubmitPayment()
         <div className="">
          
 
-          <aside className="rounded-3xl border border-gray-200 bg-white p-5 shadow-sm lg:sticky lg:top-24 sm:p-6">
+          <aside className="rounded-3xl border border-gray-200  p-5 shadow-sm lg:sticky lg:top-24 sm:p-6">
             <div className="flex items-center justify-between border-b border-gray-100 pb-5">
               <div className="flex items-center gap-3">
                 <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#f4e9e4] text-[#7c2d32]">
@@ -369,16 +371,105 @@ handelSubmitPayment()
                 </span>
               </div>
 
-              {discount > 0 && (
+              {checkoutData.discount > 0 && (
                 <div className="flex justify-between text-gray-600">
                   <span>Discount</span>
 
                   <span className="font-medium text-green-600">
-                    -{formatPrice(discount)}
+                    -{formatPrice(checkoutData.discount)}
                   </span>
                 </div>
               )}
             </div>
+           
+
+    <div className="border-t border-gray-200 pt-5">
+
+  {!appliedCoupon ? (
+    <>
+      <div className="flex gap-2">
+        <input
+          type="text"
+          value={couponCode}
+          onChange={(e) => {
+            setCouponCode(e.target.value.toUpperCase());
+            setCouponError("");
+          }}
+          placeholder="Enter Coupon Code"
+          className="flex-1 rounded-lg border border-gray-300 px-4 py-2.5 text-sm uppercase outline-none focus:border-green-600"
+        />
+
+        <button
+          onClick={handelCouponCode}
+          disabled={couponLoading}
+          className="rounded-lg bg-green-600 px-5 text-white font-medium hover:bg-green-700 disabled:opacity-60"
+        >
+          {couponLoading ? "Applying..." : "Apply"}
+        </button>
+      </div>
+
+      {/* {couponError && (
+        <p className="mt-2 text-sm text-red-600">
+          {couponError}
+        </p>
+      )} */}
+    </>
+  ) : (
+    <div className="rounded-xl border border-green-200 bg-green-50 p-4">
+      <div className="flex items-start justify-between">
+
+        <div>
+          <div className="flex items-center gap-2">
+            <span className="rounded bg-green-600 px-2 py-1 text-xs font-semibold text-white">
+              {appliedCoupon.code}
+            </span>
+
+            <span className="text-green-700 font-semibold">
+              Applied Successfully
+            </span>
+          </div>
+
+          <p className="mt-2 text-sm text-gray-600">
+            {appliedCoupon.description}
+          </p>
+
+          <div className="mt-2 text-sm">
+
+            {appliedCoupon.discountType === "percentage" ? (
+              <>
+                <span className="font-semibold">
+                  {appliedCoupon.discountValue}% OFF
+                </span>
+
+                <span className="text-gray-500 ml-2">
+                  (Max ₹{appliedCoupon.maxDiscount})
+                </span>
+              </>
+            ) : (
+              <span className="font-semibold">
+                ₹{appliedCoupon.discountValue} OFF
+              </span>
+            )}
+          </div>
+
+          <div className="mt-3 text-green-700 font-semibold">
+            You saved {formatPrice(checkoutData.discount)}
+          </div>
+        </div>
+
+        <button
+          onClick={removeCoupon}
+          className="text-red-500 text-sm font-medium hover:underline"
+        >
+          Remove
+        </button>
+      </div>
+    </div>
+  )}
+
+</div>
+
+
 
             <div className="flex items-end justify-between border-t border-gray-200 pt-5">
               <div>
@@ -392,7 +483,7 @@ handelSubmitPayment()
               </div>
 
               <p className="text-2xl font-semibold text-gray-950">
-                {formatPrice(grandTotal)}
+                {formatPrice(checkoutData.totalPrice)}
               </p>
 
 

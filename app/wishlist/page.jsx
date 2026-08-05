@@ -66,7 +66,7 @@ const Page = () => {
 
   return (
     <div className="min-h-screen bg-[#f8f5ef] text-[#2b1710]">
-      <div className="h-14 bg-gradient-to-r from-[#210102] via-[#62080d] to-[#210102] sm:h-16" />
+      <div className=" bg-gradient-to-r from-[#210102] via-[#62080d] to-[#210102] h-[75px]" />
 
       <main className="mx-auto max-w-7xl px-4 py-8 md:px-8">
         <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">

@@ -328,7 +328,7 @@ const AddressCompo = ({selectedAddressId,setSelectedAddressId}) => {
   };
 
   const inputClasses = (field) => `
-    w-full rounded-xl border bg-white px-4 py-3 pl-11
+    w-full rounded-xl border bg- px-4 py-3 pl-11
     text-sm text-gray-900 outline-none transition
     placeholder:text-gray-400 focus:ring-2
     ${
@@ -340,7 +340,7 @@ const AddressCompo = ({selectedAddressId,setSelectedAddressId}) => {
 
   return (
     <div className="w-full">
-      <div className="mx-auto max-w-5xl rounded-2xl border border-gray-200 bg-white p-5 shadow-sm sm:p-7">
+      <div className="mx-auto max-w-5xl rounded-2xl border border-gray-200 bg- p-5 shadow-sm sm:p-7">
      
 
         {isUser && (
@@ -769,7 +769,7 @@ const AddressTypeButton = ({
       className={`flex items-center justify-center gap-2 rounded-xl border px-3 py-3 text-sm font-medium transition ${
         selected
           ? "border-gray-900 bg-gray-900 text-white"
-          : "border-gray-200 bg-white text-gray-600 hover:border-gray-400"
+          : "border-gray-200 bg text-gray-600 hover:border-gray-400"
       }`}
     >
       <span className="text-lg">{icon}</span>
@@ -816,8 +816,8 @@ const AddressCard = ({
       }}
       className={`relative cursor-pointer rounded-2xl border p-5 outline-none transition ${
         selected
-          ? "border-gray-900 bg-gray-50 ring-1 ring-gray-900"
-          : "border-gray-200 bg-white hover:border-gray-400"
+          ? "border-gray-900  ring-1 ring-gray-900"
+          : "border-gray-200 bg- hover:border-gray-400"
       }`}
     >
       <div className="flex items-start justify-between gap-3">
@@ -856,7 +856,7 @@ const AddressCard = ({
           className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border ${
             selected
               ? "border-gray-900 bg-gray-900"
-              : "border-gray-300 bg-white"
+              : "border-gray-300 bg-"
           }`}
         >
           {selected && (

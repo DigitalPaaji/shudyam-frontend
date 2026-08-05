@@ -18,12 +18,13 @@ const searchParams = useSearchParams();
 const [checkoutData,setCheckoutData] =useState({
   address:"",
   price:"",
-  discount:"",
+  discount:0,
   totalPrice:"",
-  items:[]
+  items:[],
+  couponCode:"",
 
 })
-
+console.log("Razorpay loaded:", checkoutData);
 
   
 const loadRazorpay = () => {
@@ -70,7 +71,7 @@ const handleSubmitPayment = async () => {
   
     const scriptLoaded = await loadRazorpay();
 
-    console.log("Razorpay loaded:", scriptLoaded);
+    console.log("Razorpay loaded:", checkoutData);
     console.log("window.Razorpay:", window.Razorpay);
 
     if (!scriptLoaded || !window.Razorpay) {
@@ -217,7 +218,7 @@ const handleSubmitPayment = async () => {
 
   return (
     <div className='min-h-screen'>
-              <div className="h-14 bg-gradient-to-r from-[#210102] via-[#62080d] to-[#210102] sm:h-16" />
+              <div className=" bg-gradient-to-r from-[#210102] via-[#62080d] to-[#210102] h-[75px]" />
 
 
 
@@ -228,7 +229,7 @@ const handleSubmitPayment = async () => {
         <div className='px-4 md:px-12 lg:px-24 xl:px-40 py-24 grid lg:grid-cols-3 gap-5'>
 <div className='col-span-2'>
 
-<AddressCompo  selectedAddressId={checkoutData.address} setSelectedAddressId={(itm)=>setCheckoutData(prev=>({...prev,address:itm}))}   />
+<AddressCompo  selectedAddressId={checkoutData.address} setSelectedAddressId={(itm)=>setCheckoutData(prev=>({...prev,address:itm}))}    />
 
 
 
@@ -237,7 +238,7 @@ const handleSubmitPayment = async () => {
 
 
     <div className='col-span-1'>
-      <CheckoutProduct handelSubmitPayment={handleSubmitPayment} product={cartParam}  setCheckoutData={(item)=>setCheckoutData(prev=>({...prev,...item}))}/>
+      <CheckoutProduct handelSubmitPayment={handleSubmitPayment} product={cartParam} checkoutData={checkoutData}   setCheckoutData={(item)=>setCheckoutData(prev=>({...prev,...item}))}/>
     </div>
 
 

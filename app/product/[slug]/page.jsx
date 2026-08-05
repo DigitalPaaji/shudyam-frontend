@@ -362,7 +362,7 @@ else{
   if (loading) {
     return (
       <main className="min-h-screen bg-[#fff9e6]">
-        <div className="h-14 bg-gradient-to-r from-[#210102] via-[#62080d] to-[#210102] sm:h-16" />
+        <div className=" bg-gradient-to-r from-[#210102] via-[#62080d] to-[#210102] h-[75px]" />
 
         <section className="mx-auto max-w-[1500px] px-4 py-8 sm:px-6 md:px-10 md:py-12 lg:px-16 xl:px-20">
           <div className="grid animate-pulse gap-8 lg:grid-cols-2 lg:gap-12">
@@ -414,7 +414,7 @@ else{
       ref={containerRef}
       className="min-h-screen overflow-hidden bg-[#fff9e6] pb-24 text-neutral-900 lg:pb-0"
     >
-      <div className="h-14 bg-gradient-to-r from-[#210102] via-[#62080d] to-[#210102] sm:h-16" />
+      <div className="bg-gradient-to-r from-[#210102] via-[#62080d] to-[#210102]  h-[75px]" />
 
       <section className="mx-auto max-w-[1500px] px-4 py-6 sm:px-6 sm:py-8 md:px-10 md:py-12 lg:px-16 xl:px-20">
         <div className="product-breadcrumb mb-6 flex min-w-0 items-center gap-2 overflow-hidden text-xs text-neutral-500 sm:mb-8 sm:text-sm">
@@ -861,11 +861,9 @@ else{
                         Number(variant.stock) <= 0;
 
                       return (
-<div key={index} className="items-center flex flex-col  gap-2"  onClick={() =>
-                             handleVariantChange(variant)
-                          }>
+<div key={index} className="items-center flex flex-col  gap-2"  onClick={() => handleVariantChange(variant)}>
 
-    <img src={`${img_url}${product.thumbnail}`}  alt={`${product.name}`}
+    <img src={`${img_url}${product.images[variant.images[variant.images.length-1]]}`}  alt={`${product.name}`}
                         className="  object-contain "  style={{height: (150 + index*50)}}  />
 
                         <button

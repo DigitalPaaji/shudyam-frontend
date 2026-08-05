@@ -55,7 +55,7 @@ const Page = () => {
 
   return (
     <div className="min-h-screen bg-[#fff8f3] text-[#310104]">
-      <div className="h-14 bg-gradient-to-r from-[#210102] via-[#62080d] to-[#210102] sm:h-16" />
+      <div className=" bg-gradient-to-r from-[#210102] via-[#62080d] to-[#210102] h-[75px]" />
 
       <section className="mx-auto  px-4 md:px-12 lg:px-24 xl:px-40 py-24">
         <div className="mb-10 text-center">

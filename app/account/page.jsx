@@ -24,7 +24,7 @@ const Page = () => {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-[#faf7f2]">
-        <div className="h-14 bg-gradient-to-r from-[#210102] via-[#62080d] to-[#210102] sm:h-16" />
+        <div className=" bg-gradient-to-r from-[#210102] via-[#62080d] to-[#210102] h-[75px]" />
 
         <div className="mx-auto max-w-6xl px-4 py-8">
           <div className="animate-pulse rounded-3xl bg-white p-6 shadow-sm">
@@ -46,7 +46,7 @@ const Page = () => {
 
   return (
     <div className="min-h-screen bg-[#faf7f2] text-[#2b1512]">
-      <div className="h-14 bg-gradient-to-r from-[#210102] via-[#62080d] to-[#210102] sm:h-16" />
+      <div className=" bg-gradient-to-r from-[#210102] via-[#62080d] to-[#210102] h-[75px]" />
 
       <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="mb-8">
