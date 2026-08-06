@@ -153,7 +153,7 @@ const SearchPopup = ({ setOpenSearch }) => {
               onChange={(event) => setSearch(event.target.value)}
               placeholder="Search brass bottle, saucepan..."
               autoFocus
-              className="h-full w-full bg-transparent text-sm text-neutral-950 outline-none placeholder:text-neutral-400 sm:text-base"
+              className="h-full  md:w-full bg-transparent text-sm text-neutral-950 outline-none placeholder:text-neutral-400 sm:text-base"
             />
 
             {loading && (

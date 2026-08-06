@@ -74,7 +74,7 @@ const Header = () => {
 
   // Slightly adjusted for mobile to prevent overlapping with the logo
   const iconClass =
-    "flex h-14 w-14  items-center justify-center text-[#fff9e6] transition hover:bg-white/10 hover:text-[#e5c66f]";
+    "flex h-8 w-8  text-lg items-center justify-center text-[#fff9e6] transition hover:bg-white/10 hover:text-[#e5c66f]";
 
   return (
     <>
