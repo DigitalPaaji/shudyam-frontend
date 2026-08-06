@@ -8,7 +8,7 @@ const VideoStory = () => {
 
 <h3 className='text-white font-p text-2xl text-center   lg:text-4xl'>A Legacy That Belongs In Every Kitchen</h3>
 
-<p className='text-white text-center text-sm md:text-md  md:w-5/6 lg:w-3/5'>For centuries, Indian households relied on brass and copper vessels for healthier cooking and richer flavors. At Shudyam, we preserve that tradition while creating cookware designed for modern homes. Every piece is crafted to bring authenticity, durability, and joy back to cooking.</p>
+<p className='text-white text-center text-sm md:text-md  md:w-5/6 lg:w-3/5'>For centuries, Indian households relied on brass and brass vessels for healthier cooking and richer flavors. At Shudyam, we preserve that tradition while creating cookware designed for modern homes. Every piece is crafted to bring authenticity, durability, and joy back to cooking.</p>
 
 
 <video src="/video/aboutus.mp4" className=' md:w-2/3'  autoPlay

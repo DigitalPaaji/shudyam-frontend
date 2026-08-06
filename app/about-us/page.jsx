@@ -33,7 +33,7 @@ const AboutUsPage = () => {
       id: 1,
       title: "Pure Materials",
       description:
-        "We carefully select high-quality copper and dependable materials to create products made for everyday use.",
+        "We carefully select high-quality brass and dependable materials to create products made for everyday use.",
       icon: FaShieldHalved,
     },
     {
@@ -60,7 +60,7 @@ const AboutUsPage = () => {
   ];
 
   const promises = [
-    "Premium-quality copper products",
+    "Premium-quality brass products",
     "Traditional Indian craftsmanship",
     "Modern and functional designs",
     "Carefully checked before dispatch",
@@ -71,7 +71,7 @@ const AboutUsPage = () => {
   const stats = [
     { value: "100%", label: "Quality Focused" },
     { value: "Indian", label: "Craft Heritage" },
-    { value: "Pure", label: "Copper Experience" },
+    { value: "Pure", label: "Brass Experience" },
     { value: "Made", label: "With Care" },
   ];
 
@@ -80,7 +80,7 @@ const AboutUsPage = () => {
       number: "01",
       title: "Material Selection",
       description:
-        "The journey begins with carefully selected copper and supporting materials chosen for quality and durability.",
+        "The journey begins with carefully selected brass and supporting materials chosen for quality and durability.",
     },
     {
       number: "02",
@@ -116,7 +116,7 @@ const AboutUsPage = () => {
         >
           <Image
             src="/images/craft1.png"
-            alt="Traditional Shudyam copper utensils"
+            alt="Traditional Shudyam brass utensils"
             fill
             priority
             className="object-cover opacity-70"
@@ -147,7 +147,7 @@ const AboutUsPage = () => {
             </h1>
 
             {/* <p className="mt-8 max-w-xl text-base font-light leading-relaxed text-white/90 ">
-              Shudyam brings the warmth of traditional Indian copperware into modern homes through thoughtful design, skilled craftsmanship, and a deep respect for purity.
+              Shudyam brings the warmth of traditional Indian brassware into modern homes through thoughtful design, skilled craftsmanship, and a deep respect for purity.
             </p> */}
 
             {/* <div className="mt-12 flex flex-wrap items-center gap-6">
@@ -180,7 +180,7 @@ const AboutUsPage = () => {
             <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-[#e8dfd3]">
               <Image
                 src="/images/giftsection.png"
-                alt="Shudyam copper craftsmanship"
+                alt="Shudyam brass craftsmanship"
                 fill
                 className="object-cover transition duration-1000 hover:scale-105"
               />
@@ -207,7 +207,7 @@ const AboutUsPage = () => {
             </p>
 
             <h2 className="my-3 max-w-2xl font-serif text-4xl font-light leading-tight text-[#231612] md:text-5xl lg:text-[3rem]">
-              Timeless copperware for the <span className="italic text-[#52070a]">modern home.</span>
+              Timeless brassware for the <span className="italic text-[#52070a]">modern home.</span>
             </h2>
 
             <div className=" space-y-6  font-light leading-relaxed text-[#655851] ">
@@ -215,7 +215,7 @@ const AboutUsPage = () => {
                 Shudyam was created with a simple belief: everyday utensils should be useful, beautiful and connected to the traditions that shaped them.
               </p>
               <p>
-                Copperware has been part of Indian homes for generations. Beyond its distinctive shine, it represents care, hospitality, purity and a thoughtful way of living.
+                Brassware has been part of Indian homes for generations. Beyond its distinctive shine, it represents care, hospitality, purity and a thoughtful way of living.
               </p>
               <p>
                 At Shudyam, we preserve this heritage while adapting it for contemporary kitchens. Our products combine traditional character with clean forms, practical details and dependable quality.
@@ -324,7 +324,7 @@ const AboutUsPage = () => {
             </h2>
 
             <p className="my-4 max-w-lg  font-light leading-relaxed text-[#695c55] ">
-              Copper requires patience. Its form, finish, and balance depend on skilled hands and careful decisions at every stage. Our approach respects this material deeply.
+              Brass requires patience. Its form, finish, and balance depend on skilled hands and careful decisions at every stage. Our approach respects this material deeply.
             </p>
 
             <div className="mt- space-y-0 border-t border-[#e5ddd4]">
@@ -359,7 +359,7 @@ const AboutUsPage = () => {
             >
               <Image
                 src="/images/cat3.png"
-                alt="Crafting copper utensils"
+                alt="Crafting brass utensils"
                 fill
                 className="object-cover"
               />
@@ -374,7 +374,7 @@ const AboutUsPage = () => {
             >
               <Image
                 src="/images/cat2.png"
-                alt="Finished copper utensils"
+                alt="Finished brass utensils"
                 fill
                 className="object-cover"
               />
@@ -396,7 +396,7 @@ const AboutUsPage = () => {
           <div className="relative min-h-[500px] lg:min-h-[700px]">
             <Image
               src="/images/cat1.png"
-              alt="Shudyam copper collection"
+              alt="Shudyam brass collection"
               fill
               className="object-cover"
             />
@@ -474,11 +474,11 @@ const AboutUsPage = () => {
             </p>
 
             <h2 className="mt-6 font-serif text-4xl font-light leading-tight md:text-4xl">
-              Bring the beauty of copper into your <span className="italic text-[#d79461]">everyday rituals.</span>
+              Bring the beauty of brass into your <span className="italic text-[#d79461]">everyday rituals.</span>
             </h2>
 
             <p className="mx-auto mt-8 max-w-xl  font-light leading-relaxed text-white/70 ">
-              Explore thoughtfully designed copper utensils created to add warmth, tradition, and timeless elegance to your home.
+              Explore thoughtfully designed brass utensils created to add warmth, tradition, and timeless elegance to your home.
             </p>
 
             <Link

@@ -125,7 +125,7 @@ const EmptyWishlist = () => {
         </h2>
 
         <p className="mt-2 text-sm leading-6 text-gray-500">
-          Save your favourite copper products and view them here later.
+          Save your favourite brass products and view them here later.
         </p>
 
         <Link

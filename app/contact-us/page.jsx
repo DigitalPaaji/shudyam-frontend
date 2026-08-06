@@ -76,9 +76,9 @@ const ContactUsPage = () => {
         "You can track your order from the Track Order page using your order number and registered phone number. Tracking details are also shared by email or WhatsApp after dispatch.",
     },
     {
-      question: "How should I clean copper utensils?",
+      question: "How should I clean brass utensils?",
       answer:
-        "Use a soft sponge with mild dish soap for regular cleaning. For natural copper shine, use lemon and salt or a copper cleaning solution. Avoid harsh steel scrubbers.",
+        "Use a soft sponge with mild dish soap for regular cleaning. For natural brass shine, use lemon and salt or a brass cleaning solution. Avoid harsh steel scrubbers.",
     },
     {
       question: "Do you provide returns or replacements?",
@@ -173,7 +173,7 @@ const ContactUsPage = () => {
             </h1>
 
             <p className="mx-auto mt-8 max-w-2xl text-[15px] font-light leading-relaxed text-white/70 md:text-lg">
-              Have a question about our copper utensils, your order, or bulk
+              Have a question about our brass utensils, your order, or bulk
               purchasing? Send us a message and the Shudyam team will help you.
             </p>
           </motion.div>
@@ -281,7 +281,7 @@ const ContactUsPage = () => {
                     Follow Our Journey
                   </h3>
                   <p className="mt-3 text-[15px] font-light leading-relaxed text-[#71635c]">
-                    Follow Shudyam on Instagram for new collections, care tips and copper inspiration.
+                    Follow Shudyam on Instagram for new collections, care tips and brass inspiration.
                   </p>
                 </div>
               </div>

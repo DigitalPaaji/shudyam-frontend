@@ -16,7 +16,7 @@ import {
 export const metadata = {
   title: "Return & Refund Policy | Shudyam",
   description:
-    "Read Shudyam's return, exchange, cancellation, and refund policy for copper cookware and other products.",
+    "Read Shudyam's return, exchange, cancellation, and refund policy for brass cookware and other products.",
 };
 
 const highlights = [
@@ -175,12 +175,12 @@ const sections = [
     ),
   },
   {
-    id: "copper-characteristics",
-    title: "6. Natural Characteristics of Copper",
+    id: "brass-characteristics",
+    title: "6. Natural Characteristics of Brass",
     content: (
       <>
         <p>
-          Copper is a natural material and may develop patina, spots,
+          Brass is a natural material and may develop patina, spots,
           discolouration, oxidation, or a darker appearance over time.
         </p>
 
@@ -214,7 +214,7 @@ const sections = [
           <li>Clearance or final-sale products marked as non-returnable.</li>
           <li>Products without their original packaging or accessories.</li>
           <li>
-            Products showing normal copper oxidation, patina, or natural colour
+            Products showing normal brass oxidation, patina, or natural colour
             changes.
           </li>
           <li>

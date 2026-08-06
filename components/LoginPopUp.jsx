@@ -96,7 +96,7 @@ location.reload()
             </p>
 
             <p className="mt-2 text-xs uppercase tracking-[0.25em] text-[#ba7653]">
-              Pure Copper Living
+              Pure Brass Living
             </p>
           </div>
 

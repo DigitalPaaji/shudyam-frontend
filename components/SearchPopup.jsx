@@ -151,7 +151,7 @@ const SearchPopup = ({ setOpenSearch }) => {
               type="text"
               value={search}
               onChange={(event) => setSearch(event.target.value)}
-              placeholder="Search copper bottle, saucepan..."
+              placeholder="Search brass bottle, saucepan..."
               autoFocus
               className="h-full w-full bg-transparent text-sm text-neutral-950 outline-none placeholder:text-neutral-400 sm:text-base"
             />

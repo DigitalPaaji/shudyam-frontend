@@ -28,7 +28,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 //     id: 1,
 //     image: "p1.png",
 //     hoverimg: "hi.png",
-//     title: "Copper Saucepan with Insulated Handle",
+//     title: "Brass Saucepan with Insulated Handle",
 //     variants: [
 //       { size: 14, mrp: "10,500", basePrice: "19,500" },
 //       { size: 16, mrp: "12,500", basePrice: "21,500" },
@@ -39,7 +39,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 //     id: 2,
 //       image: "p1.png",
 //     hoverimg: "hi.png",
-//     title: "Copper Frying Pan",
+//     title: "Brass Frying Pan",
 //     variants: [
 //       { size: 14, mrp: "15,400", basePrice: "24,400" },
 //       { size: 16, mrp: "17,400", basePrice: "27,400" },
@@ -50,7 +50,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 //     id: 3,
 //      image: "p1.png",
 //     hoverimg: "hi.png",
-//     title: "Copper Kadhri",
+//     title: "Brass Kadhri",
 //     variants: [
 //       { size: 14, mrp: "23,400", basePrice: "35,000" },
 //       { size: 16, mrp: "26,400", basePrice: "39,000" },
@@ -61,7 +61,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 //     id: 4,
 //      image: "p1.png",
 //     hoverimg: "hi.png",
-//     title: "Copper Saute Pan",
+//     title: "Brass Saute Pan",
 //     variants: [
 //       { size: 14, mrp: "14,500", basePrice: "22,500" },
 //       { size: 16, mrp: "16,500", basePrice: "25,500" },
@@ -72,7 +72,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 //     id: 5,
 //      image: "p1.png",
 //     hoverimg: "hi.png",
-//     title: "Traditional Copper Frypan",
+//     title: "Traditional Brass Frypan",
 //     variants: [
 //       { size: 14, mrp: "13,500", basePrice: "21,500" },
 //       { size: 16, mrp: "15,500", basePrice: "24,500" },
@@ -320,7 +320,7 @@ useEffect(()=>{
 
         <div ref={rightHeadingRef} className="w-full md:w-auto">
           <p className= "  md:max-w-[230px] text-sm leading-relaxed text-[#760209] md:text-right md:text-base">
-            Indian households have used copper vessels for centuries.
+            Indian households have used brass vessels for centuries.
           </p>
 
           <Link

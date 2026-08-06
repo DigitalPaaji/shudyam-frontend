@@ -874,7 +874,7 @@ const ProductsPageContent = () => {
       <section className="relative h-[38vh] min-h-[280px] overflow-hidden sm:h-[48vh] lg:h-[65vh]">
         <img
           src="/images/banner.png"
-          alt="Premium copper products"
+          alt="Premium brass products"
           className="h-full w-full object-cover"
         />
 
@@ -887,11 +887,11 @@ const ProductsPageContent = () => {
             </p>
 
             <h1 className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-7xl">
-              Timeless Copper Essentials
+              Timeless Brass Essentials
             </h1>
 
             <p className="mt-4 max-w-lg text-sm leading-6 text-white/80 sm:text-base">
-              Explore premium copper products designed for
+              Explore premium brass products designed for
               traditional and modern living.
             </p>
           </div>

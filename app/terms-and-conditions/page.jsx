@@ -82,7 +82,7 @@ const sections = [
         </p>
 
         <p>
-          Copper is a natural material. Minor variations in colour, texture,
+          Brass is a natural material. Minor variations in colour, texture,
           shine, hammering, or finishing are normal and should not be considered
           manufacturing defects.
         </p>
@@ -92,8 +92,8 @@ const sections = [
             <FiAlertCircle className="mt-1 shrink-0 text-xl text-[#a85d28]" />
 
             <p className="text-sm leading-7 text-stone-700">
-              Copper products can naturally develop patina or darken over time.
-              This is a normal characteristic of copper and can generally be
+              Brass products can naturally develop patina or darken over time.
+              This is a normal characteristic of brass and can generally be
               managed through proper cleaning and care.
             </p>
           </div>
@@ -247,7 +247,7 @@ const sections = [
 
         <p>
           Products damaged due to misuse, improper cleaning, accidental damage,
-          normal copper oxidation, or failure to follow care instructions may
+          normal brass oxidation, or failure to follow care instructions may
           not qualify for a return, exchange, or refund.
         </p>
       </>
@@ -255,7 +255,7 @@ const sections = [
   },
   {
     id: "care",
-    title: "11. Copper Product Care",
+    title: "11. Brass Product Care",
     content: (
       <>
         <p>
@@ -277,7 +277,7 @@ const sections = [
             electric, oven, or dishwasher use before using it.
           </li>
           <li>
-            Do not store acidic food in unlined copper utensils for extended
+            Do not store acidic food in unlined brass utensils for extended
             periods.
           </li>
         </ul>
@@ -515,7 +515,7 @@ const sections = [
 ];
 
 const importantPoints = [
-  "Copper naturally changes colour and may develop patina.",
+  "Brass naturally changes colour and may develop patina.",
   "Product appearance can vary slightly from website photographs.",
   "Follow the supplied care and usage instructions.",
   "Report damaged or incorrect products within the return-policy period.",
@@ -550,7 +550,7 @@ export default function TermsAndConditionsPage() {
 
             <p className="mt-7 max-w-2xl  leading-8 text-stone-300">
               These terms explain the rules that apply when you browse, create
-              an account, or purchase premium copper products from Shudyam.
+              an account, or purchase premium brass products from Shudyam.
             </p>
 
           </div>
@@ -567,7 +567,7 @@ export default function TermsAndConditionsPage() {
               </p>
 
               <h2 className="mt-3 font-serif text-2xl text-[#2b170f] sm:text-3xl">
-                Before using your copper products
+                Before using your brass products
               </h2>
             </div>
 

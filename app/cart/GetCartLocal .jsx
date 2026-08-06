@@ -440,7 +440,7 @@ const EmptyCart = ({ onBack }) => {
         </h2>
 
         <p className="mt-2 text-sm leading-6 text-gray-500">
-          Add some beautiful copper products to your cart and
+          Add some beautiful brass products to your cart and
           they will appear here.
         </p>
 

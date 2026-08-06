@@ -18,17 +18,17 @@ import {
 export const metadata = {
   title: "Our Craftsmanship | Shudyam",
   description:
-    "Discover the materials, skilled hands and thoughtful processes behind every Shudyam copper creation.",
+    "Discover the materials, skilled hands and thoughtful processes behind every Shudyam brass creation.",
 };
 
 const processSteps = [
   {
     number: "01",
     label: "Selection",
-    title: "Choosing the Copper",
+    title: "Choosing the Brass",
     description:
-      "Our process begins with carefully selected copper sheets chosen for their finish, consistency and suitability for each design.",
-    image: "/images/craftsmanship/selecting-copper.jpeg",
+      "Our process begins with carefully selected brass sheets chosen for their finish, consistency and suitability for each design.",
+    image: "/images/craftsmanship/selecting-brass.jpeg",
     points: [
       "Material inspection",
       "Thickness verification",
@@ -41,7 +41,7 @@ const processSteps = [
     title: "Formed by Skilled Hands",
     description:
       "The metal is gradually shaped into its intended form through controlled pressure, traditional tools and experienced craftsmanship.",
-    image: "/images/craftsmanship/shaping-copper.jpeg",
+    image: "/images/craftsmanship/shaping-brass.jpeg",
     points: [
       "Measured proportions",
       "Balanced construction",
@@ -54,7 +54,7 @@ const processSteps = [
     title: "A Rhythm in Every Mark",
     description:
       "Each hammer impression contributes to the vessel’s character, creating subtle patterns that make every handcrafted piece distinct.",
-    image: "/images/craftsmanship/hammering-copper.jpeg",
+    image: "/images/craftsmanship/hammering-brass.jpeg",
     points: [
       "Hand-applied texture",
       "Individual character",
@@ -66,8 +66,8 @@ const processSteps = [
     label: "Finishing",
     title: "Polished with Patience",
     description:
-      "The shaped product is refined, cleaned and polished to reveal the warm, luminous appearance associated with copper.",
-    image: "/images/craftsmanship/polishing-copper.webp",
+      "The shaped product is refined, cleaned and polished to reveal the warm, luminous appearance associated with brass.",
+    image: "/images/craftsmanship/polishing-brass.webp",
     points: [
       "Surface refinement",
       "Edge smoothing",
@@ -109,7 +109,7 @@ const values = [
     number: "03",
     title: "Material Honesty",
     description:
-      "We celebrate the natural warmth and evolving character of copper instead of hiding its individuality.",
+      "We celebrate the natural warmth and evolving character of brass instead of hiding its individuality.",
   },
   {
     icon: FiShield,
@@ -136,7 +136,7 @@ const details = [
   {
     title: "Finish",
     description:
-      "Every surface is carefully refined to reveal copper’s rich, warm and naturally reflective appearance.",
+      "Every surface is carefully refined to reveal brass’s rich, warm and naturally reflective appearance.",
     image: "/images/craftsmanship/detail-finish.webp",
   },
 ];
@@ -193,7 +193,7 @@ export default function CraftsmanshipPage() {
       <section className="  relative overflow-hidden bg-[#160b07d8] text-white ">
         <Image
           src="/images/craftsmanship/hero-artisan.webp"
-          alt="Artisan crafting a Shudyam copper vessel"
+          alt="Artisan crafting a Shudyam brass vessel"
           fill
           priority
           sizes="100vw"
@@ -223,7 +223,7 @@ export default function CraftsmanshipPage() {
 
             {/* <p className="mt-8 max-w-xl text-sm font-light leading-relaxed text-stone-300 sm:text-base">
               Behind every Shudyam creation is a journey of metal, fire,
-              patience and skilled hands—bringing traditional copper craft into
+              patience and skilled hands—bringing traditional brass craft into
               contemporary homes.
             </p> */}
 
@@ -278,7 +278,7 @@ export default function CraftsmanshipPage() {
             <div className="absolute bottom-0 left-0 h-[82%] w-[94%] overflow-hidden rounded-3xl">
               <Image
                 src="/images/craftsmanship/artisan-at-work.jpg"
-                alt="Shudyam artisan working on a copper product"
+                alt="Shudyam artisan working on a brass product"
                 fill
                 sizes="(max-width: 1024px) 90vw, 45vw"
                 className="object-cover transition duration-700 hover:scale-105"
@@ -288,8 +288,8 @@ export default function CraftsmanshipPage() {
 
             <div className="absolute right-0 top-0 h-[48%] w-[58%] overflow-hidden rounded-3xl border-[6px] border-[#FFF9E6] shadow-xl">
               <Image
-                src="/images/craftsmanship/copper-detail.webp"
-                alt="Close-up of handcrafted copper texture"
+                src="/images/craftsmanship/brass-detail.webp"
+                alt="Close-up of handcrafted brass texture"
                 fill
                 sizes="(max-width: 1024px) 45vw, 22vw"
                 className="object-cover"
@@ -323,7 +323,7 @@ export default function CraftsmanshipPage() {
                 until it feels complete.
               </p>
               <p>
-                At Shudyam, we value the natural character of copper. Its warm
+                At Shudyam, we value the natural character of brass. Its warm
                 tone, subtle variations and evolving surface make every piece
                 personal rather than perfectly identical.
               </p>

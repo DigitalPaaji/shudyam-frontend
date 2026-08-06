@@ -440,7 +440,7 @@ export default function ShippingPolicyPage() {
 
             <p className="mt-7 max-w-2xl text-base leading-8 text-stone-300 sm:text-lg">
               Learn how Shudyam processes, packs, dispatches, tracks, and
-              delivers your premium copper products.
+              delivers your premium brass products.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 text-sm">
@@ -483,7 +483,7 @@ export default function ShippingPolicyPage() {
 
             <p className="mt-7 max-w-2xl  leading-8 text-stone-300">
                Learn how Shudyam processes, packs, dispatches, tracks, and
-              delivers your premium copper products.
+              delivers your premium brass products.
             </p>
 
           </div>
