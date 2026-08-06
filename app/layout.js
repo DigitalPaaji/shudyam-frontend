@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 import Header from "@/components/Header";
 import MainLayout from "./MainLayout";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 
 
@@ -20,8 +21,8 @@ export default function RootLayout({ children }) {
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-<link href="https://fonts.googleapis.com/css2?family=Lustria&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet"></link>
-
+{/* <link href="https://fonts.googleapis.com/css2?family=Lustria&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet"></link> */}
+<link href="https://fonts.googleapis.com/css2?family=Lustria&family=Mea+Culpa&family=Imperial+Script&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet"></link>
    </head>
 
 
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
          <Header />
         {children}
          <Footer />
+         <ScrollToTopButton />
          </MainLayout>
         
         

@@ -129,7 +129,7 @@ export default function ToonHubCarousel() {
         </div>
 
         {/* Bottom Control Row with fully responsive, readable typography scaling */}
-        <div className="absolute bottom-8 sm:bottom-12 left-1/2 z-50 flex -translate-x-1/2 flex-col items-center justify-center gap-4 sm:gap-6 px-4 text-center w-full max-w-4xl">
+        <div className="absolute  bottom-14 w-full left-1/2 z-50 flex -translate-x-1/2 flex-col items-center justify-center gap-4 sm:gap-6 px-4 text-center ">
           <h3
             className="
               relative inline-block
@@ -137,16 +137,18 @@ export default function ToonHubCarousel() {
               lg:text-[34px]
               2xl:text-[40px]
               leading-tight
-              tracking-wide
+             
               bg-gradient-to-r
               from-[#F8E7A1]
               via-[#E0A328]
               to-[#FFD56A]
-              bg-[length:200%_100%]
+             
               bg-clip-text
               text-transparent
               animate-[shine_3s_linear_infinite]
               drop-shadow-md
+              tracking-[0.6]
+              roboto-slab
             "
           >
             {IMAGES[currentIndex].title}
