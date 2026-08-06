@@ -14,9 +14,9 @@ import {
 } from "react-icons/fi";
 
 export const metadata = {
-  title: "Return & Refund Policy | Shudhyam",
+  title: "Return & Refund Policy | Shudyam",
   description:
-    "Read Shudhyam's return, exchange, cancellation, and refund policy for copper cookware and other products.",
+    "Read Shudyam's return, exchange, cancellation, and refund policy for copper cookware and other products.",
 };
 
 const highlights = [
@@ -47,13 +47,13 @@ const sections = [
     content: (
       <>
         <p>
-          At Shudhyam, we carefully inspect and package every product before
+          At Shudyam, we carefully inspect and package every product before
           dispatch. This policy explains when a product may be returned,
           exchanged, replaced, or refunded.
         </p>
 
         <p>
-          By purchasing from Shudhyam, you agree to the terms stated in this
+          By purchasing from Shudyam, you agree to the terms stated in this
           Return and Refund Policy.
         </p>
 
@@ -231,7 +231,7 @@ const sections = [
       <>
         <p>
           Change-of-mind returns may be accepted only when specifically
-          permitted by Shudhyam and when the product is completely unused,
+          permitted by Shudyam and when the product is completely unused,
           unopened, and in resalable condition.
         </p>
 
@@ -242,7 +242,7 @@ const sections = [
         </p>
 
         <p>
-          Shudhyam reserves the right to reject a change-of-mind return when the
+          Shudyam reserves the right to reject a change-of-mind return when the
           product cannot be resold as new.
         </p>
       </>
@@ -292,13 +292,13 @@ const sections = [
         </p>
 
         <p>
-          Shudhyam may cancel an order due to stock unavailability, pricing
+          Shudyam may cancel an order due to stock unavailability, pricing
           errors, payment failure, unsupported delivery locations, suspected
           fraud, or other operational reasons.
         </p>
 
         <p>
-          If a prepaid order is cancelled by Shudhyam, the eligible amount will
+          If a prepaid order is cancelled by Shudyam, the eligible amount will
           be refunded through the applicable payment method.
         </p>
       </>
@@ -317,7 +317,7 @@ const sections = [
         <p>
           If a customer refuses an otherwise valid order, remains unavailable,
           or provides an incorrect address, the order may be returned to
-          Shudhyam.
+          Shudyam.
         </p>
 
         <p>
@@ -340,7 +340,7 @@ const sections = [
         <p>To request a return:</p>
 
         <ol>
-          <li>Contact Shudhyam customer support within the applicable period.</li>
+          <li>Contact Shudyam customer support within the applicable period.</li>
           <li>Provide your order number and reason for the request.</li>
           <li>Share the required photos, videos, and supporting information.</li>
           <li>Wait for return approval and return instructions.</li>
@@ -362,7 +362,7 @@ const sections = [
       <>
         <p>
           For verified damaged, defective, missing, or incorrect-product cases,
-          Shudhyam may arrange reverse pickup or reimburse reasonable return
+          Shudyam may arrange reverse pickup or reimburse reasonable return
           shipping costs.
         </p>
 
@@ -427,13 +427,13 @@ const sections = [
 
         <p>
           Customers are responsible for providing accurate refund information.
-          Shudhyam will not be responsible for delays or losses caused by
+          Shudyam will not be responsible for delays or losses caused by
           incorrect bank or UPI details.
         </p>
 
         <p>
           Refunds are not normally issued in cash, unless expressly agreed by
-          Shudhyam.
+          Shudyam.
         </p>
       </>
     ),
@@ -455,7 +455,7 @@ const sections = [
         </p>
 
         <p>
-          Banking delays after refund initiation are outside Shudhyam&apos;s
+          Banking delays after refund initiation are outside Shudyam&apos;s
           direct control.
         </p>
       </>
@@ -480,7 +480,7 @@ const sections = [
 
         <p>
           No deduction will normally be applied when the return is approved
-          because Shudhyam delivered a verified damaged, defective, or incorrect
+          because Shudyam delivered a verified damaged, defective, or incorrect
           product.
         </p>
       </>
@@ -516,7 +516,7 @@ const sections = [
       <>
         <p>
           To request a return, replacement, cancellation, or refund, contact
-          Shudhyam customer support with your order number and supporting
+          Shudyam customer support with your order number and supporting
           evidence.
         </p>
 
@@ -563,7 +563,7 @@ export default function RefundPolicyPage() {
   return (
     <main className="min-h-screen bg-[#fbf7f2] text-[#271710]">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#180b07] px-5 pb-20 pt-28 text-white sm:px-8 lg:px-12">
+      {/* <section className="relative overflow-hidden bg-[#180b07] px-5 pb-20 pt-28 text-white sm:px-8 lg:px-12">
        
 
         <div className="relative mx-auto max-w-7xl">
@@ -591,7 +591,7 @@ export default function RefundPolicyPage() {
 
             <p className="mt-7 max-w-2xl text-base leading-8 text-stone-300 sm:text-lg">
               Learn how to request a return, exchange, replacement,
-              cancellation, or refund for your Shudhyam order.
+              cancellation, or refund for your Shudyam order.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 text-sm">
@@ -605,7 +605,40 @@ export default function RefundPolicyPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+         <section className="relative overflow-hidden bg-[#180b07] py-20 text-white ">
+            
+           
+      
+              <div className="relative   px-4 sm:px-6 md:px-12  lg:px-24  xl:px-40 ">
+                <div className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#FFD56A]">
+                  <Link href="/" className="transition hover:text-white">
+                    Home
+                  </Link>
+      
+                 
+                  <FiChevronRight />
+      
+                    <span className="text-white">Return &amp; Refund Policy</span>
+                </div>
+      
+                <div className="max-w-4xl">
+       
+                  <h1 className="font-serif text-4xl leading-tight   lg:text-5xl">
+                     Return &amp; <span className=" bg-gradient-to-r from-[#F8E7A1] via-[#E0A328] to-[#FFD56A] bg-clip-text text-transparent">
+                Refund Policy
+              </span>
+                  </h1>
+      
+                  <p className="mt-7 max-w-2xl  leading-8 text-stone-300">
+                     Learn how to request a return, exchange, replacement,
+              cancellation, or refund for your Shudyam order.
+                  </p>
+      
+                </div>
+              </div>
+            </section>
 
       {/* Highlights */}
       <section className="relative z-10 mx-auto -mt-8 max-w-7xl px-5 sm:px-8 lg:px-12">

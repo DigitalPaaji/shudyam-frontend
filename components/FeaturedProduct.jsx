@@ -106,7 +106,7 @@ useEffect(()=>{
           />
         </div>
 
-        {/* Product Slider */}
+      
         <Swiper
           modules={[Autoplay]}
           loop={products.length > 3}

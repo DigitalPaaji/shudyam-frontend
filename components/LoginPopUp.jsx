@@ -92,7 +92,7 @@ location.reload()
           {/* Header */}
           <div className="mb-7 text-center">
             <p className="font-serif text-3xl tracking-[0.18em] text-white">
-              SHUDHYAM
+              Shudyam
             </p>
 
             <p className="mt-2 text-xs uppercase tracking-[0.25em] text-[#ba7653]">
@@ -263,7 +263,7 @@ const Login = ({ onSuccess }) => {
         </h1>
 
         <p className="mt-1 text-sm text-white/45">
-          Login to continue shopping with Shudhyam.
+          Login to continue shopping with Shudyam.
         </p>
       </div>
 
@@ -463,7 +463,7 @@ const Signup = ({ onSuccess, openLogin }) => {
         <p className="mt-1 text-sm text-white/45">
           {otpSent
             ? `Enter the OTP sent to ${userData.email}`
-            : "Create your Shudhyam account."}
+            : "Create your Shudyam account."}
         </p>
       </div>
 

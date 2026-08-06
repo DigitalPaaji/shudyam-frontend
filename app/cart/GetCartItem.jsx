@@ -115,39 +115,7 @@ const GetCartItem = () => {
     return () => controller.abort();
   }, []);
 
-  useGSAP(
-    () => {
-      if (!cartData.cartItems.length || isLoading) return;
-
-      gsap.from(".cart-heading", {
-        y: 25,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power3.out",
-      });
-
-      gsap.from(".cart-item", {
-        y: 35,
-        opacity: 0,
-        duration: 0.65,
-        stagger: 0.1,
-        ease: "power3.out",
-      });
-
-      gsap.from(".cart-summary", {
-        x: 45,
-        opacity: 0,
-        duration: 0.7,
-        delay: 0.15,
-        ease: "power3.out",
-      });
-    },
-    {
-      scope: pageRef,
-      dependencies: [cartData.cartItems.length, isLoading],
-      revertOnUpdate: true,
-    },
-  );
+ 
 
   const getSelectedVariant = (item) => {
     const variantId = item.productvarient || item.variantid || item.variantId;
@@ -308,21 +276,22 @@ const GetCartItem = () => {
       className="min-h-screen bg-[#f8f7f4] px-4 py-8 sm:px-6 lg:px-12 lg:py-12"
     >
       <div className="mx-auto max-w-7xl">
-        <button
-          type="button"
-          onClick={() => router.back()}
-          className="mb-7 inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition hover:border-gray-900 hover:text-gray-950"
-        >
-          <FiArrowLeft /> Back
-        </button>
+      
 
-        <div className="cart-heading mb-8 flex flex-col justify-between gap-3 border-b border-gray-200 pb-6 sm:flex-row sm:items-end">
+        <div className="cart-heading mb-8 flex flex-col justify-between gap-3 border-b border-gray-200 pb-3 sm:flex-row sm:items-end">
           <div>
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#8b5e3c]">
               Your selection
             </p>
 
-            <h1 className="text-3xl font-semibold text-gray-950 sm:text-4xl">
+            <h1 className="text-3xl font-semibold text-gray-950 ">
+              <button
+          type="button"
+          onClick={() => router.back()}
+          className=" inline-flex items-center gap-2 rounded-full  text-xl me-3  font-medium "
+        >
+          <FiArrowLeft /> 
+        </button>
               Shopping Cart
             </h1>
           </div>
@@ -383,11 +352,11 @@ const GetCartItem = () => {
 
                             {variant?.sku && <span>SKU: {variant.sku}</span>}
 
-                            {variant?.stock !== undefined && (
+                            {/* {variant?.stock !== undefined && (
                               <span className="text-green-600">
                                 Stock: {variant.stock}
                               </span>
-                            )}
+                            )} */}
                           </div>
                         </div>
 

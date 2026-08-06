@@ -7,8 +7,8 @@ import { BiLogoReact } from 'react-icons/bi'
 
 const Whyshudyam = () => {
   return (
-    <div className='px-4 md:px-12 lg:px-24 xl:px-40 py-24'>
- <div className='grid  md:grid-cols-2 gap-14'>
+    <div className='px-4 md:px-12 lg:px-24 xl:px-40 py-12'>
+ <div className='grid  lg:grid-cols-2 gap-14'>
 
 <div>
 <Image src={"/images/craft1.png"} alt='craft'  width={500} height={500} className='rounded-md w-full h-[30rem] object-cover' />
@@ -23,7 +23,7 @@ Crafted for Better Cooking, Designed for Generations
     
 </p>
 
-<p className='leading-tight font-p text-p text-sm text-justify'>Shudhyam combines heritage craftsmanship with modern functionality to create cookware that performs beautifully, lasts for years, and brings authenticity back to every meal. Crafted with care, designed with purpose, and made to be passed down through generations.</p>
+<p className='leading-tight font-p text-p text-sm text-justify'>Shudyam combines heritage craftsmanship with modern functionality to create cookware that performs beautifully, lasts for years, and brings authenticity back to every meal. Crafted with care, designed with purpose, and made to be passed down through generations.</p>
 {
 [
 {icon:LuMessagesSquare,text:"Hand-finished by skilled artisans." },
@@ -40,7 +40,7 @@ Crafted for Better Cooking, Designed for Generations
 
 
 
-<button className='bg-p w-fit text-white  px-3 py-1.5 rounded-md cursor-pointer'>Shop Collection</button>
+{/* <button className='bg-p w-fit text-white  px-3 py-1.5 rounded-md cursor-pointer'>Shop </button> */}
 
 
 

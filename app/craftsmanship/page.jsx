@@ -16,9 +16,9 @@ import {
 } from "react-icons/fi";
 
 export const metadata = {
-  title: "Our Craftsmanship | Shudhyam",
+  title: "Our Craftsmanship | Shudyam",
   description:
-    "Discover the materials, skilled hands and thoughtful processes behind every Shudhyam copper creation.",
+    "Discover the materials, skilled hands and thoughtful processes behind every Shudyam copper creation.",
 };
 
 const processSteps = [
@@ -116,7 +116,7 @@ const values = [
     number: "04",
     title: "Quality Reviewed",
     description:
-      "Products are inspected before packing so that each Shudhyam piece arrives ready to become part of your home.",
+      "Products are inspected before packing so that each Shudyam piece arrives ready to become part of your home.",
   },
 ];
 
@@ -172,7 +172,7 @@ const gallery = [
 function SectionLabel({ children, light = false }) {
   return (
     <div
-      className={`inline-flex items-center gap-3 text-[10px] font-medium uppercase tracking-[0.25em] ${
+      className={`inline-flex items-center gap-3 text-[10px] font-medium uppercase  ${
         light ? "text-[#e4b888]" : "text-[#9d5428]"
       }`}
     >
@@ -190,10 +190,10 @@ export default function CraftsmanshipPage() {
   return (
     <main className="overflow-hidden bg-[#FFF9E6] text-[#25150f]">
       {/* HERO SECTION */}
-      <section className="relative max-h-[82vh] overflow-hidden bg-[#160b07d8] text-white">
+      <section className="  relative overflow-hidden bg-[#160b07d8] text-white ">
         <Image
           src="/images/craftsmanship/hero-artisan.webp"
-          alt="Artisan crafting a Shudhyam copper vessel"
+          alt="Artisan crafting a Shudyam copper vessel"
           fill
           priority
           sizes="100vw"
@@ -202,7 +202,7 @@ export default function CraftsmanshipPage() {
 
 <div className="absolute top-0 left-0 w-screen h-full bg-black/80" />
 
-        <div className="relative z-10 mx-auto flex max-h-[82vh] max-w-[1500px] flex-col px-5 pb-10 pt-28 sm:px-8 lg:px-14 xl:px-20">
+        <div className="relative z-10 mx-auto flex  px-4 sm:px-6 md:px-12  lg:px-24  xl:px-40   flex-col  pb-10 pt-28 ">
           {/* <div className="flex items-center gap-2 text-xs font-light tracking-wide text-[#dbb28c]">
             <Link href="/" className="transition hover:text-white">
               Home
@@ -212,17 +212,17 @@ export default function CraftsmanshipPage() {
           </div> */}
 
           <div className="my-auto max-w-3xl py-16">
-            <SectionLabel light>The art behind Shudhyam</SectionLabel>
+            <SectionLabel light>The art behind Shudyam</SectionLabel>
 
-            <h1 className="mt-6 font-serif text-4xl font-normal leading-tight tracking-wide sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="mt-6 font-serif text-4xl font-normal leading-tight tracking-wide sm:text-5xl md:text-6xl ">
               Crafted by Hand.
-              <span className="mt-2 block bg-gradient-to-r from-[#f3d3af] via-[#d49254] to-[#f0c18e] bg-clip-text italic text-transparent">
+              <span className="mt-2 block bg-gradient-to-r from-[#F8E7A1] via-[#E0A328] to-[#FFD56A] bg-clip-text italic text-transparent">
                 Made with Soul.
               </span>
             </h1>
 
             {/* <p className="mt-8 max-w-xl text-sm font-light leading-relaxed text-stone-300 sm:text-base">
-              Behind every Shudhyam creation is a journey of metal, fire,
+              Behind every Shudyam creation is a journey of metal, fire,
               patience and skilled hands—bringing traditional copper craft into
               contemporary homes.
             </p> */}
@@ -246,7 +246,7 @@ export default function CraftsmanshipPage() {
             </div> */}
           </div>
 
-          <div className="grid gap-4 border-t border-white/15 pt-7 sm:grid-cols-3">
+          <div className=" hidden  md:grid gap-4 border-t border-white/15 pt-7 sm:grid-cols-3">
             {[
               ["Hand Finished", "Attention in every detail"],
               ["Naturally Unique", "No two pieces feel identical"],
@@ -274,11 +274,11 @@ export default function CraftsmanshipPage() {
         <div className="absolute right-0 top-0 h-72 w-72 rounded-full bg-[#b87333]/10 blur-[100px]" />
 
         <div className="relative mx-auto grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div className="relative min-h-[480px] sm:min-h-[580px]">
+          <div className="relative min-h-[480px] sm:min-h-[580px] ">
             <div className="absolute bottom-0 left-0 h-[82%] w-[94%] overflow-hidden rounded-3xl">
               <Image
                 src="/images/craftsmanship/artisan-at-work.jpg"
-                alt="Shudhyam artisan working on a copper product"
+                alt="Shudyam artisan working on a copper product"
                 fill
                 sizes="(max-width: 1024px) 90vw, 45vw"
                 className="object-cover transition duration-700 hover:scale-105"
@@ -310,12 +310,12 @@ export default function CraftsmanshipPage() {
           <div>
             <SectionLabel>Our philosophy</SectionLabel>
 
-            <h2 className="mt-6 font-serif text-3xl font-normal leading-tight md:text-4xl lg:text-5xl">
+            <h2 className="mt-6 font-serif text-3xl font-normal leading-tight md:text-4xl ">
               Where traditional skill meets
               <span className="italic text-[#a75a2c]"> modern living.</span>
             </h2>
 
-            <div className="mt-8 space-y-5 text-sm font-light leading-relaxed text-stone-600 sm:text-base">
+            <div className="my-3 space-y-5 text-sm font-light leading-relaxed text-stone-600 sm:text-base">
               <p>
                 Craftsmanship is more than the final appearance of an object. It
                 is found in the decisions made before the first cut, the control
@@ -323,7 +323,7 @@ export default function CraftsmanshipPage() {
                 until it feels complete.
               </p>
               <p>
-                At Shudhyam, we value the natural character of copper. Its warm
+                At Shudyam, we value the natural character of copper. Its warm
                 tone, subtle variations and evolving surface make every piece
                 personal rather than perfectly identical.
               </p>
@@ -366,7 +366,7 @@ export default function CraftsmanshipPage() {
             <div>
               <SectionLabel light>What defines our work</SectionLabel>
               <h2 className="mt-6 font-serif text-3xl font-light tracking-wide sm:text-4xl lg:text-5xl">
-                The Shudhyam
+                The Shudyam
                 <span className="block italic text-[#d99759]">standard.</span>
               </h2>
             </div>
@@ -502,7 +502,7 @@ export default function CraftsmanshipPage() {
       </section>
 
       {/* DETAIL SECTION */}
-      <section className="bg-[#ede4d9] px-5 py-20 sm:px-8 md:px-12 lg:px-24 xl:px-40 lg:py-28">
+      <section className=" px-5 py-20 sm:px-8 md:px-12 lg:px-24 xl:px-40 lg:py-28">
         <div className="mx-auto max-w-[1400px]">
           <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
@@ -554,228 +554,15 @@ export default function CraftsmanshipPage() {
         </div>
       </section>
 
-      {/* HUMAN  TOUCH SECTION */}
-      <section className="relative overflow-hidden bg-[#1d0e08] text-white">
-        <div className="relative mx-auto flex items-center px-5 py-20 sm:px-8 md:px-12 lg:px-24 xl:px-40 lg:py-28">
-          <div className="max-w-2xl">
-            <SectionLabel light>The hands behind the work</SectionLabel>
+     
 
-            <h2 className="mt-6 font-serif text-3xl font-light leading-tight sm:text-4xl lg:text-5xl">
-              Skill that cannot be
-              <span className="block italic text-[#dda064]">
-                rushed or replicated.
-              </span>
-            </h2>
+      
 
-            <p className="mt-6 text-sm font-light leading-relaxed text-stone-300 sm:text-base">
-              A craftsperson learns to understand metal through touch, sound and
-              resistance. That understanding cannot be reduced to a single
-              machine setting. It develops gradually through observation,
-              repetition and experience.
-            </p>
+   
+  
+     
 
-            <p className="mt-4 text-sm font-light leading-relaxed text-stone-300 sm:text-base">
-              This human judgement gives each Shudhyam piece its individual
-              character—the slight variations that remind us it was shaped by
-              hands rather than produced without feeling.
-            </p>
-
-            <div className="mt-10 inline-flex items-center gap-4 border-t border-white/10 pt-6">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#b87333]/20 text-[#dda064]">
-                <FiStar className="text-lg" />
-              </span>
-              <div>
-                <p className="font-serif text-lg tracking-wide">Made with intention</p>
-                <p className="mt-0.5 text-[11px] font-light text-stone-400">
-                  Created to be used, loved and remembered
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* GALLERY SECTION */}
-      <section className="px-5 py-20 sm:px-8 md:px-12 lg:px-24 xl:px-40 lg:py-28">
-        <div className="mx-auto max-w-[1400px]">
-          <div className="mx-auto max-w-2xl text-center">
-            <SectionLabel>Inside the workshop</SectionLabel>
-            <h2 className="mt-5 font-serif text-3xl font-normal sm:text-4xl lg:text-5xl">
-              Moments of
-              <span className="italic text-[#a75a2c]"> making.</span>
-            </h2>
-          </div>
-
-          <div className="mt-12 grid auto-rows-[240px] grid-cols-1 gap-4 md:grid-cols-12 md:auto-rows-[220px]">
-            {gallery.map((item) => (
-              <article
-                key={item.title}
-                className={`group relative overflow-hidden rounded-3xl ${item.className}`}
-              >
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  sizes="(max-width: 768px) 90vw, 60vw"
-                  className="object-cover transition duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/5 to-transparent opacity-80" />
-                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-5 text-white sm:p-6">
-                  <h3 className="font-serif text-lg font-light tracking-wide sm:text-xl">{item.title}</h3>
-                  <span className="flex h-8 w-8 translate-y-2 items-center justify-center rounded-full border border-white/30 bg-white/10 opacity-0 backdrop-blur transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                    <FiArrowRight className="text-sm" />
-                  </span>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* EVOLVE SECTION */}
-      <section className="px-5 pb-20 sm:px-8 md:px-12 lg:px-24 xl:px-40 lg:pb-28">
-        <div className="relative mx-auto max-w-[1400px] overflow-hidden rounded-3xl bg-[#b96d35] text-white">
-          <div className="absolute inset-0 opacity-[0.13]">
-            <div className="h-full w-full bg-[radial-gradient(circle_at_center,#fff_1px,transparent_1.5px)] bg-[size:18px_18px]" />
-          </div>
-
-          <div className="grid lg:grid-cols-2">
-            <div className="relative min-h-[400px] overflow-hidden">
-              <Image
-                src="/images/craftsmanship/natural-copper.jpeg"
-                alt="Natural surface of polished copper"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#b96d35]/30" />
-            </div>
-
-            <div className="relative flex items-center p-8 sm:p-12 lg:p-14 xl:p-16">
-              <div>
-                <SectionLabel light>Designed to evolve</SectionLabel>
-                <h2 className="mt-5 font-serif text-3xl font-light leading-tight sm:text-4xl">
-                  Copper becomes more
-                  <span className="block italic text-[#ffe0be]">
-                    personal with time.
-                  </span>
-                </h2>
-
-                <p className="mt-5 text-sm font-light leading-relaxed text-[#fff1e3]/90 sm:text-base">
-                  Copper naturally responds to air, moisture, touch and use.
-                  Changes in tone and surface character are part of its living
-                  beauty, giving each product a story unique to its owner.
-                </p>
-
-                <Link
-                  href="/copper-care"
-                  className="group mt-8 inline-flex items-center gap-3 rounded-full bg-[#2a130a] px-6 py-3.5 text-[13px] font-medium text-white transition hover:bg-black"
-                >
-                  Read Copper Care Guide
-                  <FiArrowRight className="transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PROMISE SECTION */}
-      <section className="bg-white px-5 py-20 sm:px-8 md:px-12 lg:px-24 xl:px-40 lg:py-28">
-        <div className="mx-auto max-w-[1000px] text-center">
-          <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#b87333]/10 text-2xl text-[#9d5428]">
-            <FiShield />
-          </span>
-
-          <div className="mt-6">
-            <SectionLabel>Our promise</SectionLabel>
-          </div>
-
-          <h2 className="mx-auto mt-5 max-w-3xl font-serif text-3xl font-light leading-tight sm:text-4xl lg:text-5xl">
-            Craftsmanship you can
-            <span className="italic text-[#a75a2c]"> see and feel.</span>
-          </h2>
-
-          <p className="mx-auto mt-6 max-w-2xl text-sm font-light leading-relaxed text-stone-600 sm:text-base">
-            We create objects that are functional enough for everyday life and
-            beautiful enough to become part of your family’s rituals. Every
-            Shudhyam piece reflects our respect for material, process and the
-            people who bring it to life.
-          </p>
-
-          <div className="mt-12 grid gap-4 sm:grid-cols-3">
-            {[
-              {
-                icon: FiCheck,
-                title: "Carefully Inspected",
-                text: "Reviewed before packing",
-              },
-              {
-                icon: FiPackage,
-                title: "Securely Packed",
-                text: "Protected for its journey",
-              },
-              {
-                icon: FiHeart,
-                title: "Made to Be Cherished",
-                text: "For meaningful everyday use",
-              },
-            ].map((item) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={item.title}
-                  className="rounded-3xl border border-[#a55a2d]/15 bg-[#fbf7f2] p-6"
-                >
-                  <Icon className="mx-auto text-xl text-[#a75a2c]" />
-                  <p className="mt-4 font-serif text-lg tracking-wide">{item.title}</p>
-                  <p className="mt-1.5 text-[13px] font-light text-stone-500">{item.text}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA SECTION */}
-      <section className="relative mb-20 overflow-hidden bg-[#170b07] px-5 py-24 text-white sm:px-8 md:px-12 lg:px-24 xl:px-40 lg:py-32">
-        <div className="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-[#b87333]/15 blur-[130px]" />
-
-        <div className="relative mx-auto max-w-3xl text-center">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#dda36a]">
-            Bring craftsmanship home
-          </p>
-
-          <h2 className="mt-5 font-serif text-3xl font-light leading-tight sm:text-4xl lg:text-5xl">
-            Discover copper pieces
-            <span className="block italic text-[#d99759]">
-              created with purpose.
-            </span>
-          </h2>
-
-          <p className="mx-auto mt-6 max-w-xl text-sm font-light leading-relaxed text-stone-400 sm:text-base">
-            Explore cookware, serveware and everyday copper essentials designed
-            to make ordinary rituals feel meaningful.
-          </p>
-
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/products"
-              className="group inline-flex items-center gap-3 rounded-full bg-[#b87333] px-7 py-3.5 text-[13px] font-medium text-white transition hover:bg-[#d08749]"
-            >
-              Explore Collection
-              <FiArrowRight className="transition-transform group-hover:translate-x-1" />
-            </Link>
-
-            <Link
-              href="/about-us"
-              className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-[13px] font-medium text-white backdrop-blur transition hover:bg-white/10"
-            >
-              Our Story
-            </Link>
-          </div>
-        </div>
-      </section>
+ 
     </main>
   );
 }

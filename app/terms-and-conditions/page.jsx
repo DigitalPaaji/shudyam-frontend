@@ -8,9 +8,9 @@ import {
 } from "react-icons/fi";
 
 export const metadata = {
-  title: "Terms & Conditions | Shudhyam",
+  title: "Terms & Conditions | Shudyam",
   description:
-    "Read the terms and conditions governing purchases, payments, shipping, returns, and use of the Shudhyam website.",
+    "Read the terms and conditions governing purchases, payments, shipping, returns, and use of the Shudyam website.",
 };
 
 const sections = [
@@ -20,7 +20,7 @@ const sections = [
     content: (
       <>
         <p>
-          By accessing, browsing, or purchasing from the Shudhyam website, you
+          By accessing, browsing, or purchasing from the Shudyam website, you
           agree to be bound by these Terms and Conditions, our Privacy Policy,
           Shipping Policy, Return and Refund Policy, and any other policies
           displayed on our website.
@@ -63,7 +63,7 @@ const sections = [
 
         <p>
           You agree to provide accurate, complete, and current information.
-          Shudhyam reserves the right to suspend or terminate accounts containing
+          Shudyam reserves the right to suspend or terminate accounts containing
           false information or showing suspicious activity.
         </p>
       </>
@@ -134,7 +134,7 @@ const sections = [
         <p>
           Placing an order constitutes an offer to purchase the selected
           products. An order is considered accepted only after it has been
-          confirmed and processed by Shudhyam.
+          confirmed and processed by Shudyam.
         </p>
 
         <p>We may cancel or refuse an order in circumstances including:</p>
@@ -168,7 +168,7 @@ const sections = [
 
         <p>
           Online payments are processed through third-party payment gateways.
-          Shudhyam does not directly store complete card, UPI PIN, or banking
+          Shudyam does not directly store complete card, UPI PIN, or banking
           credentials.
         </p>
 
@@ -283,7 +283,7 @@ const sections = [
         </ul>
 
         <p>
-          Shudhyam will not be responsible for damage caused by improper use,
+          Shudyam will not be responsible for damage caused by improper use,
           storage, cleaning, maintenance, overheating, or unauthorized repair.
         </p>
       </>
@@ -321,7 +321,7 @@ const sections = [
 
         <p>
           Unless expressly permitted, multiple offers cannot be combined.
-          Shudhyam may modify, suspend, or withdraw an offer if misuse,
+          Shudyam may modify, suspend, or withdraw an offer if misuse,
           duplication, technical error, or fraudulent activity is identified.
         </p>
       </>
@@ -351,9 +351,9 @@ const sections = [
     content: (
       <>
         <p>
-          All website content, including the Shudhyam name, logo, product
+          All website content, including the Shudyam name, logo, product
           photography, videos, text, graphics, packaging, designs, icons, and
-          website layout, is owned by or licensed to Shudhyam.
+          website layout, is owned by or licensed to Shudyam.
         </p>
 
         <p>
@@ -376,7 +376,7 @@ const sections = [
         </p>
 
         <p>
-          You grant Shudhyam a non-exclusive right to display, reproduce, edit,
+          You grant Shudyam a non-exclusive right to display, reproduce, edit,
           and use submitted content for website, customer-support, and marketing
           purposes.
         </p>
@@ -401,7 +401,7 @@ const sections = [
 
         <p>
           These services are governed by their own terms and privacy policies.
-          Shudhyam is not responsible for the independent practices, content, or
+          Shudyam is not responsible for the independent practices, content, or
           availability of third-party platforms.
         </p>
       </>
@@ -413,7 +413,7 @@ const sections = [
     content: (
       <>
         <p>
-          To the maximum extent permitted by applicable law, Shudhyam will not
+          To the maximum extent permitted by applicable law, Shudyam will not
           be liable for indirect, incidental, special, or consequential losses
           arising from website use, delivery delays, product misuse, loss of
           data, or third-party services.
@@ -437,7 +437,7 @@ const sections = [
     title: "19. Indemnification",
     content: (
       <p>
-        You agree to indemnify and protect Shudhyam, its owners, employees,
+        You agree to indemnify and protect Shudyam, its owners, employees,
         representatives, and service providers against claims, damages, losses,
         or expenses resulting from your unlawful use of the website, violation
         of these terms, or infringement of another person&apos;s rights.
@@ -481,7 +481,7 @@ const sections = [
         <p>
           These terms are governed by the laws of India. Any dispute will be
           subject to the jurisdiction of the competent courts located where
-          Shudhyam&apos;s registered office is situated, unless applicable
+          Shudyam&apos;s registered office is situated, unless applicable
           consumer law requires otherwise.
         </p>
 
@@ -499,7 +499,7 @@ const sections = [
       <>
         <p>
           For questions regarding these Terms and Conditions, please contact
-          Shudhyam through the details provided on our Contact Us page.
+          Shudyam through the details provided on our Contact Us page.
         </p>
 
         <Link
@@ -507,7 +507,7 @@ const sections = [
           className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#8f4b23] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#713719]"
         >
           <FiMail />
-          Contact Shudhyam
+          Contact Shudyam
         </Link>
       </>
     ),
@@ -525,12 +525,12 @@ export default function TermsAndConditionsPage() {
   return (
     <main className="min-h-screen bg-[#fbf7f2] text-[#271710]">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#180b07] px-5 py-16 text-white sm:px-8 lg:px-12">
+      <section className="relative overflow-hidden bg-[#180b07] py-20 text-white ">
       
      
 
-        <div className="relative mx-auto ">
-          <div className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#ddb184]">
+        <div className="relative   px-4 sm:px-6 md:px-12  lg:px-24  xl:px-40 ">
+          <div className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#FFD56A]">
             <Link href="/" className="transition hover:text-white">
               Home
             </Link>
@@ -541,31 +541,18 @@ export default function TermsAndConditionsPage() {
           </div>
 
           <div className="max-w-4xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#d79a62]/30 bg-white/5 px-4 py-2 text-sm text-[#e8bd94] backdrop-blur">
-              <FiShield />
-              Legal Information
-            </div>
-
-            <h1 className="font-serif text-4xl leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
-              Terms &amp; <span className=" bg-gradient-to-r from-[#f4d4b0] via-[#c98145] to-[#f2c18f] bg-clip-text text-transparent">
+ 
+            <h1 className="font-serif text-4xl leading-tight   lg:text-5xl">
+              Terms &amp; <span className=" bg-linear-to-r from-[#F8E7A1] via-[#E0A328] to-[#FFD56A] bg-clip-text text-transparent">
                   Conditions
               </span>
             </h1>
 
-            <p className="mt-7 max-w-2xl text-base leading-8 text-stone-300 sm:text-lg">
+            <p className="mt-7 max-w-2xl  leading-8 text-stone-300">
               These terms explain the rules that apply when you browse, create
-              an account, or purchase premium copper products from Shudhyam.
+              an account, or purchase premium copper products from Shudyam.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3 text-sm">
-              <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-stone-300">
-                Effective date: 1 July 2026
-              </span>
-
-              <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-stone-300">
-                Applicable in India
-              </span>
-            </div>
           </div>
         </div>
       </section>
@@ -627,9 +614,9 @@ export default function TermsAndConditionsPage() {
         <div className="min-w-0">
           <div className="mb-10 rounded-3xl border border-[#a45b2c]/15 bg-[#fffaf5] p-6 sm:p-8">
             <p className="leading-8 text-stone-700">
-              Please read these terms carefully before using the Shudhyam
-              website. References to “Shudhyam”, “we”, “us”, or “our” refer to
-              the owner and operator of the Shudhyam e-commerce platform.
+              Please read these terms carefully before using the Shudyam
+              website. References to “Shudyam”, “we”, “us”, or “our” refer to
+              the owner and operator of the Shudyam e-commerce platform.
               References to “you”, “customer”, or “user” refer to any person
               accessing or purchasing through the website.
             </p>

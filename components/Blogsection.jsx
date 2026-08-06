@@ -109,7 +109,7 @@ const Blogsection = () => {
               </div>
 
               {/* Blog content */}
-              <div className="px-5 py-2">
+              <div className="px-5 py-6">
                 <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#760209]/55">
                   {formatDate(item.createdAt)}
                 </p>
@@ -118,13 +118,11 @@ const Blogsection = () => {
                   {item.title}
                 </h3>
 
-                {/* <p className="mt-3 line-clamp-2 text-sm leading-6 text-[#310104]/60">
-                  {item.des}
-                </p> */}
+              
 
                 <button
                   type="button"
-                  className="mt- inline-flex items-center gap-2 text-sm font-medium text-[#760209]"
+                  className=" inline-flex items-center gap-2 text-sm font-medium text-[#760209]"
                 >
                   Read article
 

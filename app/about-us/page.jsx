@@ -98,7 +98,7 @@ const AboutUsPage = () => {
       number: "04",
       title: "Quality Inspection",
       description:
-        "Before reaching your home, every Shudhyam product is inspected for finish, form and overall quality.",
+        "Before reaching your home, every Shudyam product is inspected for finish, form and overall quality.",
     },
   ];
 
@@ -116,7 +116,7 @@ const AboutUsPage = () => {
         >
           <Image
             src="/images/craft1.png"
-            alt="Traditional Shudhyam copper utensils"
+            alt="Traditional Shudyam copper utensils"
             fill
             priority
             className="object-cover opacity-70"
@@ -136,8 +136,8 @@ const AboutUsPage = () => {
           >
             <div className="mb-8 flex items-center gap-4">
               <span className="h-[1px] w-12 bg-[#d79461]" />
-              <span className="text-xs font-medium uppercase tracking-[0.4em] text-[#d79461]">
-                The Story of Shudhyam
+              <span className="text-sm font-medium uppercase  text-[#d79461]">
+                The Story of Shudyam
               </span>
             </div>
 
@@ -146,8 +146,8 @@ const AboutUsPage = () => {
               <span className="italic text-[#d79461]">into tradition.</span>
             </h1>
 
-            {/* <p className="mt-8 max-w-xl text-base font-light leading-relaxed text-white/90 md:text-lg">
-              Shudhyam brings the warmth of traditional Indian copperware into modern homes through thoughtful design, skilled craftsmanship, and a deep respect for purity.
+            {/* <p className="mt-8 max-w-xl text-base font-light leading-relaxed text-white/90 ">
+              Shudyam brings the warmth of traditional Indian copperware into modern homes through thoughtful design, skilled craftsmanship, and a deep respect for purity.
             </p> */}
 
             {/* <div className="mt-12 flex flex-wrap items-center gap-6">
@@ -180,7 +180,7 @@ const AboutUsPage = () => {
             <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-[#e8dfd3]">
               <Image
                 src="/images/giftsection.png"
-                alt="Shudhyam copper craftsmanship"
+                alt="Shudyam copper craftsmanship"
                 fill
                 className="object-cover transition duration-1000 hover:scale-105"
               />
@@ -202,23 +202,23 @@ const AboutUsPage = () => {
             transition={{ duration: 1, ease: premiumEase, delay: 0.2 }}
             className="pt-16 lg:pl-12 lg:pt-0"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[#b76a3e]">
+            <p className="text-sm font-semibold uppercase  text-[#b76a3e]">
               Who We Are
             </p>
 
-            <h2 className="mt-6 max-w-2xl font-serif text-4xl font-light leading-tight text-[#231612] md:text-5xl lg:text-[3.5rem]">
+            <h2 className="my-3 max-w-2xl font-serif text-4xl font-light leading-tight text-[#231612] md:text-5xl lg:text-[3rem]">
               Timeless copperware for the <span className="italic text-[#52070a]">modern home.</span>
             </h2>
 
-            <div className="mt-8 space-y-6 text-[15px] font-light leading-relaxed text-[#655851] md:text-lg">
+            <div className=" space-y-6  font-light leading-relaxed text-[#655851] ">
               <p>
-                Shudhyam was created with a simple belief: everyday utensils should be useful, beautiful and connected to the traditions that shaped them.
+                Shudyam was created with a simple belief: everyday utensils should be useful, beautiful and connected to the traditions that shaped them.
               </p>
               <p>
                 Copperware has been part of Indian homes for generations. Beyond its distinctive shine, it represents care, hospitality, purity and a thoughtful way of living.
               </p>
               <p>
-                At Shudhyam, we preserve this heritage while adapting it for contemporary kitchens. Our products combine traditional character with clean forms, practical details and dependable quality.
+                At Shudyam, we preserve this heritage while adapting it for contemporary kitchens. Our products combine traditional character with clean forms, practical details and dependable quality.
               </p>
             </div>
 
@@ -268,11 +268,11 @@ const AboutUsPage = () => {
       <section className="bg-[#FFF9E6] py-24">
         <div className="mx-auto px-4 md:px-12 lg:px-24 xl:px-40">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[#b76a3e]">
+            <p className="text-sm font-semibold uppercase  text-[#b76a3e]">
               What Defines Us
             </p>
             <h2 className="mt-6 font-serif text-4xl font-light text-[#231612] md:text-5xl">
-              The values behind every <br className="hidden md:block"/> <span className="italic">Shudhyam creation.</span>
+              The values behind every <br className="hidden md:block"/> <span className="italic">Shudyam creation.</span>
             </h2>
           </div>
 
@@ -294,7 +294,7 @@ const AboutUsPage = () => {
                   <h3 className="font-serif text-2xl text-[#281916]">
                     {value.title}
                   </h3>
-                  <p className="mt-4 text-[15px] font-light leading-relaxed text-[#74665f]">
+                  <p className="mt-4  font-light leading-relaxed text-[#74665f]">
                     {value.description}
                   </p>
                 </motion.div>
@@ -314,20 +314,20 @@ const AboutUsPage = () => {
             transition={{ duration: 1, ease: premiumEase }}
             className="order-2 lg:order-1"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[#b76a3e]">
+            <p className="text-sm font-semibold uppercase  text-[#b76a3e]">
               Our Craftsmanship
             </p>
 
-            <h2 className="mt-6 font-serif text-4xl font-light leading-tight text-[#231612] md:text-5xl">
+            <h2 className="mt-6 font-serif text-4xl font-light leading-tight text-[#231612] md:text-4xl">
               Made by hands that <br />
               <span className="italic text-[#b76a3e]">understand the material.</span>
             </h2>
 
-            <p className="mt-8 max-w-lg text-[15px] font-light leading-relaxed text-[#695c55] md:text-lg">
+            <p className="my-4 max-w-lg  font-light leading-relaxed text-[#695c55] ">
               Copper requires patience. Its form, finish, and balance depend on skilled hands and careful decisions at every stage. Our approach respects this material deeply.
             </p>
 
-            <div className="mt-12 space-y-0 border-t border-[#e5ddd4]">
+            <div className="mt- space-y-0 border-t border-[#e5ddd4]">
               {process.map((item, index) => (
                 <div
                   key={item.number}
@@ -340,7 +340,7 @@ const AboutUsPage = () => {
                     <h3 className="font-serif text-xl text-[#2a1c18]">
                       {item.title}
                     </h3>
-                    <p className="mt-3 max-w-md text-[15px] font-light leading-relaxed text-[#75675f]">
+                    <p className="mt-3 max-w-md  font-light leading-relaxed text-[#75675f]">
                       {item.description}
                     </p>
                   </div>
@@ -396,7 +396,7 @@ const AboutUsPage = () => {
           <div className="relative min-h-[500px] lg:min-h-[700px]">
             <Image
               src="/images/cat1.png"
-              alt="Shudhyam copper collection"
+              alt="Shudyam copper collection"
               fill
               className="object-cover"
             />
@@ -412,17 +412,17 @@ const AboutUsPage = () => {
           </div>
 
           <div className="flex flex-col justify-center ">
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[#b76a3e]">
+            <p className="text-sm font-semibold uppercase  text-[#b76a3e]">
               Our Promise
             </p>
-            <h2 className="mt-6 font-serif text-4xl font-light leading-tight text-[#231612] md:text-5xl">
+            <h2 className="mt-3 font-serif text-4xl font-light leading-tight text-[#231612] md:text-4xl">
               Products you will be proud to <span className="italic text-[#52070a]">use and share.</span>
             </h2>
-            <p className="mt-8 text-[15px] font-light leading-relaxed text-[#71635c] md:text-lg">
-              We want every Shudhyam product to feel special from the moment you receive it. That means thoughtful packaging, careful quality checking, and support that remains available long after your purchase.
+            <p className="my-3  font-light leading-relaxed text-[#71635c] ">
+              We want every Shudyam product to feel special from the moment you receive it. That means thoughtful packaging, careful quality checking, and support that remains available long after your purchase.
             </p>
 
-            <div className="mt-12 grid gap-6 sm:grid-cols-2">
+            <div className="mt-7 grid gap-6 sm:grid-cols-2">
               {promises.map((promise, index) => (
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
@@ -435,7 +435,7 @@ const AboutUsPage = () => {
                   <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#f4ece3] text-[10px] text-[#52070a]">
                     <FaCheck />
                   </span>
-                  <span className="text-[15px] font-light leading-relaxed text-[#4f423c]">
+                  <span className=" font-light leading-relaxed text-[#4f423c]">
                     {promise}
                   </span>
                 </motion.div>
@@ -446,7 +446,7 @@ const AboutUsPage = () => {
       </section>
 
       {/* Founder note */}
-      <section className="bg-[#FFF9E6] py-24 md:py-32">
+      {/* <section className="bg-[#FFF9E6] py-24 md:py-32">
         <div className="mx-auto max-w-4xl px-5 text-center md:px-10">
           <FaQuoteLeft className="mx-auto text-4xl text-[#e5ddd4]" />
           
@@ -456,11 +456,11 @@ const AboutUsPage = () => {
           
           <div className="mx-auto mt-12 h-px w-20 bg-[#b76a3e]" />
           
-          <p className="mt-8 text-xs font-semibold uppercase tracking-[0.4em] text-[#a75d36]">
-            A Note from Team Shudhyam
+          <p className="mt-8 text-sm font-semibold uppercase  text-[#a75d36]">
+            A Note from Team Shudyam
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section className="bg-[#FFF9E6] px-5 pb-24 md:px-10 md:pb-32 lg:px-16">
@@ -469,15 +469,15 @@ const AboutUsPage = () => {
           <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-[#52070a]/30 blur-[120px]" />
 
           <div className="relative z-10 mx-auto max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[#d79461]">
-              Discover Shudhyam
+            <p className="text-sm font-semibold uppercase  text-[#d79461]">
+              Discover Shudyam
             </p>
 
-            <h2 className="mt-6 font-serif text-4xl font-light leading-tight md:text-6xl">
+            <h2 className="mt-6 font-serif text-4xl font-light leading-tight md:text-4xl">
               Bring the beauty of copper into your <span className="italic text-[#d79461]">everyday rituals.</span>
             </h2>
 
-            <p className="mx-auto mt-8 max-w-xl text-[15px] font-light leading-relaxed text-white/70 md:text-lg">
+            <p className="mx-auto mt-8 max-w-xl  font-light leading-relaxed text-white/70 ">
               Explore thoughtfully designed copper utensils created to add warmth, tradition, and timeless elegance to your home.
             </p>
 

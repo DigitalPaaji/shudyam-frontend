@@ -308,18 +308,18 @@ useEffect(()=>{
       className="overflow-hidden bg-[#fff9e7] px-4 py-16 sm:px-6 md:px-12 md:py-20 lg:px-24 xl:px-40"
     >
       {/* Heading */}
-      <div className="mb-8 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <div className="mb-8 flex flex-col text-center md:text-left gap-4 md:gap-6 md:flex-row md:items-end md:justify-between">
         <div ref={leftHeadingRef}>
           <UnderlineText text="Bestsellers" />
 
           <h2 className="mt-4 max-w-xl font-p text-3xl leading-[0.95] text-[#760209] sm:text-4xl lg:text-5xl">
             Get Your Kitchen
-            <span className="block">Essentials</span>
+            <span className="md:block"> Essentials</span>
           </h2>
         </div>
 
         <div ref={rightHeadingRef} className="w-full md:w-auto">
-          <p className="max-w-[230px] text-sm leading-relaxed text-[#760209] md:text-right md:text-base">
+          <p className= "  md:max-w-[230px] text-sm leading-relaxed text-[#760209] md:text-right md:text-base">
             Indian households have used copper vessels for centuries.
           </p>
 

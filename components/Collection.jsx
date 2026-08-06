@@ -222,7 +222,7 @@ const Collection = () => {
 
       {/* Loading Skeleton */}
       {loading && (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid  gap-6 grid-cols-2 lg:grid-cols-4">
           {Array.from({ length: INITIAL_COUNT }).map((_, index) => (
             <div key={index} className="animate-pulse">
               <div className="aspect-square bg-[#f1e9e5]" />
@@ -257,7 +257,7 @@ const Collection = () => {
 
       {/* Category Grid */}
       {!loading && !error && categories.length > 0 && (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid  gap-6 grid-cols-2 lg:grid-cols-4">
           {visibleCategories.map((item, index) => (
             <Link
               key={item._id}
@@ -293,7 +293,7 @@ const Collection = () => {
         </div>
       )}
       {!loading && !error && categories.length > INITIAL_COUNT && (
-        <div className="mt-10 flex justify-center md:mt-14">
+        <div className=" flex justify-center md:mt-6">
           <button
             ref={buttonRef}
             type="button"

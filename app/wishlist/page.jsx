@@ -1,17 +1,19 @@
 "use client";
 
+import ProductCard from "@/components/ProductCard";
 import { removeWishlist } from "@/components/store/wishlistslice";
 import { base_url, img_url } from "@/components/utile";
 import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { FiHeart, FiShoppingBag, FiTrash2 } from "react-icons/fi";
+import { FiArrowLeft, FiHeart, FiShoppingBag, FiTrash2 } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 // import { removeWishlist } from "@/components/store/wishlistSlice";
 
 const Page = () => {
   const wishlist = useSelector((state) => state.wishlist);
-  const dispatch = useDispatch();
+const router = useRouter()
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -54,15 +56,9 @@ const Page = () => {
     fetchWishlist();
   }, [wishlist]);
 
-  const getImageUrl = (image) => {
-    if (!image) return "/placeholder.webp";
-    if (image.startsWith("http")) return image;
-    return `${img_url}${image}`;
-  };
+ 
 
-  const handleRemoveWishlist = (productId) => {
-    dispatch(removeWishlist(productId));
-  };
+
 
   return (
     <div className="min-h-screen bg-[#f8f5ef] text-[#2b1710]">
@@ -76,6 +72,13 @@ const Page = () => {
             </p>
 
             <h1 className="text-3xl font-semibold text-[#2b1710]">
+                 <button
+                        type="button"
+                        onClick={() => router.back()}
+                        className=" inline-flex items-center gap-2 rounded-full  text-xl me-3  font-medium "
+                      >
+                        <FiArrowLeft /> 
+                      </button>
               Wishlist
             </h1>
 
@@ -100,58 +103,7 @@ const Page = () => {
         ) : (
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {products.map((product) => (
-              <div
-                key={product._id}
-                className="group overflow-hidden rounded-2xl border border-[#e4d6c8] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
-              >
-                <Link
-                  href={`/product/${product.slug}`}
-                  className="block bg-[#f3eee7] p-4"
-                >
-                  <img
-                    src={getImageUrl(product.thumbnail)}
-                    alt={product.name}
-                    className="h-56 w-full object-contain transition duration-500 group-hover:scale-105"
-                  />
-                </Link>
-
-                <div className="p-4">
-                  <div className="mb-2 flex items-center justify-between gap-3">
-                    <p className="text-xs font-medium uppercase tracking-wide text-[#8b5e3c]">
-                      {product.category?.name || "Product"}
-                    </p>
-
-                    <button
-                      type="button"
-                      onClick={() => handleRemoveWishlist(product._id)}
-                      className="flex h-9 w-9 items-center justify-center rounded-full text-gray-400 transition hover:bg-red-50 hover:text-red-500"
-                      aria-label="Remove from wishlist"
-                    >
-                      <FiTrash2 />
-                    </button>
-                  </div>
-
-                  <Link href={`/product/${product.slug}`}>
-                    <h2 className="line-clamp-2 text-base font-semibold text-[#2b1710] transition hover:text-[#8b5e3c]">
-                      {product.name}
-                    </h2>
-                  </Link>
-
-                  <p className="mt-2 line-clamp-2 text-sm leading-6 text-gray-500">
-                    {product.shortDescription}
-                  </p>
-
-                  <div className="mt-5">
-                    <Link
-                      href={`/product/${product.slug}`}
-                      className="flex w-full items-center justify-center gap-2 rounded-full bg-[#2b1710] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#5b1f12]"
-                    >
-                      <FiShoppingBag />
-                      View Product
-                    </Link>
-                  </div>
-                </div>
-              </div>
+           <ProductCard  product={product} key={product._id} />
             ))}
           </div>
         )}

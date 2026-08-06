@@ -138,13 +138,13 @@ const Page = () => {
                       className="rounded-3xl border border-[#62080d]/10 bg-[#fffaf6] p-5 sm:p-6"
                     >
                       {item.title && (
-                        <h2 className="mb-3 text-2xl font-semibold text-[#62080d]">
+                        <h2 className="mb-3 text-2xl font-semibold  text-[#62080d]">
                           {item.title}
                         </h2>
                       )}
 
                       {item.des && (
-                        <p className="whitespace-pre-line text-base leading-8 text-[#3f1719]">
+                        <p className="whitespace-pre-line text-base leading-8  text-[#3f1719]">
                           {item.des}
                         </p>
                       )}

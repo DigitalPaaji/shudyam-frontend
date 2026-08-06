@@ -47,3 +47,17 @@ background-color:#530509 ;
   scrollbar-width: none;
   scrollbar-color: #7c2d12 #f5f5f4;
 }
+
+
+/* *{
+  border: 2px solid red;
+} */
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}

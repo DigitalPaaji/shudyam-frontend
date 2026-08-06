@@ -129,7 +129,7 @@ const handleSubmitPayment = async () => {
       key: data.key,
       amount: data.order.amount,
       currency: data.order.currency || "INR",
-      name: "Shudhyam",
+      name: "Shudyam",
       description: "Order Payment",
       order_id: data.order.id,
 
@@ -222,11 +222,11 @@ const handleSubmitPayment = async () => {
 
 
 
-
+ 
 
 
         
-        <div className='px-4 md:px-12 lg:px-24 xl:px-40 py-24 grid lg:grid-cols-3 gap-5'>
+        <div className=' bg-[#f8f7f4] px-4 md:px-12 lg:px-24 xl:px-40 py-24 grid lg:grid-cols-3 gap-5'>
 <div className='col-span-2'>
 
 <AddressCompo  selectedAddressId={checkoutData.address} setSelectedAddressId={(itm)=>setCheckoutData(prev=>({...prev,address:itm}))}    />
@@ -237,7 +237,7 @@ const handleSubmitPayment = async () => {
     </div>
 
 
-    <div className='col-span-1'>
+    <div className='col-span-1 w-full'>
       <CheckoutProduct handelSubmitPayment={handleSubmitPayment} product={cartParam} checkoutData={checkoutData}   setCheckoutData={(item)=>setCheckoutData(prev=>({...prev,...item}))}/>
     </div>
 

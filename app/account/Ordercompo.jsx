@@ -153,7 +153,7 @@ const Ordercompo = () => {
       <div className="mx-auto max-w-6xl">
         <div className="mb-8">
           <p className="text-sm font-medium uppercase tracking-[0.25em] text-[#9b6a4a]">
-            Shudhyam Copper
+            Shudyam Copper
           </p>
 
           <h1 className="mt-2 text-3xl font-semibold text-stone-950 sm:text-4xl">

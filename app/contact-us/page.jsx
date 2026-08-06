@@ -53,9 +53,9 @@ const ContactUsPage = () => {
     {
       id: 2,
       title: "Email us",
-      value: "support@shudhyam.com",
+      value: "support@Shudyam.com",
       description: "We usually reply within one business day.",
-      href: "mailto:support@shudhyam.com",
+      href: "mailto:support@Shudyam.com",
       icon: FaEnvelope,
     },
    
@@ -71,7 +71,7 @@ const ContactUsPage = () => {
 
   const faqs = [
     {
-      question: "How can I track my Shudhyam order?",
+      question: "How can I track my Shudyam order?",
       answer:
         "You can track your order from the Track Order page using your order number and registered phone number. Tracking details are also shared by email or WhatsApp after dispatch.",
     },
@@ -93,7 +93,7 @@ const ContactUsPage = () => {
     {
       question: "Do you ship throughout India?",
       answer:
-        "Yes, Shudhyam delivers to most serviceable locations across India. Shipping availability and estimated delivery time are shown during checkout.",
+        "Yes, Shudyam delivers to most serviceable locations across India. Shipping availability and estimated delivery time are shown during checkout.",
     },
   ];
 
@@ -130,7 +130,7 @@ const ContactUsPage = () => {
 
       setSuccessMessage(
         response.data?.message ||
-          "Thank you for contacting Shudhyam. Our team will get back to you soon."
+          "Thank you for contacting Shudyam. Our team will get back to you soon."
       );
       setFormData(initialFormData);
     } catch (error) {
@@ -161,20 +161,20 @@ const ContactUsPage = () => {
           >
             <div className="mb-8 flex items-center justify-center gap-4">
               <span className="h-[1px] w-8 md:w-12 bg-[#d79461]" />
-              <span className="text-[10px] md:text-xs font-medium uppercase tracking-[0.4em] text-[#d79461]">
+              <span className="text-[10px] md:text-xs font-medium uppercase  text-[#d79461]">
                 We are here to help
               </span>
               <span className="h-[1px] w-8 md:w-12 bg-[#d79461]" />
             </div>
 
-            <h1 className="font-serif text-5xl font-light leading-[1.1] sm:text-6xl lg:text-[5rem]">
+            <h1 className="font-serif text-5xl font-light leading-[1.1] sm:text-6xl ">
               Let&apos;s start a <br />
               <span className="italic text-[#d79461]">conversation.</span>
             </h1>
 
             <p className="mx-auto mt-8 max-w-2xl text-[15px] font-light leading-relaxed text-white/70 md:text-lg">
               Have a question about our copper utensils, your order, or bulk
-              purchasing? Send us a message and the Shudhyam team will help you.
+              purchasing? Send us a message and the Shudyam team will help you.
             </p>
           </motion.div>
         </div>
@@ -229,15 +229,15 @@ const ContactUsPage = () => {
             transition={{ duration: 1, ease: premiumEase }}
             className="pt-6"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[#b76a3e]">
+            <p className="text-xs font-semibold uppercase  text-[#b76a3e]">
               Get In Touch
             </p>
 
-            <h2 className="mt-6 max-w-xl font-serif text-4xl font-light leading-tight text-[#231612] md:text-5xl">
+            <h2 className="my-4 max-w-xl font-serif text-3xl font-light leading-tight text-[#231612] md:text-4xl">
               We would love to <span className="italic text-[#52070a]">hear from you.</span>
             </h2>
 
-            <p className="mt-8 max-w-xl text-[15px] font-light leading-relaxed text-[#71635c] md:text-lg">
+            <p className=" max-w-xl text-[15px] font-light leading-relaxed text-[#71635c]">
               Whether you need product guidance, order assistance, or want to
               discuss a bulk purchase, our team is ready to help.
             </p>
@@ -281,7 +281,7 @@ const ContactUsPage = () => {
                     Follow Our Journey
                   </h3>
                   <p className="mt-3 text-[15px] font-light leading-relaxed text-[#71635c]">
-                    Follow Shudhyam on Instagram for new collections, care tips and copper inspiration.
+                    Follow Shudyam on Instagram for new collections, care tips and copper inspiration.
                   </p>
                 </div>
               </div>
@@ -307,7 +307,7 @@ const ContactUsPage = () => {
             className="border border-[#e5ddd4] bg-white p-8 shadow-[0_30px_90px_rgba(35,22,18,0.06)] "
           >
             <div className="mb-10">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.4em] text-[#b76a3e]">
+              <p className="text-[10px] font-semibold uppercase  text-[#b76a3e]">
                 Send A Message
               </p>
               <h2 className="mt-4 font-serif text-3xl font-light text-[#261813]">
@@ -444,11 +444,11 @@ const ContactUsPage = () => {
         <div className="mx-auto px-4 md:px-12 lg:px-24 xl:px-40">
           <div className="mb-14 flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[#b76a3e]">
+              <p className="text-xs font-semibold uppercase  text-[#b76a3e]">
                 Our Location
               </p>
               <h2 className="mt-5 font-serif text-4xl font-light text-[#231612] md:text-5xl">
-                Visit <span className="italic text-[#52070a]">Shudhyam.</span>
+                Visit <span className="italic text-[#52070a]">Shudyam.</span>
               </h2>
             </div>
             <p className="max-w-md text-[15px] font-light leading-relaxed text-[#71635c]">
@@ -466,7 +466,7 @@ const ContactUsPage = () => {
           >
             <div className="min-h-[500px]">
               <iframe
-                title="Shudhyam location"
+                title="Shudyam location"
                 src="https://www.google.com/maps?q=Jaipur,Rajasthan,India&output=embed"
                 width="100%"
                 height="100%"
@@ -480,8 +480,8 @@ const ContactUsPage = () => {
             <div className="flex flex-col justify-center bg-[#1a110e] p-10 text-white md:p-14">
               <FaLocationDot className="text-4xl text-[#d79461]" />
 
-              <p className="mt-10 text-[10px] font-semibold uppercase tracking-[0.4em] text-[#d79461]">
-                Shudhyam HQ
+              <p className="mt-10 text-[10px] font-semibold uppercase  text-[#d79461]">
+                Shudyam HQ
               </p>
 
               <h3 className="mt-5 font-serif text-3xl font-light leading-tight">
@@ -515,16 +515,16 @@ const ContactUsPage = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, ease: premiumEase }}
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[#b76a3e]">
+            <p className="text-xs font-semibold uppercase  text-[#b76a3e]">
               Common Questions
             </p>
 
-            <h2 className="mt-6 font-serif text-4xl font-light leading-tight text-[#231612] md:text-5xl">
+            <h2 className="mt-6 font-serif text-3xl font-light leading-tight text-[#231612] md:text-4xl">
               Frequently <br className="hidden lg:block"/>
               <span className="italic text-[#52070a]">asked questions.</span>
             </h2>
 
-            <p className="mt-8 text-[15px] font-light leading-relaxed text-[#71635c]">
+            <p className="mt-4 text-[15px] font-light leading-relaxed text-[#71635c]">
               Find quick answers about orders, product care, delivery, and bulk enquiries.
             </p>
 
@@ -555,9 +555,9 @@ const ContactUsPage = () => {
                   <button
                     type="button"
                     onClick={() => setActiveFaq(isOpen ? null : index)}
-                    className="flex w-full items-center justify-between gap-6 py-8 text-left transition-colors hover:bg-white/50"
+                    className="flex w-full items-center justify-between gap-6 py-4 text-left "
                   >
-                    <span className="font-serif text-2xl font-light text-[#291b16]">
+                    <span className="font-serif text-lg font-light text-[#291b16]">
                       {faq.question}
                     </span>
                     <span
@@ -574,7 +574,7 @@ const ContactUsPage = () => {
                   <div
                     className={`grid overflow-hidden transition-all duration-500 ease-in-out ${
                       isOpen
-                        ? "grid-rows-[1fr] pb-8 opacity-100"
+                        ? "grid-rows-[1fr] pb-2 opacity-100"
                         : "grid-rows-[0fr] opacity-0"
                     }`}
                   >
@@ -591,35 +591,7 @@ const ContactUsPage = () => {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="bg-[#FFF9E6] px-5 pb-24 md:px-10 md:pb-32 lg:px-16 pt-10">
-        <div className="relative mx-auto max-w-[1450px] overflow-hidden bg-[#1a110e] px-6 py-24 text-center text-white md:px-12 md:py-32">
-          <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-[#d79461]/20 blur-[120px] pointer-events-none" />
-          <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-[#b76a3e]/20 blur-[120px] pointer-events-none" />
-
-          <div className="relative z-10 mx-auto max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[#d79461]">
-              Explore Shudhyam
-            </p>
-
-            <h2 className="mt-6 font-serif text-4xl font-light leading-tight md:text-6xl">
-              Discover copperware made for <span className="italic text-[#d79461]">meaningful homes.</span>
-            </h2>
-
-            <p className="mx-auto mt-8 max-w-xl text-[15px] font-light leading-relaxed text-white/70 md:text-lg">
-              Explore traditional craftsmanship shaped into elegant products for modern kitchens.
-            </p>
-
-            <Link
-              href="/products"
-              className="group mt-12 inline-flex items-center gap-4 border border-[#d79461] bg-transparent px-10 py-4 text-sm font-medium tracking-wider text-[#d79461] transition-all hover:bg-[#d79461] hover:text-[#1a110e]"
-            >
-              Shop The Collection
-              <FaArrowRight className="transition-transform duration-500 group-hover:translate-x-2" />
-            </Link>
-          </div>
-        </div>
-      </section>
+    
     </main>
   );
 };

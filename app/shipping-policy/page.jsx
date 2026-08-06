@@ -14,9 +14,9 @@ import {
 } from "react-icons/fi";
 
 export const metadata = {
-  title: "Shipping Policy | Shudhyam",
+  title: "Shipping Policy | Shudyam",
   description:
-    "Read Shudhyam's shipping policy, delivery timelines, shipping charges, order tracking, damaged parcel guidelines, and delivery terms.",
+    "Read Shudyam's shipping policy, delivery timelines, shipping charges, order tracking, damaged parcel guidelines, and delivery terms.",
 };
 
 const shippingHighlights = [
@@ -24,7 +24,7 @@ const shippingHighlights = [
     icon: FiPackage,
     title: "Secure Packaging",
     description:
-      "Every Shudhyam product is carefully packed to help prevent transit damage.",
+      "Every Shudyam product is carefully packed to help prevent transit damage.",
   },
   {
     icon: FiTruck,
@@ -169,7 +169,7 @@ const sections = [
         </ul>
 
         <p>
-          Shudhyam is not responsible for delays, failed deliveries, or losses
+          Shudyam is not responsible for delays, failed deliveries, or losses
           caused by incomplete or incorrect address information.
         </p>
 
@@ -209,7 +209,7 @@ const sections = [
     content: (
       <>
         <p>
-          Orders returned to Shudhyam by the courier partner are known as
+          Orders returned to Shudyam by the courier partner are known as
           Return to Origin orders.
         </p>
 
@@ -259,7 +259,7 @@ const sections = [
         </p>
 
         <p>
-          Shudhyam may request images, videos, packaging labels, invoices, and
+          Shudyam may request images, videos, packaging labels, invoices, and
           other evidence before approving a replacement, refund, or claim.
         </p>
       </>
@@ -294,7 +294,7 @@ const sections = [
     content: (
       <>
         <p>
-          Shudhyam makes reasonable efforts to deliver orders within the
+          Shudyam makes reasonable efforts to deliver orders within the
           estimated timeline, but delays may occur due to:
         </p>
 
@@ -330,7 +330,7 @@ const sections = [
         </p>
 
         <p>
-          Shudhyam reserves the right to disable Cash on Delivery for customers
+          Shudyam reserves the right to disable Cash on Delivery for customers
           with repeated refused deliveries, suspicious activity, or previous
           Return to Origin orders.
         </p>
@@ -360,7 +360,7 @@ const sections = [
         </p>
 
         <p>
-          Shudhyam is not responsible for delays or charges caused by customs
+          Shudyam is not responsible for delays or charges caused by customs
           authorities.
         </p>
       </>
@@ -377,7 +377,7 @@ const sections = [
         </p>
 
         <p>
-          Shudhyam is not responsible for loss, theft, or damage after the
+          Shudyam is not responsible for loss, theft, or damage after the
           package has been delivered to the customer, recipient, security desk,
           reception, neighbour, or another authorized person at the address.
         </p>
@@ -410,7 +410,7 @@ export default function ShippingPolicyPage() {
   return (
     <main className="min-h-screen bg-[#fbf7f2] text-[#271710]">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#180b07] px-5 pb-20 pt-28 text-white sm:px-8 lg:px-12">
+      {/* <section className="relative overflow-hidden bg-[#180b07] px-5 pb-20 pt-28 text-white sm:px-8 lg:px-12">
       
 
       
@@ -439,7 +439,7 @@ export default function ShippingPolicyPage() {
             </h1>
 
             <p className="mt-7 max-w-2xl text-base leading-8 text-stone-300 sm:text-lg">
-              Learn how Shudhyam processes, packs, dispatches, tracks, and
+              Learn how Shudyam processes, packs, dispatches, tracks, and
               delivers your premium copper products.
             </p>
 
@@ -454,7 +454,42 @@ export default function ShippingPolicyPage() {
             </div>
           </div>
         </div>
+      </section> */}
+
+
+   <section className="relative overflow-hidden bg-[#180b07] py-20 text-white ">
+      
+     
+
+        <div className="relative   px-4 sm:px-6 md:px-12  lg:px-24  xl:px-40 ">
+          <div className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#FFD56A]">
+            <Link href="/" className="transition hover:text-white">
+              Home
+            </Link>
+
+           
+            <FiChevronRight />
+
+            <span className="text-white">Shipping Policy</span>
+          </div>
+
+          <div className="max-w-4xl">
+ 
+            <h1 className="font-serif text-4xl leading-tight   lg:text-5xl">
+               Shipping <span className=" bg-gradient-to-r from-[#F8E7A1] via-[#E0A328] to-[#FFD56A]  bg-clip-text text-transparent">
+                Policy
+              </span>
+            </h1>
+
+            <p className="mt-7 max-w-2xl  leading-8 text-stone-300">
+               Learn how Shudyam processes, packs, dispatches, tracks, and
+              delivers your premium copper products.
+            </p>
+
+          </div>
+        </div>
       </section>
+
 
       {/* Highlights */}
       <section className="relative z-10 mx-auto -mt-8 max-w-7xl px-5 sm:px-8 lg:px-12">
@@ -553,7 +588,7 @@ export default function ShippingPolicyPage() {
 
               <p className="leading-8 text-stone-700">
                 This Shipping Policy applies to orders placed through the
-                Shudhyam website. Delivery timelines are estimates and may vary
+                Shudyam website. Delivery timelines are estimates and may vary
                 according to location, availability, courier operations, and
                 circumstances beyond our control.
               </p>
@@ -589,7 +624,7 @@ export default function ShippingPolicyPage() {
             <FiCheckCircle className="mx-auto text-4xl text-[#dca574]" />
 
             <h2 className="mt-5 font-serif text-3xl sm:text-4xl">
-              Track your Shudhyam order
+              Track your Shudyam order
             </h2>
 
             <p className="mt-4 leading-7 text-stone-300">

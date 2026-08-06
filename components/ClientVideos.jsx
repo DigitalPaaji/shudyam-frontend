@@ -320,11 +320,11 @@ const route = useRouter()
                 />
 
                 {/* Status badge */}
-                {item.status && (
+                {/* {item.status && (
                   <div className="absolute left-2.5 top-2.5 z-20 rounded-full bg-[#760209] px-2.5 py-1 text-[9px] font-medium uppercase tracking-wider text-white shadow-md">
                     Client video
                   </div>
-                )}
+                )} */}
 
                 {/* Product information */}
                 <div

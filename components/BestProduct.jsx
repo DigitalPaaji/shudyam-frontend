@@ -87,6 +87,8 @@ else{
 
   const reverse = index % 2 !== 0;
 
+const thumbnailImage =  product.isTopImage ? product.images[product.isTopImage]    :product.thumbnail
+
   return (
     <section className="overflow-hidden py-12 sm:py-16 lg:py-24">
       <div className="grid grid-cols-12 items-center gap-8 lg:gap-16">
@@ -101,7 +103,7 @@ else{
             <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-tr from-gray-100 to-transparent blur-3xl"></div>
 
             <img
-              src={`${img_url}${product.thumbnail}`}
+              src={`${img_url}${thumbnailImage}`}
               alt={product.name}
               loading="lazy"
               className="h-auto w-full object-contain drop-shadow-xl transition-transform duration-500 hover:scale-105"
@@ -122,9 +124,9 @@ else{
                   {product?.shortDescription}
                 </p> */}
 
-<div className="flex mt-5">
+<div className="flex mt-5 gap-3">
 {product?.variants?.map((item) => (
-<div key={item._id} className={` cursor-pointer font-medium text-sm   md:text-xl px-3 rounded-2xl p-1 ${selectVarient._id ===item._id? "bg-p text-white":""}  `} onClick={()=>setSelectVarient(item)}>
+<div key={item._id} className={` cursor-pointer font-medium text-sm    px-3 rounded-2xl p-1 ${selectVarient._id ===item._id? "bg-p text-white":""} border-[#530509] border `} onClick={()=>setSelectVarient(item)}>
 <p> ₹{item.mrp}/<span className="text-sm"> {item.attributes?.value}</span> </p>
 
 </div>
@@ -180,7 +182,7 @@ const BestProduct = () => {
   return (
     <div className="w-full bg-gray-50/30 container mx-auto">
       {products.map((item, index) => (
-        <BestProductCompo product={item} index={index} key={item._id} />
+        <BestProductCompo product={item} index={index} key={item._id} bestImage={true} />
       ))}
     </div>
   );

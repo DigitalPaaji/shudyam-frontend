@@ -100,9 +100,9 @@ const ReviewSection = ({ productid }) => {
           <h2 className="font-serif text-3xl font-semibold text-neutral-900 md:text-4xl">
             Customer Reviews
           </h2>
-          <p className="mt-3 max-w-2xl text-neutral-600">
+          {/* <p className="mt-3 max-w-2xl text-neutral-600">
             See what our customers are saying about this product.
-          </p>
+          </p> */}
         </div>
 
         {/* Swiper Carousel */}
@@ -135,7 +135,7 @@ const ReviewSection = ({ productid }) => {
           >
             {reviews.map((review) => (
               <SwiperSlide key={review._id} className="h-auto">
-                <div className="flex h-full flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-6 md:p-8 shadow-sm transition hover:shadow-md">
+                <div className="flex h-full flex-col justify-between rounded-2xl border border-neutral-200  p-6 md:p-8 shadow-sm transition hover:shadow-md">
                   
                   {/* Top: Quote Icon & Stars */}
                   <div>
