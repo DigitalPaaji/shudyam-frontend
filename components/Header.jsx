@@ -183,14 +183,14 @@ const Header = () => {
                   aria-label="Account"
                   className={iconClass}
                 >
-                  <FaRegUser className="text-sm sm:text-base" />
+                  <FaRegUser className="text-base" />
                 </Link>
               ) : (
                 <div
                   onClick={() => dispatch(toggle(true))}
                   className={`${iconClass} cursor-pointer`}
                 >
-                  <FaRegUser className="text-sm sm:text-base" />
+                  <FaRegUser className="text-base" />
                 </div>
               )}
 
