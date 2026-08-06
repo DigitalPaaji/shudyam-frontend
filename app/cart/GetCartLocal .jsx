@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import {
   FiAlertCircle,
+  FiArrowLeft,
   FiArrowRight,
   FiMinus,
   FiPlus,
@@ -18,6 +19,7 @@ import { useGSAP } from "@gsap/react";
 
 import { base_url, img_url } from "@/components/utile";
 import { decreaseQuantity ,removeFromCart,increaseQuantity} from "@/components/store/AddtoCartLocal";
+import { useRouter } from "next/navigation";
 
 gsap.registerPlugin(useGSAP);
 
@@ -49,7 +51,7 @@ const getImageUrl = (image) => {
 const GetCartLocal = () => {
   const pageRef = useRef(null);
   const dispatch = useDispatch();
-
+ const router = useRouter();
   const { cart: localCart } = useSelector(
     (state) => state.LocalCart
   );
@@ -122,39 +124,7 @@ const cartParam = encodeURIComponent(JSON.stringify(localCart));
     };
   }, [localCart]);
 
-  useGSAP(
-    () => {
-      if (!cartData.cart.length || isLoading) return;
 
-      gsap.from(".cart-heading", {
-        y: 25,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power3.out",
-      });
-
-      gsap.from(".cart-item", {
-        y: 35,
-        opacity: 0,
-        duration: 0.65,
-        stagger: 0.1,
-        ease: "power3.out",
-      });
-
-      gsap.from(".cart-summary", {
-        x: 45,
-        opacity: 0,
-        duration: 0.7,
-        delay: 0.15,
-        ease: "power3.out",
-      });
-    },
-    {
-      scope: pageRef,
-      dependencies: [cartData.cart.length, isLoading],
-      revertOnUpdate: true,
-    }
-  );
 
   const handleIncrease = (item) => {
     if (item.quantity >= item.variant.stock) return;
@@ -216,7 +186,7 @@ const cartParam = encodeURIComponent(JSON.stringify(localCart));
   }
 
   if (!cartData.cart.length) {
-    return <EmptyCart />;
+    return <EmptyCart  onBack={() => router.back()}  />;
   }
 
   return (
@@ -231,9 +201,16 @@ const cartParam = encodeURIComponent(JSON.stringify(localCart));
               Your selection
             </p>
 
-            <h1 className="text-3xl font-semibold text-gray-950 sm:text-4xl">
-              Shopping Cart
-            </h1>
+               <h1 className="text-3xl font-semibold text-gray-950 ">
+                          <button
+                      type="button"
+                      onClick={() => router.back()}
+                      className=" inline-flex items-center gap-2 rounded-full  text-xl me-3  font-medium "
+                    >
+                      <FiArrowLeft /> 
+                    </button>
+                          Shopping Cart
+                        </h1>
           </div>
 
           <p className="text-sm text-gray-500">
@@ -444,14 +421,20 @@ const cartParam = encodeURIComponent(JSON.stringify(localCart));
   );
 };
 
-const EmptyCart = () => {
+const EmptyCart = ({ onBack }) => {
   return (
     <div className="flex min-h-[75vh] items-center justify-center bg-[#f8f7f4] px-4">
       <div className="max-w-md text-center">
         <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-sm">
           <FiShoppingBag className="text-3xl text-[#8b5e3c]" />
         </div>
-
+<button
+          type="button"
+          onClick={onBack}
+          className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition hover:border-gray-900 hover:text-gray-950"
+        >
+          <FiArrowLeft /> Back
+        </button>
         <h2 className="mt-6 text-2xl font-semibold text-gray-950">
           Your cart is empty
         </h2>

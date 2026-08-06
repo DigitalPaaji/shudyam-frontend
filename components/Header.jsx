@@ -70,7 +70,7 @@ const Header = () => {
   }, [isUser, user?.cartCount, cart?.length]);
 
   const navClass =
-    "relative py-2 text-xs text-[#fff9e6] transition duration-300 after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#e5c66f] after:transition-all after:duration-300 hover:text-[#e5c66f] hover:after:w-full";
+    "relative py-2 text-xs  2xl:text-base text-[#fff9e6] transition duration-300 after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#e5c66f] after:transition-all after:duration-300 hover:text-[#e5c66f] hover:after:w-full";
 
   // Slightly adjusted for mobile to prevent overlapping with the logo
   const iconClass =

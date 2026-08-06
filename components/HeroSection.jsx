@@ -1,104 +1,177 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import React, { useRef } from "react";
+import React, { useState, useEffect } from "react";
+import { BsArrowRightShort,BsArrowLeftShort  } from "react-icons/bs";
+const IMAGES = [
+    { src: "/images/banner/masalabox.png", title: "Traditional Masala Box" },
+    { src: "/images/banner/wokpan.webp", title: "Golden Casserole Pot" },
+    { src: "/images/banner/tadkapan.webp", title: "Golden Tadka Pan" },
+    { src: "/images/banner/saucepan.png", title: "Tri-Ply Saucepan" },
+    { src: "/images/banner/rotitawa.png", title: "Premium Roti Tawa" },
+    { src: "/images/banner/glass.webp", title: "Crystal Glassware" },
+    { src: "/images/banner/patila.webp", title: "Heavy Duty Patila" },
+    { src: "/images/banner/kadhri.webp", title: "Traditional Kadhai" },
+    { src: "/images/banner/pudding.webp", title: "Dessert Pudding Bowl" },
+];
 
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+export default function ToonHubCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
-const HeroSection = () => {
-  const sectionRef = useRef(null);
-  const img1Ref = useRef(null);
-  const img2Ref = useRef(null);
-  const img3Ref = useRef(null);
+  useEffect(() => {
+    IMAGES.forEach((img) => {
+      const image = new Image();
+      image.src = img.src;
+    });
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
 
-useGSAP(()=>{
-const tl = gsap.timeline();
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-tl.to(img1Ref.current,{
-  
-})
+  // Smooth continuous autoplay marquee effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % IMAGES.length);
+    }, 4000); // 4 seconds per slide for a smooth, slow pace
 
+    return () => clearInterval(interval);
+  }, []);
 
+  const navigate = (direction) => {
+    if (direction === "next") {
+      setCurrentIndex((prev) => (prev + 1) % IMAGES.length);
+    } else {
+      setCurrentIndex((prev) => (prev - 1 + IMAGES.length) % IMAGES.length);
+    }
+  };
 
-})
+  // Extended array to create a seamless infinite marquee loop feel
+  const extendedImages = [...IMAGES, ...IMAGES, ...IMAGES];
+  // Shift index so the active item is centered nicely in the virtual track
+  const offsetIndex = currentIndex + IMAGES.length;
 
-
-
+  // Smaller dimensions for items
+  const itemWidth = isMobile ? 180 : 300;
+  const itemHeight = isMobile ? 180 : 300;
 
   return (
-    <section
-    
-      className=""
-    >
-<div    ref={sectionRef} className="relative h-screen bg-gradient-to-r from-[#150102] via-[#570207] to-[#150102]">
+    <section className="relative w-full overflow-hidden bg-[#150102]">
+      <div
+        style={{
+          fontFamily: "'Inter', sans-serif",
+        }}
+        className="relative w-full h-screen bg-linear-to-r from-[#150102] via-[#570207] to-[#150102] overflow-hidden flex flex-col justify-between px-4 md:px-12 lg:px-24 xl:px-40"
+      >
+        
+        {/* Grain overlay */}
+        <div
+          className="absolute inset-0 pointer-events-none z-50 opacity-40"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E")`,
+            backgroundSize: "200px 200px",
+          }}
+        />
 
+        {/* Background logo text matching the theme reference */}
+        <img
+          src="/logo.webp"
+          alt="Brand logo"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10 invert pointer-events-none select-none z-2 h-[40vh] sm:h-[60vh] object-contain"
+        />
 
+        {/* Smooth Marquee Track Container */}
+        <div className="absolute inset-0 z-3 pointer-events-none overflow-hidden flex items-center justify-center">
+          <div
+            className="flex items-center absolute transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]"
+            style={{
+              transform: `translateX(calc(50% - ${offsetIndex * itemWidth}px - ${itemWidth / 2}px))`,
+              willChange: "transform",
+            }}
+          >
+            {extendedImages.map((img, index) => {
+              const distance = Math.abs(index - offsetIndex);
+              const isCenter = distance === 0;
+              const isAdjacent = distance === 1;
 
+              // Scaled down dimensions and smaller scale factors
+              let scale = isCenter ? (isMobile ? 1.1 : 1.25) : isAdjacent ? 0.75 : 0.5;
+              let opacity = isCenter ? 1 : isAdjacent ? 0.65 : 0.3;
+              let blur = isCenter ? "blur(0px)" : isAdjacent ? "blur(2px)" : "blur(4px)";
 
+              return (
+                <div
+                  key={index}
+                  className="shrink-0 flex items-center justify-center transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]"
+                  style={{
+                    width: `${itemWidth}px`,
+                    height: `${itemHeight}px`,
+                    transform: `scale(${scale})`,
+                    opacity: opacity,
+                    filter: `drop-shadow(0 28px 20px rgba(20,0,0,1)) ${blur}`,
+                    willChange: "transform, opacity, filter",
+                  }}
+                >
+                  <img
+                    src={img.src}
+                    alt={`Product ${index + 1}`}
+                    draggable={false}
+                    className="w-full h-full object-contain select-none pointer-events-none"
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
 
- <img
-       
-        src="/logo.webp"
-        alt="Brand logo"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2   opacity-10 invert "
-      />
+        {/* Bottom Control Row with fully responsive, readable typography scaling */}
+        <div className="absolute bottom-8 sm:bottom-12 left-1/2 z-50 flex -translate-x-1/2 flex-col items-center justify-center gap-4 sm:gap-6 px-4 text-center w-full max-w-4xl">
+          <h3
+            className="
+              relative inline-block
+              text-[24px]
+              lg:text-[34px]
+              2xl:text-[40px]
+              leading-tight
+              tracking-wide
+              bg-gradient-to-r
+              from-[#F8E7A1]
+              via-[#E0A328]
+              to-[#FFD56A]
+              bg-[length:200%_100%]
+              bg-clip-text
+              text-transparent
+              animate-[shine_3s_linear_infinite]
+              drop-shadow-md
+            "
+          >
+            {IMAGES[currentIndex].title}
+          </h3>
 
-<img  ref={img1Ref} src="/images/products/1.png" alt=""  className="absolute top-2/5 left-1/3 -translate-x-1/2 -translate-y-1/2  h-64   [filter:drop-shadow(0_28px_20px_rgba(20,0,0,1))]"/>
-<img  ref={img2Ref} src="/images/products/3.png" alt=""  className="absolute top-2/5 left-3/5 -translate-x-1/2 -translate-y-1/2  h-72   [filter:drop-shadow(0_28px_20px_rgba(20,0,0,1))]"/>
-<img  ref={img3Ref} src="/images/products/2.png" alt=""  className="absolute top-3/4  left-3/5 -translate-x-4/5 -translate-y-1/2  h-52   [filter:drop-shadow(0_28px_20px_rgba(20,0,0,1))]"/>
+          <div className="flex items-center gap-4 sm:gap-5">
+            <button
+              onClick={() => navigate("prev")}
+              className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-white/70 text-white transition-all duration-200 hover:scale-110 hover:bg-white/15 active:scale-95 cursor-pointer pointer-events-auto shadow-lg"
+              aria-label="Previous Item"
+            >
+              <BsArrowLeftShort size={22} strokeWidth={2.25} />
+            </button>
 
+            <button
+              onClick={() => navigate("next")}
+              className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-white/70 text-white transition-all duration-200 hover:scale-110 hover:bg-white/15 active:scale-95 cursor-pointer pointer-events-auto shadow-lg"
+              aria-label="Next Item"
+            >
+              <BsArrowRightShort size={22} strokeWidth={2.25} />
+            </button>
+          </div>
+        </div>
 
-
-
-
-
-
-</div>
-
-    
-    
-    
-    
-     
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 1440 180"
-  preserveAspectRatio="none"
-  className="block h-[85px] w-full rotate-180 sm:h-[110px] lg:h-[135px]"
->
-  <defs>
-    <linearGradient
-      id="footerWaveGradient"
-      x1="0%"
-      y1="0%"
-      x2="100%"
-      y2="0%"
-    >
-      <stop offset="0%" stopColor="#150102" />
-      <stop offset="50%" stopColor="#570207" />
-      <stop offset="100%" stopColor="#150102" />
-    </linearGradient>
-  </defs>
-
-  <path
-    fill="url(#footerWaveGradient)"
-    d="
-      M0 180
-      V105
-      C290 25, 500 0, 720 0
-      C940 0, 1150 25, 1440 105
-      V180
-      H0
-      Z
-    "
-  />
-</svg>
-     
+      </div>
     </section>
   );
-};
-
-export default HeroSection;
+}
