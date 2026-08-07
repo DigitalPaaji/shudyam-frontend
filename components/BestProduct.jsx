@@ -99,7 +99,7 @@ const thumbnailImage =  product.isTopImage ? product.images[product.isTopImage] 
             reverse ? "lg:order-1" : "lg:order-2"
           }`}
         >
-          <div className="relative mx-auto w-full max-w-[380px] lg:max-w-[500px]">
+          <div className="relative mx-auto w-full max-w-[380px] lg:max-w-[600px]">
             <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-tr from-gray-100 to-transparent blur-3xl"></div>
 
             <img
