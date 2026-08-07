@@ -142,17 +142,18 @@ const Header = () => {
           {/* Center Logo */}
           <Link
             href="/"
-            aria-label="Homepage"
-            className="header-item absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+            
+            className="cursor-pointer mt-4"
           >
-            <div
-              onClick={() => route.push("/")}
-              className="h-10 w-24 sm:h-12 sm:w-32 bg-[#e5c66f] cursor-pointer"
+            {/* <Link
+             href="/"
+              className="h-14 cursor-pointer w-36  bg-[#e5c66f] "
               style={{
                 WebkitMask: "url('/logo.webp') center / contain no-repeat",
                 mask: "url('/logo.webp') center / contain no-repeat",
               }}
-            />
+            /> */}
+            <img src="/images/logo.png" alt="" className=" cursor-pointer w-32 md:w-36" />
           </Link>
 
           {/* Right Nav Icons */}
