@@ -102,25 +102,7 @@ const ProductCard = ({ product ,wishlist,dispatch}) => {
     <Link href={`/product/${product.slug}`} className="best-seller-card group h-full will-change-transform">
       {/* Product image */}
       <div className="relative  overflow-hidden border border-[#760209]/30 bg-[#fff9e7]">
-       {/* <button
-                       type="button"
-                       aria-label="Toggle wishlist"
-                       // onClick={() =>
-                       //   setIsWishlisted((previous) => !previous)
-                       // }
-                       onClick={()=>dispatch(toggleWishlist(product._id))}
-                       className={`flex h-12 w-full items-center justify-center rounded-full border text-lg transition sm:h-14 sm:text-xl ${
-                         wishlist.includes(product._id)
-                           ? "border-[#52070a] bg-[#52070a] text-white"
-                           : "border-neutral-300 bg-white/40 hover:border-[#52070a] hover:text-[#52070a]"
-                       }`}
-                     >
-                       <FiHeart
-                         className={
-                            wishlist.includes(product._id) ? "fill-current" : ""
-                         }
-                       />
-                     </button> */}
+     
 
                       <button
           type="button"
@@ -137,13 +119,13 @@ className={`absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center
           <GoHeart className="text-lg" />
         </button>
     
-        {/* Main image */}
+     
         <img
           src={`${img_url}${product.thumbnail}`}
           alt={product.name}
        
         
-          className="object-cover p-5 object-center     sm:p-7"
+          className="object-contain  object-center  aspect-square   "
         />
 
         {/* Hover img */}

@@ -110,7 +110,7 @@ const RelatedProducts = ({ categoryId, currentProductId }) => {
               You may also like
             </p>
 
-            <h2 className="font-serif text-3xl font-semibold text-neutral-950  md:text-4xl">
+            <h2 className="mt-3 font-serif text-2xl sm:text-3xl">
               Related Products
             </h2>
           </div>
