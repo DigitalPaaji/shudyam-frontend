@@ -96,7 +96,7 @@ const thumbnailImage =  product.isTopImage ? product.images[product.isTopImage] 
         <div
        
           className={`order-1 col-span-12 flex justify-center lg:col-span-5 ${
-            reverse ? "lg:order-2" : "lg:order-1"
+            reverse ? "lg:order-1" : "lg:order-2"
           }`}
         >
           <div className="relative mx-auto w-full max-w-[380px] lg:max-w-[450px]">
@@ -111,7 +111,7 @@ const thumbnailImage =  product.isTopImage ? product.images[product.isTopImage] 
           </div>
         </div>
 <div className={`order-2 col-span-12 w-full lg:col-span-7 ${
-            reverse ? "lg:order-1" : "lg:order-2"
+            reverse ? "lg:order-2" : "lg:order-1"
           }`}>
 <div className="flex flex-col items-center text-center px-2 sm:px-6">
                 <UnderlineText text="Featured" />
