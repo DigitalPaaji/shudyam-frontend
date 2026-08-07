@@ -48,8 +48,8 @@ const GetCartItem = () => {
   const router = useRouter();
 
   const [cartData, setCartData] = useState(initialCartData);
-  const [isLoading, setIsLoading] = useState(false);
-  const [actionLoadingId, setActionLoadingId] = useState("");
+const [isLoading, setIsLoading] = useState(true);  
+const [actionLoadingId, setActionLoadingId] = useState("");
   const [error, setError] = useState("");
 
   const checkoutCart = useMemo(() => {
@@ -69,45 +69,44 @@ const GetCartItem = () => {
     return encodeURIComponent(JSON.stringify(checkoutCart));
   }, [checkoutCart]);
 
-  const fetchCart = async () => {
-    try {
-       setIsLoading(true);
-
-      setError("");
-
-      const response = await axios.get(`${base_url}/cart/get`, {
-        withCredentials: true,
-      });
-
-      const data = response.data;
-
-      setCartData({
-        cartItems: Array.isArray(data.cartItems) ? data.cartItems : [],
-        count: data.count || 0,
-        grandTotal: data.grandTotal || 0,
-      });
-    } catch (error) {
-      
-    setCartData(initialCartData)
-
-      console.error("Cart fetch error:", error);
-
-      setError(
-        error.response?.data?.message ||
-          error.message ||
-          "Something went wrong while loading your cart",
-      );
-    } finally {
-       setIsLoading(false);
+  const fetchCart = async ({ showLoader = false } = {}) => {
+  try {
+    if (showLoader) {
+      setIsLoading(true);
     }
-  };
+
+    setError("");
+
+    const response = await axios.get(`${base_url}/cart/get`, {
+      withCredentials: true,
+    });
+
+    const data = response.data;
+
+    setCartData({
+      cartItems: Array.isArray(data.cartItems) ? data.cartItems : [],
+      count: data.count || 0,
+      grandTotal: data.grandTotal || 0,
+    });
+  } catch (error) {
+    console.error("Cart fetch error:", error);
+
+    setCartData(initialCartData);
+
+    setError(
+      error.response?.data?.message ||
+        error.message ||
+        "Something went wrong while loading your cart"
+    );
+  } finally {
+    if (showLoader) {
+      setIsLoading(false);
+    }
+  }
+};
 
   useEffect(() => {
-    const controller = new AbortController();
-
-    fetchCart();
-
-    return () => controller.abort();
+      fetchCart({ showLoader: true });
   }, []);
 
  
