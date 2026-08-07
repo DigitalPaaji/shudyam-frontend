@@ -94,8 +94,8 @@ const [actionLoadingId, setActionLoadingId] = useState("");
     setCartData(initialCartData);
 
     setError(
-      error.response?.data?.message ||
-        error.message ||
+      error?.response?.data?.message ||
+        error?.message ||
         "Something went wrong while loading your cart"
     );
   } finally {
@@ -107,7 +107,7 @@ const [actionLoadingId, setActionLoadingId] = useState("");
 
   useEffect(() => {
       fetchCart({ showLoader: true });
-  }, []);
+  }, [ ]);
 
  
 

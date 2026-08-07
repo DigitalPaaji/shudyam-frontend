@@ -528,13 +528,13 @@ const ContactUsPage = () => {
               Find quick answers about orders, product care, delivery, and bulk enquiries.
             </p>
 
-            <Link
+            {/* <Link
               href="/faq"
               className="group mt-10 inline-flex items-center gap-4 text-sm font-medium tracking-wide text-[#52070a]"
             >
               View All Questions
               <FaArrowRight className="transition-transform duration-500 group-hover:translate-x-2" />
-            </Link>
+            </Link> */}
           </motion.div>
 
           <motion.div 

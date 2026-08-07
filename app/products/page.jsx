@@ -206,7 +206,7 @@ const PriceRangeSlider = ({
 
       {/* Selected prices */}
       <div className="mb-6 grid grid-cols-[1fr_auto_1fr] items-center gap-3">
-        <div className="rounded-xl border border-black/10 bg-[#FFF9F2] px-3 py-2 text-center">
+        <div className=" text-center">
           <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-gray-400">
             Minimum
           </p>
@@ -218,8 +218,8 @@ const PriceRangeSlider = ({
 
         <div className="h-px w-5 bg-black/15" />
 
-        <div className="rounded-xl border border-black/10 bg-[#FFF9F2] px-3 py-2 text-center">
-          <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-gray-400">
+        <div className="text-center">
+          <p className="text-[10px]  uppercase tracking-[0.14em] text-gray-400">
             Maximum
           </p>
 
@@ -294,7 +294,7 @@ const PriceRangeSlider = ({
             Minimum price
           </label>
 
-          <div className="flex items-center rounded-xl border border-black/10 bg-white px-3 transition duration-200 focus-within:border-p focus-within:ring-4 focus-within:ring-p/5">
+          <div className="flex items-center rounded-xl border border-black/10 bg-white px-3 transition duration-200   ">
             <span className="text-sm font-medium text-gray-400">
               ₹
             </span>
@@ -320,7 +320,7 @@ const PriceRangeSlider = ({
             Maximum price
           </label>
 
-          <div className="flex items-center rounded-xl border border-black/10 bg-white px-3 transition duration-200 focus-within:border-p focus-within:ring-4 focus-within:ring-p/5">
+          <div className="flex items-center rounded-xl border border-black/10 bg-white px-3 transition duration-200 ">
             <span className="text-sm font-medium text-gray-400">
               ₹
             </span>
@@ -398,7 +398,7 @@ const FilterSection = ({
             <h2 className="mt-1 text-2xl font-semibold tracking-tight text-[#260305]">
               Filters
             </h2>
-          </div>
+          </div> 
 
           <button
             type="button"
@@ -420,7 +420,7 @@ const FilterSection = ({
                   Categories
                 </h3>
 
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-2 text-xs text-gray-500">
                   Choose a product collection
                 </p>
               </div>
@@ -440,10 +440,10 @@ const FilterSection = ({
               <button
                 type="button"
                 onClick={() => {onCategoryChange(""),setShowFilter(false)}}
-                className={`rounded-full border px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                className={`rounded-xl border cursor-pointer  px-4 py-2 text-sm font-medium transition-all duration-200 ${
                   !category
                     ? "border-p bg-p text-white shadow-[0_5px_18px_rgba(118,2,9,0.2)]"
-                    : "border-black/10 bg-white text-gray-600 hover:border-p/40 hover:text-p"
+                    : "border-black/10  text-gray-600 hover:border-p/40 hover:text-p"
                 }`}
               >
                 All Products
@@ -468,10 +468,10 @@ const FilterSection = ({
                         onClick={() =>{
                           onCategoryChange(item.slug),setShowFilter(false)}
                         }
-                        className={`rounded-full border px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                        className={`rounded-xl cursor-pointer  border px-4 py-2 text-sm font-medium transition-all duration-200 ${
                           isActive
                             ? "border-p bg-p text-white shadow-[0_5px_18px_rgba(118,2,9,0.2)]"
-                            : "border-black/10 bg-white text-gray-600 hover:border-p/40 hover:text-p"
+                            : "border-black/10  text-gray-600 hover:border-p/40 hover:text-p"
                         }`}
                       >
                         {categoryName}
@@ -514,7 +514,7 @@ const FilterSection = ({
               )}
             </div>
 
-            <div className="rounded-2xl border border-black/10 bg-white p-4 shadow-[0_10px_30px_rgba(0,0,0,0.035)]">
+            <div className="rounded-2xl border border-black/10 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.035)]">
               <PriceRangeSlider
                 minValue={minValue}
                 maxValue={maxValue}
@@ -526,7 +526,7 @@ const FilterSection = ({
             <button
               type="button"
               onClick={()=>{onApplyPrice(),setShowFilter(false)}}
-              className="mt-5 flex w-full items-center justify-center rounded-xl bg-[#260305] px-4 py-3.5 text-sm font-semibold text-white transition duration-200 hover:bg-p"
+              className="mt-5 flex w-full items-center justify-center rounded-xl bg-p px-4 py-3.5 text-sm font-semibold text-white transition duration-200 hover:bg-p"
             >
               Apply Price Range
             </button>

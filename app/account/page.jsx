@@ -233,12 +233,12 @@ const ProfieCompo=({user,setShowingData})=>{
               </p>
 
               <div className="mt-5 flex flex-wrap gap-3">
-                <Link
+                {/* <Link
                   href="/track-order"
                   className="rounded-full bg-white px-5 py-2 text-sm font-medium text-[#62080d] transition hover:bg-[#f7eee6]"
                 >
                   Track Order
-                </Link>
+                </Link> */}
 
                 <Link
                   href="/contact-us"
