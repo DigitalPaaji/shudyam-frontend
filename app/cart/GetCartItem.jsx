@@ -87,10 +87,8 @@ const GetCartItem = () => {
         grandTotal: data.grandTotal || 0,
       });
     } catch (error) {
-      if (error.name === "CanceledError" || error.code === "ERR_CANCELED") {
-         setIsLoading(false);
-        return;
-      }
+      
+    setCartData(initialCartData)
 
       console.error("Cart fetch error:", error);
 
