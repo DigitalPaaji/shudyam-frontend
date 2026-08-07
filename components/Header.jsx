@@ -132,9 +132,9 @@ const Header = () => {
               className={iconClass}
             >
               {menuOpen ? (
-                <IoCloseOutline className="text-xl sm:text-2xl" />
+                <IoCloseOutline className="text-2xl" />
               ) : (
-                <IoMenuOutline className="text-xl sm:text-2xl" />
+                <IoMenuOutline className="text-2xl" />
               )}
             </button>
           </div>
@@ -173,7 +173,7 @@ const Header = () => {
                 onClick={() => setOpenSearch(true)}
                 className={iconClass}
               >
-                <IoSearchOutline className="text-base sm:text-lg" />
+                <IoSearchOutline className="text-lg" />
               </button>
 
               {/* User Icon - Visible on all screens */}
@@ -183,7 +183,7 @@ const Header = () => {
                   aria-label="Account"
                   className={iconClass}
                 >
-                  <FaRegUser className="text-base" />
+                  <FaRegUser className="text-lg" />
                 </Link>
               ) : (
                 <div
@@ -200,7 +200,7 @@ const Header = () => {
                 aria-label="Cart"
                 className={`${iconClass} relative`}
               >
-                <IoBagHandleOutline className="text-lg" />
+                <IoBagHandleOutline className="text-xl" />
                 {cartCount > 0 && (
                   <span className="absolute right-0 top-0 flex h-3.5 min-w-[14px] sm:h-4 sm:min-w-4 items-center justify-center rounded-full bg-[#e5c66f] px-1 text-[7px] sm:text-[8px] font-semibold text-[#250103]">
                     {cartCount}

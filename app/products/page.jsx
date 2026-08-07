@@ -307,7 +307,7 @@ const PriceRangeSlider = ({
               max={maxValue - PRICE_STEP}
               step={PRICE_STEP}
               onChange={handleMinInput}
-              className="price-number-input min-w-0 flex-1 bg-transparent px-2 py-3 text-sm font-medium text-[#260305] outline-none"
+              className="price-number-input min-w-0 flex-1 bg-transparent px-2 py-3 text-base font-medium text-[#260305] outline-none"
             />
           </div>
         </div>
@@ -333,7 +333,7 @@ const PriceRangeSlider = ({
               max={PRICE_MAX}
               step={PRICE_STEP}
               onChange={handleMaxInput}
-              className="price-number-input min-w-0 flex-1 bg-transparent px-2 py-3 text-sm font-medium text-[#260305] outline-none"
+              className="price-number-input min-w-0 flex-1 bg-transparent px-2 py-3 text-base font-medium text-[#260305] outline-none"
             />
           </div>
         </div>

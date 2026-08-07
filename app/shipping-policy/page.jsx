@@ -633,13 +633,13 @@ export default function ShippingPolicyPage() {
             </p>
 
             <div className="mt-7 flex flex-wrap justify-center gap-3">
-              <Link
+              {/* <Link
                 href="/track-order"
                 className="inline-flex items-center gap-2 rounded-full bg-[#b87333] px-7 py-3.5 font-semibold text-white transition hover:bg-[#965421]"
               >
                 Track Order
                 <FiChevronRight />
-              </Link>
+              </Link> */}
 
               <Link
                 href="/contact-us"

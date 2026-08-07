@@ -329,7 +329,7 @@ const AddressCompo = ({selectedAddressId,setSelectedAddressId}) => {
 
   const inputClasses = (field) => `
     w-full rounded-xl border bg- px-4 py-3 pl-11
-    text-sm text-gray-900 outline-none transition
+    text-base text-gray-900 outline-none transition
     placeholder:text-gray-400 focus:ring-2
     ${
       errors[field]

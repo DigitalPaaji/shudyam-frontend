@@ -396,7 +396,7 @@ const removeCoupon = () => {
             setCouponError("");
           }}
           placeholder="Enter Coupon Code"
-          className="flex-1 rounded-lg border border-gray-300 px-4 py-2.5 text-sm uppercase outline-none focus:border-green-600"
+          className="flex-1 rounded-lg border border-gray-300 px-4 py-2.5 text-base uppercase outline-none focus:border-green-600"
         />
 
         <button

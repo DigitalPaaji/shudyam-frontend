@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { BsArrowRightShort,BsArrowLeftShort  } from "react-icons/bs";
+import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
+
 const IMAGES = [
     { src: "/images/banner/masalabox.png", title: "Traditional Masala Box" },
     { src: "/images/banner/wokpan.webp", title: "Golden Casserole Pot" },
@@ -98,10 +99,9 @@ export default function ToonHubCarousel() {
               const isCenter = distance === 0;
               const isAdjacent = distance === 1;
 
-              // Scaled down dimensions and smaller scale factors
+              // Scaled down dimensions and smaller scale factors (No blur applied)
               let scale = isCenter ? (isMobile ? 1.1 : 1.25) : isAdjacent ? 0.75 : 0.5;
               let opacity = isCenter ? 1 : isAdjacent ? 0.65 : 0.3;
-              let blur = isCenter ? "blur(0px)" : isAdjacent ? "blur(2px)" : "blur(4px)";
 
               return (
                 <div
@@ -112,7 +112,7 @@ export default function ToonHubCarousel() {
                     height: `${itemHeight}px`,
                     transform: `scale(${scale})`,
                     opacity: opacity,
-                    filter: `drop-shadow(0 28px 20px rgba(20,0,0,1)) ${blur}`,
+                    filter: `drop-shadow(0 28px 20px rgba(20,0,0,1))`,
                     willChange: "transform, opacity, filter",
                   }}
                 >
@@ -120,6 +120,8 @@ export default function ToonHubCarousel() {
                     src={img.src}
                     alt={`Product ${index + 1}`}
                     draggable={false}
+                    loading="eager"
+                    decoding="sync"
                     className="w-full h-full object-contain select-none pointer-events-none"
                   />
                 </div>
@@ -129,38 +131,36 @@ export default function ToonHubCarousel() {
         </div>
 
         {/* Bottom Control Row with fully responsive, readable typography scaling */}
-        <div className="absolute  bottom-14 w-full left-1/2 z-50 flex -translate-x-1/2 flex-col items-center justify-center gap-4 sm:gap-6 px-4 text-center ">
+        <div className="absolute bottom-14 w-full left-1/2 flex -translate-x-1/2 flex-col items-center justify-center gap-4 sm:gap-6 px-4 text-center">
           <h3
             className="
               relative inline-block
-              text-[24px]
+              text-[28px]
               lg:text-[34px]
               2xl:text-[40px]
               leading-tight
-             
               bg-gradient-to-r
               from-[#F8E7A1]
               via-[#E0A328]
               to-[#FFD56A]
-             
               bg-clip-text
               text-transparent
               animate-[shine_3s_linear_infinite]
               drop-shadow-md
-              tracking-[0.6]
+              tracking-[0.6px]
               roboto-slab
             "
           >
             {IMAGES[currentIndex].title}
           </h3>
 
-          <div className="flex items-center gap-4 sm:gap-5">
+          <div className="flex items-center gap-4 sm:gap-5 opacity-60">
             <button
               onClick={() => navigate("prev")}
               className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-white/70 text-white transition-all duration-200 hover:scale-110 hover:bg-white/15 active:scale-95 cursor-pointer pointer-events-auto shadow-lg"
               aria-label="Previous Item"
             >
-              <BsArrowLeftShort size={22} strokeWidth={2.25} />
+              <BsArrowLeft size={22} />
             </button>
 
             <button
@@ -168,7 +168,7 @@ export default function ToonHubCarousel() {
               className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-white/70 text-white transition-all duration-200 hover:scale-110 hover:bg-white/15 active:scale-95 cursor-pointer pointer-events-auto shadow-lg"
               aria-label="Next Item"
             >
-              <BsArrowRightShort size={22} strokeWidth={2.25} />
+              <BsArrowRight size={22} />
             </button>
           </div>
         </div>

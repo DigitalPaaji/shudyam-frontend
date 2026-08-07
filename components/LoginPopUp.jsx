@@ -603,7 +603,7 @@ const InputField = ({
         required
         placeholder={placeholder}
         autoComplete={autoComplete}
-        className="w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-[#a9613f] focus:bg-black/30"
+        className="w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/25 focus:border-[#a9613f] focus:bg-black/30"
       />
     </div>
   );

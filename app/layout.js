@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import MainLayout from "./MainLayout";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import ScrollToTop from "@/components/ScrollToTop";
 
 
 
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
 
       <body className="bg-[#FFF9E6]">
          <MainLayout>
+          <ScrollToTop />
          <Header />
         {children}
          <Footer />

@@ -57,10 +57,10 @@ const customerLinks = [{
   text:"Terms & conditions",
   link:"terms-and-conditions"
 },
-  {
-  text:"Track Order",
-  link:"track-order"
-},
+//   {
+//   text:"Track Order",
+//   link:"track-order"
+// },
 {
   text:"Shipping & Delivery Policy",
   link:"shipping-policy"
