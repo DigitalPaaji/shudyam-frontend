@@ -16,11 +16,11 @@ const dispatch = useDispatch()
 
 
   const sellingPrice = Number(
-    String(activeVariant.mrp).replaceAll(",", "")
+    activeVariant.mrp
   );
 
   const originalPrice = Number(
-    String(activeVariant.basePrice).replaceAll(",", "")
+  activeVariant.basePrice
   );
 
   const discountPercentage =
@@ -45,25 +45,6 @@ const dispatch = useDispatch()
     }
   };
 
-  // const handleAddToCart = async() => {
-  //   const cartItem = {
-  //     productid: product.id,
-  //     title: product.title,
-  //     variantid: activeVariant._id,
-      
-  //     quantity: 1,
-  //   };
-
-  //   if(!isUser){
-
-  //   }else{
-
-  //   }
-
-
-
-    
-  // };
 
 
 
@@ -143,9 +124,9 @@ const dispatch = useDispatch()
        <img
                src={`${img_url}${product.thumbnail}`}
                alt={product.name}
-               fill
-               sizes="(max-width: 640px) 90vw, (max-width: 1024px) 48vw, 33vw"
-               className="object-cover p-5 object-center  sm:p-7"
+             
+               
+               className="object-cover object-center aspect-[4/3]   p-7"
              />
       </div>
 

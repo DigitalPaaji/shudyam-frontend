@@ -871,11 +871,11 @@ const ProductsPageContent = () => {
   return (
     <div className="min-h-screen bg-[#FFF9E6]">
       {/* Banner */}
-      <section className="relative h-[38vh] min-h-[280px] overflow-hidden sm:h-[48vh] lg:h-[65vh]">
+      <section className="relative  overflow-hidden h-[48vh] lg:h-[65vh]">
         <img
-          src="/images/banner.png"
+          src="/images/banner.webp"
           alt="Premium brass products"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover objto"
         />
 
         <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/25 to-transparent" />
