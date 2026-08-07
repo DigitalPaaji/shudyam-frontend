@@ -69,7 +69,7 @@ const GetCartItem = () => {
     return encodeURIComponent(JSON.stringify(checkoutCart));
   }, [checkoutCart]);
 
-  const fetchCart = async ({ signal, showLoader = true } = {}) => {
+  const fetchCart = async () => {
     try {
        setIsLoading(true);
 
@@ -77,7 +77,6 @@ const GetCartItem = () => {
 
       const response = await axios.get(`${base_url}/cart/get`, {
         withCredentials: true,
-        signal,
       });
 
       const data = response.data;
@@ -89,6 +88,7 @@ const GetCartItem = () => {
       });
     } catch (error) {
       if (error.name === "CanceledError" || error.code === "ERR_CANCELED") {
+         setIsLoading(false);
         return;
       }
 
@@ -107,10 +107,7 @@ const GetCartItem = () => {
   useEffect(() => {
     const controller = new AbortController();
 
-    fetchCart({
-      signal: controller.signal,
-      showLoader: true,
-    });
+    fetchCart();
 
     return () => controller.abort();
   }, []);
