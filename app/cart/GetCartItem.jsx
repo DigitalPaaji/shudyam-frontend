@@ -71,7 +71,7 @@ const GetCartItem = () => {
 
   const fetchCart = async ({ signal, showLoader = true } = {}) => {
     try {
-      if (showLoader) setIsLoading(true);
+       setIsLoading(true);
 
       setError("");
 
@@ -479,7 +479,7 @@ const GetCartItem = () => {
 
             <Link
               href={`/checkout?cart=${cartParam}&type=cart`}
-              className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-gray-950 px-6 py-4 text-sm font-semibold text-white transition duration-300 hover:bg-[#8b5e3c]"
+              className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-p px-6 py-4 text-sm font-semibold text-white transition duration-300 "
             >
               Proceed to Checkout
               <FiArrowRight className="text-lg" />
@@ -528,7 +528,7 @@ const EmptyCart = ({ onBack }) => {
 
           <Link
             href="/products"
-            className="mt-7 inline-flex items-center gap-2 rounded-full bg-gray-950 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#8b5e3c]"
+            className="mt-7 inline-flex items-center gap-2 rounded-full bg-p px-7 py-3.5 text-sm font-semibold text-white"
           >
             Start Shopping
             <FiArrowRight />
