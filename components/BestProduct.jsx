@@ -95,7 +95,7 @@ const thumbnailImage =  product.isTopImage ? product.images[product.isTopImage] 
        
         <div
        
-          className={`order-1 col-span-12 flex justify-center lg:col-span-5 ${
+          className={`order-1 col-span-12 flex justify lg:col-span-6 ${
             reverse ? "lg:order-1" : "lg:order-2"
           }`}
         >
@@ -110,7 +110,7 @@ const thumbnailImage =  product.isTopImage ? product.images[product.isTopImage] 
             />
           </div>
         </div>
-<div className={`order-2 col-span-12 w-full lg:col-span-7 ${
+<div className={`order-2 col-span-12 w-full lg:col-span-6 ${
             reverse ? "lg:order-2" : "lg:order-1"
           }`}>
 <div className="flex flex-col items-center text-center px-2 sm:px-6">
