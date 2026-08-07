@@ -932,7 +932,7 @@ else{
             className="flex h-11 min-w-[150px] items-center justify-center gap-2 rounded-full bg-[#52070a] px-5 text-xs font-semibold uppercase tracking-[0.07em] text-white disabled:bg-neutral-300"
           >
             <FiShoppingBag />
-            Add to carts
+            Add to cart
           </button>
 }
         </div>

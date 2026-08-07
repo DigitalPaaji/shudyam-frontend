@@ -90,7 +90,7 @@ else{
 const thumbnailImage =  product.isTopImage ? product.images[product.isTopImage]    :product.thumbnail
 
   return (
-    <section className="overflow-hidden py-12 sm:py-16 lg:py-24">
+    <section className="overflow-hidden py-12">
       <div className="grid grid-cols-12 items-center gap-8 lg:gap-16">
        
         <div

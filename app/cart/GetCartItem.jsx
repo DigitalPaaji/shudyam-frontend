@@ -100,7 +100,7 @@ const GetCartItem = () => {
           "Something went wrong while loading your cart",
       );
     } finally {
-      if (showLoader) setIsLoading(false);
+       setIsLoading(false);
     }
   };
 
@@ -500,7 +500,7 @@ const GetCartItem = () => {
 
 const EmptyCart = ({ onBack }) => {
   return (
-    <div className="min-h-[75vh] bg-[#f8f7f4] px-4 py-8">
+    <div className="min-h-[75vh] px-4 py-8">
       <div className="mx-auto max-w-7xl">
         <button
           type="button"

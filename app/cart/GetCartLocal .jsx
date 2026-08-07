@@ -423,7 +423,7 @@ const cartParam = encodeURIComponent(JSON.stringify(localCart));
 
 const EmptyCart = ({ onBack }) => {
   return (
-    <div className="flex min-h-[75vh] items-center justify-center bg-[#f8f7f4] px-4">
+    <div className="flex min-h-[75vh] items-center justify-center  px-4">
       <div className="max-w-md text-center">
         <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-sm">
           <FiShoppingBag className="text-3xl text-[#8b5e3c]" />
@@ -458,7 +458,7 @@ const EmptyCart = ({ onBack }) => {
 
 const CartLoading = () => {
   return (
-    <div className="min-h-screen bg-[#f8f7f4] px-4 py-12 sm:px-6 lg:px-12">
+    <div className="min-h-screen  px-4 py-12 sm:px-6 lg:px-12">
       <div className="mx-auto max-w-7xl animate-pulse">
         <div className="mb-8 h-10 w-56 rounded-lg bg-gray-200" />
 
