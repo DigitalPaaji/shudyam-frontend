@@ -180,7 +180,7 @@ const BestProduct = () => {
   }
 
   return (
-    <div className="w-full bg-gray-50/30 container mx-auto">
+    <div className="w-full bg-gray-50/30  px-4  sm:px-6 md:px-12  lg:px-24  xl:px-40">
       {products.map((item, index) => (
         <BestProductCompo product={item} index={index} key={item._id} bestImage={true} />
       ))}
