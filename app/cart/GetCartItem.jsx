@@ -48,7 +48,7 @@ const GetCartItem = () => {
   const router = useRouter();
 
   const [cartData, setCartData] = useState(initialCartData);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [actionLoadingId, setActionLoadingId] = useState("");
   const [error, setError] = useState("");
 
