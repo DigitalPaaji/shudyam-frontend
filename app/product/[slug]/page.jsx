@@ -500,7 +500,7 @@ else{
             </div>
 
             {productImages.length > 1 && (
-              <div className="mt-3 flex gap-2 overflow-x-auto pb-2 sm:mt-4 sm:gap-3">
+              <div className="mt-3 custom-scrollbar flex gap-2 overflow-x-auto pb-2 sm:mt-4 sm:gap-3">
                 {productImages.map((image, index) => (
                   <button
                     type="button"
