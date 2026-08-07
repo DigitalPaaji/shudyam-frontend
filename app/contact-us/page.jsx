@@ -390,7 +390,7 @@ const ContactUsPage = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full resize-none border border-[#e5ddd4] bg-[#faf8f5] px-5 py-4 text-[15px] font-light text-[#33241f] outline-none transition-all placeholder:text-[#a39791] focus:border-[#b76a3e] focus:bg-white focus:ring-1 focus:ring-[#b76a3e]/20"
+                  className="w-full resize-none border border-[#e5ddd4] bg-[#faf8f5] px-5 py-4 text-base font-light text-[#33241f] outline-none transition-all placeholder:text-[#a39791] focus:border-[#b76a3e] focus:bg-white focus:ring-1 focus:ring-[#b76a3e]/20"
                 />
               </div>
 
@@ -623,7 +623,7 @@ const FormInput = ({
         value={value}
         onChange={onChange}
         required={required}
-        className="h-14 w-full border border-[#e5ddd4] bg-[#faf8f5] px-5 text-[15px] font-light text-[#33241f] outline-none transition-all placeholder:text-[#a39791] focus:border-[#b76a3e] focus:bg-white focus:ring-1 focus:ring-[#b76a3e]/20"
+        className="h-14 w-full border border-[#e5ddd4] bg-[#faf8f5] px-5 text-base font-light text-[#33241f] outline-none transition-all placeholder:text-[#a39791] focus:border-[#b76a3e] focus:bg-white focus:ring-1 focus:ring-[#b76a3e]/20"
       />
     </div>
   );

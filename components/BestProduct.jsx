@@ -99,14 +99,14 @@ const thumbnailImage =  product.isTopImage ? product.images[product.isTopImage] 
             reverse ? "lg:order-2" : "lg:order-1"
           }`}
         >
-          <div className="relative mx-auto w-full max-w-[240px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-[450px]">
+          <div className="relative mx-auto w-full max-w-[380px] lg:max-w-[450px]">
             <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-tr from-gray-100 to-transparent blur-3xl"></div>
 
             <img
               src={`${img_url}${thumbnailImage}`}
               alt={product.name}
               loading="lazy"
-              className="h-auto w-full object-contain drop-shadow-xl transition-transform duration-500 hover:scale-105"
+              className="h-auto  w-full object-contain "
             />
           </div>
         </div>
