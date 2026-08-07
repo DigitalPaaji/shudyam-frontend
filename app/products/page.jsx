@@ -410,9 +410,9 @@ const FilterSection = ({
           </button>
         </header>
 
-        {/* Scrollable body */}
+   
         <div className="flex-1 overflow-y-auto  custom-scrollbar px-5 py-7 sm:px-6">
-          {/* Categories */}
+      
           <section>
             <div className="mb-5 flex items-center justify-between">
               <div>
@@ -487,10 +487,10 @@ const FilterSection = ({
             )}
           </section>
 
-          {/* Divider */}
+         
           <div className="my-8 h-px bg-black/10" />
 
-          {/* Price */}
+         
           <section>
             <div className="mb-6 flex items-start justify-between">
               <div>
@@ -533,7 +533,7 @@ const FilterSection = ({
           </section>
         </div>
 
-        {/* Footer actions */}
+        
         <footer className="border-t border-black/10 bg-white px-5 py-4 sm:px-6">
           <div className="flex gap-3">
             <button

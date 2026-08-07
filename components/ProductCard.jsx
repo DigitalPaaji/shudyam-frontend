@@ -151,16 +151,23 @@ const dispatch = useDispatch()
 
       {/* Product Details */}
       <div className="flex flex-1 flex-col pt-4">
-        <div className="mb-3 flex items-end justify-between gap-4">
-          <div className="min-w-0 flex-1">
-            <h3
+ <h3
               title={product.name}
-              className="truncate text-sm font-medium text-[#650006]"
+              className=" mb-1  md:hidden  text-sm font-medium text-[#650006]"
             >
               {product.name}
             </h3>
 
-            <div className="mt-1 flex flex-wrap items-center gap-2">
+        <div className="mb-3 flex items-end justify-between gap-4">
+          <div className="min-w-0 flex-1">
+            <h3
+              title={product.name}
+              className=" hidden md:inline-block  truncate text-sm font-medium text-[#650006]"
+            >
+              {product.name}
+            </h3>
+
+            <div className="mt-1 flex flex-wrap items-center md:gap-2">
               <span className="text-sm font-semibold text-[#790007]">
                 Rs. {formatPrice(sellingPrice)}
               </span>

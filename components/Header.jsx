@@ -19,6 +19,8 @@ import { toggle } from "./store/toggleUser";
 import { getUser } from "./store/userSlice";
 import { loadCart } from "./store/AddtoCartLocal";
 import { useRouter } from "next/navigation";
+import axios from "axios";
+import { base_url } from "./utile";
 
 gsap.registerPlugin(useGSAP);
 
@@ -36,6 +38,22 @@ const Header = () => {
   const { showLogin } = useSelector((state) => state.toggleUser);
   const { isUser, user } = useSelector((state) => state.user);
   const { cart } = useSelector((state) => state.LocalCart);
+  const [products,setProducts]= useState([ ])
+
+ const fetchRadnomproduct = async()=>{
+  try {
+    const response = await axios.get(`${base_url}/cache/products/random`)
+    const data = await response.data;
+    if(data.success){
+setProducts(data.products)
+    }
+  } catch (error) {
+    setProducts([ ])
+  }
+ }
+
+
+
 
   useGSAP(
     () => {
@@ -56,6 +74,7 @@ const Header = () => {
   };
 
   useEffect(() => {
+    fetchRadnomproduct()
     dispatch(getCategory());
     dispatch(loadCart());
     dispatch(getUser());
@@ -94,22 +113,27 @@ const Header = () => {
                 type="button"
                 className={`${navClass} flex items-center gap-1.5`}
               >
-                Collection
+                <Link href="/products">Products  </Link>
                 <FaAngleDown className="text-[9px] transition group-hover:rotate-180" />
               </button>
 
-              <div className="invisible absolute left-0 top-full z-50 w-48 translate-y-3 pt-4 opacity-0 transition duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                <div className="border border-[#d9bd72]/25 bg-[#1b0102] p-2 shadow-2xl">
-                  {categories?.length > 0 &&
-                    categories.map((item) => (
+              <div className="invisible absolute left-0 top-full z-50 w-[25rem] translate-y-3 pt-4 opacity-0 transition duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="border grid grid-cols-2 w-full  border-[#d9bd72]/25 bg-[#1b0102] p-2 shadow-2xl">
+                  {products?.length > 0 &&
+                    products.map((item) => (
                       <Link
                         key={item._id}
-                        href={`/products?category=${item.slug}`}
+                        href={`/product/${item.slug}`}
                         className="block border-b border-[#d9bd72]/10 px-4 py-3 text-xs text-[#fff9e6] transition last:border-none hover:bg-white/5 hover:text-[#e5c66f]"
                       >
                         {item.name}
                       </Link>
                     ))}
+
+
+
+
+
                 </div>
               </div>
             </div>
@@ -226,7 +250,7 @@ const Header = () => {
               onClick={() => setCollectionOpen((previous) => !previous)}
               className="flex w-full items-center justify-between py-4 text-sm text-[#fff9e6]"
             >
-              Collection
+             <Link href="/products">Products  </Link>
               <FaAngleDown
                 className={`text-xs transition-transform duration-300 ${
                   collectionOpen ? "rotate-180" : ""
@@ -241,13 +265,12 @@ const Header = () => {
             >
               <div className="overflow-hidden">
                 <div className="border-l border-[#d9bd72]/25 pl-4">
-                  {categories?.length > 0 &&
-                    categories.map((item) => (
+                 {products?.length > 0 &&
+                    products.map((item) => (
                       <Link
-                        href={`/products?category=${item.slug}`}
                         key={item._id}
-                        onClick={closeMenu}
-                        className="block py-2.5 text-xs text-[#fff9e6]/70 hover:text-[#e5c66f]"
+                        href={`/product/${item.slug}`}
+                        className="block border-b border-[#d9bd72]/10 px-4 py-3 text-xs text-[#fff9e6] transition last:border-none hover:bg-white/5 hover:text-[#e5c66f]"
                       >
                         {item.name}
                       </Link>
