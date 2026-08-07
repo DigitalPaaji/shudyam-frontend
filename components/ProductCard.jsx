@@ -114,7 +114,7 @@ const dispatch = useDispatch()
   return (
     <Link href={`/product/${product.slug}`} className="group flex h-full flex-col">
       {/* Product Image */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#fbf6e7]">
+      <div className="relative  w-full overflow-hidden bg-[#fbf6e7]">
         {discountPercentage > 0 && (
           <span className="absolute left-3 top-3 z-20 rounded-full bg-[#870008] px-3 py-1.5 text-[10px] font-medium tracking-wide text-white">
             {discountPercentage}% OFF
@@ -126,7 +126,7 @@ const dispatch = useDispatch()
                alt={product.name}
              
                
-               className="object-cover object-center aspect-[4/3]   p-7"
+               className="object-cover object-center    p-7"
              />
       </div>
 

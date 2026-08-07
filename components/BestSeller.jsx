@@ -141,9 +141,9 @@ className={`absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center
         <img
           src={`${img_url}${product.thumbnail}`}
           alt={product.name}
-          // fill
+       
         
-          className="object-cover p-5 object-center  aspect-[4/3]   sm:p-7"
+          className="object-cover p-5 object-center     sm:p-7"
         />
 
         {/* Hover img */}
