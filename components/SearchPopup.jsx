@@ -147,14 +147,14 @@ const SearchPopup = ({ setOpenSearch }) => {
           <div className="flex h-14 flex-1 items-center gap-3 rounded-xl border border-neutral-200 bg-neutral-50 px-4 transition focus-within:border-neutral-900 focus-within:bg-white focus-within:ring-4 focus-within:ring-neutral-900/5">
             <IoSearchOutline className="shrink-0 text-xl text-neutral-400" />
 
-            <input
-              type="text"
-              value={search}
-              onChange={(event) => setSearch(event.target.value)}
-              placeholder="Search brass bottle, saucepan..."
-              autoFocus
-              className="h-full  md:w-full bg-transparent text-sm text-neutral-950 outline-none placeholder:text-neutral-400 sm:text-base"
-            />
+         <input
+  type="text"
+  value={search}
+  onChange={(event) => setSearch(event.target.value)}
+  placeholder="Search brass bottle, saucepan..."
+  autoFocus
+  className="h-full w-full bg-transparent text-base text-neutral-950 outline-none placeholder:text-neutral-400"
+/>
 
             {loading && (
               <span className="h-5 w-5 shrink-0 animate-spin rounded-full border-2 border-neutral-200 border-t-neutral-900" />

@@ -200,7 +200,7 @@ const Header = () => {
                 aria-label="Cart"
                 className={`${iconClass} relative`}
               >
-                <IoBagHandleOutline className="text-base sm:text-lg" />
+                <IoBagHandleOutline className="text-lg" />
                 {cartCount > 0 && (
                   <span className="absolute right-0 top-0 flex h-3.5 min-w-[14px] sm:h-4 sm:min-w-4 items-center justify-center rounded-full bg-[#e5c66f] px-1 text-[7px] sm:text-[8px] font-semibold text-[#250103]">
                     {cartCount}
@@ -264,7 +264,7 @@ const Header = () => {
             About Us
           </Link>
 
-          <Link
+          <Link 
             href="/craftsmanship"
             onClick={closeMenu}
             className="block border-b border-[#d9bd72]/15 py-4 text-sm text-[#fff9e6]"
