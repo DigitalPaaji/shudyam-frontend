@@ -153,28 +153,33 @@ const dispatch = useDispatch()
       <div className="flex flex-1 flex-col pt-4">
  <h3
               title={product.name}
-              className=" mb-1  md:hidden  text-sm font-medium text-[#650006]"
+              className=" mb-1    text-sm font-medium text-[#650006]"
             >
               {product.name}
             </h3>
 
         <div className="mb-3 flex items-end justify-between gap-4">
           <div className="min-w-0 flex-1">
-            <h3
+            {/* <h3
               title={product.name}
               className=" hidden md:inline-block  truncate text-sm font-medium text-[#650006]"
             >
               {product.name}
-            </h3>
+            </h3> */}
 
             <div className="mt-1 flex flex-wrap items-center md:gap-2">
               <span className="text-sm font-semibold text-[#790007]">
                 Rs. {formatPrice(sellingPrice)}
               </span>
-
-              <span className="text-xs text-[#987f76] line-through">
-                Rs. {formatPrice(originalPrice)}
-              </span>
+{originalPrice != null &&
+  originalPrice !== "" &&
+  !isNaN(Number(originalPrice)) &&
+  Number(originalPrice) > 0 && (
+    <span className="text-xs text-[#987f76] line-through">
+      Rs. {formatPrice(Number(originalPrice))}
+    </span>
+  )}
+              
             </div>
           </div>
 
@@ -184,7 +189,7 @@ const dispatch = useDispatch()
               onChange={handleVariantChange}
                 onClick={(e)=>e.preventDefault()}
               aria-label={`Select size for ${product.title}`}
-              className="cursor-pointer rounded-md border border-[#eee4ce] bg-[#f5edda] px-3 py-2 text-xs text-[#790007] outline-none transition hover:border-[#790007]/30 focus:border-[#790007]"
+              className="cursor-pointer rounded-md border border-[#eee4ce] bg-[#f5edda] px-1.5 py-1 text-xs text-[#790007] outline-none transition hover:border-[#790007]/30 focus:border-[#790007]"
             >
               {product.variants.map((variant) => (
                 <option key={variant._id} value={variant._id} className=" hover:bg-p">

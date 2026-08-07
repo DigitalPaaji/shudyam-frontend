@@ -839,7 +839,7 @@ else{
         )}
 
 
-            {!!product.variants?.length && (
+            {/* {!!product.variants?.length && (
               <div className="product-fade-item my-24">
               
                
@@ -897,7 +897,7 @@ else{
                     })}
                 </div>
               </div>
-            )}
+            )} */}
 
 <ReviewSection productid={product._id} />
 

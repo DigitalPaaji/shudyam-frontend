@@ -269,6 +269,7 @@ setProducts(data.products)
                     products.map((item) => (
                       <Link
                         key={item._id}
+                         onClick={() => setMenuOpen(false)}
                         href={`/product/${item.slug}`}
                         className="block border-b border-[#d9bd72]/10 px-4 py-3 text-xs text-[#fff9e6] transition last:border-none hover:bg-white/5 hover:text-[#e5c66f]"
                       >
