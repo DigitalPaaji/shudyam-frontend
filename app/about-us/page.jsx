@@ -115,7 +115,7 @@ const AboutUsPage = () => {
           transition={{ duration: 2, ease: "easeOut" }}
         >
           <Image
-            src="/images/craft1.png"
+            src="/images/banner.webp"
             alt="Traditional Shudyam brass utensils"
             fill
             priority
@@ -358,7 +358,7 @@ const AboutUsPage = () => {
               className="absolute left-0 top-0 h-[75%] w-[80%] overflow-hidden"
             >
               <Image
-                src="/images/cat3.png"
+                src="/images/about1.webp"
                 alt="Crafting brass utensils"
                 fill
                 className="object-cover"
@@ -373,7 +373,7 @@ const AboutUsPage = () => {
               className="absolute bottom-0 right-0 h-[55%] w-[65%] overflow-hidden border-[12px] border-white shadow-2xl"
             >
               <Image
-                src="/images/cat2.png"
+                src="/images/about3.webp"
                 alt="Finished brass utensils"
                 fill
                 className="object-cover"
@@ -395,7 +395,7 @@ const AboutUsPage = () => {
         <div className="mx-auto gap-10 grid px-4 md:px-12 lg:px-24 xl:px-40  overflow-hidden bg-[#FFF9E6] shadow-[0_20px_60px_-15px_rgba(35,22,18,0.05)] lg:grid-cols-2">
           <div className="relative min-h-[500px] lg:min-h-[700px]">
             <Image
-              src="/images/cat1.png"
+              src="/images/about2.webp"
               alt="Shudyam brass collection"
               fill
               className="object-cover"

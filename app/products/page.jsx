@@ -102,22 +102,39 @@ const PriceRangeSlider = ({
     );
   };
 
+  // const handleMaxInput = (event) => {
+  //   const rawValue = event.target.value;
+
+  //   if (rawValue === "") return;
+
+  //   const value = Number(rawValue);
+
+  //   if (Number.isNaN(value)) return;
+
+  //   setMaxValue(
+  //     Math.max(
+  //       Math.min(value, PRICE_MAX),
+  //       minValue + PRICE_STEP
+  //     )
+  //   );
+  // };
+
+
   const handleMaxInput = (event) => {
-    const rawValue = event.target.value;
+  const rawValue = event.target.value;
 
-    if (rawValue === "") return;
+  // Allow user to completely clear the input
+  if (rawValue === "") {
+    setMaxValue("");
+    return;
+  }
 
-    const value = Number(rawValue);
+  const value = Number(rawValue);
 
-    if (Number.isNaN(value)) return;
+  if (Number.isNaN(value)) return;
 
-    setMaxValue(
-      Math.max(
-        Math.min(value, PRICE_MAX),
-        minValue + PRICE_STEP
-      )
-    );
-  };
+  setMaxValue(value);
+};
 
   return (
     <div className="w-full">
@@ -871,14 +888,14 @@ const ProductsPageContent = () => {
   return (
     <div className="min-h-screen bg-[#FFF9E6]">
       {/* Banner */}
-      <section className="relative  overflow-hidden h-[48vh] lg:h-[65vh]">
+      <section className="relative  overflow-hidden h-[48vh] lg:h-[665px]">
         <img
           src="/images/banner.webp"
           alt="Premium brass products"
-          className="h-full w-full object-cover objto"
+          className="h-full w-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/25 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/65 via-black/25 to-transparent" />
 
         {/* <div className="absolute inset-0 flex items-center px-4 sm:px-8 md:px-12 lg:px-24 xl:px-40">
           <div className="max-w-xl text-white">
@@ -1049,7 +1066,7 @@ const ProductsPageContent = () => {
             ))}
           </div>
         ) : (
-          <div className="flex min-h-[400px] flex-col items-center justify-center rounded-2xl border border-dashed border-black/20 bg-white px-5 text-center">
+          <div className="flex min-h-[400px] flex-col items-center justify-center rounded-2xl border border-dashed border-black/20  px-5 text-center">
             <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-p/10">
               <IoFilterOutline className="text-2xl text-p" />
             </div>

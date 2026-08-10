@@ -4,15 +4,15 @@ import React, { useState, useEffect } from "react";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 
 const IMAGES = [
-    { src: "/images/banner/masalabox.png", title: "Traditional Masala Box" },
-    { src: "/images/banner/wokpan.webp", title: "Golden Casserole Pot" },
-    { src: "/images/banner/tadkapan.webp", title: "Golden Tadka Pan" },
-    { src: "/images/banner/saucepan.png", title: "Tri-Ply Saucepan" },
-    { src: "/images/banner/rotitawa.png", title: "Premium Roti Tawa" },
-    { src: "/images/banner/glass.webp", title: "Crystal Glassware" },
-    { src: "/images/banner/patila.webp", title: "Heavy Duty Patila" },
-    { src: "/images/banner/kadhri.webp", title: "Traditional Kadhai" },
-    { src: "/images/banner/pudding.webp", title: "Dessert Pudding Bowl" },
+{ src: "/images/banner/masalabox.png", title: "Masala Box" },
+{ src: "/images/banner/wokpan.webp", title: "Classic Wok Pan" },
+{ src: "/images/banner/tadkapan.webp", title: "Tadka Pan" },
+{ src: "/images/banner/saucepan.png", title: "Sauce Pan" },
+{ src: "/images/banner/rotitawa.png", title: "Roti Tawa" },
+{ src: "/images/banner/glass.webp", title: "Drinking Glass" },
+{ src: "/images/banner/patila.webp", title: "Cooking Patila" },
+{ src: "/images/banner/kadhri.webp", title: "Cooking Kadhai" },
+{ src: "/images/banner/pudding.webp", title: "Pudding Bowl" },
 ];
 
 export default function ToonHubCarousel() {

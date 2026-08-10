@@ -14,8 +14,8 @@ import { img_url } from "./utile";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-const INITIAL_COUNT = 4;
-const LOAD_COUNT = 4;
+const INITIAL_COUNT = 5;
+const LOAD_COUNT = 5;
 
 const Collection = () => {
   const [catCount, setCatCount] = useState(INITIAL_COUNT);
@@ -222,10 +222,10 @@ const Collection = () => {
 
       {/* Loading Skeleton */}
       {loading && (
-        <div className="grid  gap-6 grid-cols-2 lg:grid-cols-4">
+        <div className="grid  gap-6 grid-cols-2 lg:grid-cols-5">
           {Array.from({ length: INITIAL_COUNT }).map((_, index) => (
             <div key={index} className="animate-pulse">
-              <div className="aspect-square bg-[#f1e9e5]" />
+              <div className="aspect-square bg-[#f1e9e5]" />       
 
               <div className="flex justify-center py-5">
                 <div className="h-5 w-28 rounded-full bg-[#f1e9e5]" />
@@ -257,14 +257,15 @@ const Collection = () => {
 
       {/* Category Grid */}
       {!loading && !error && categories.length > 0 && (
-        <div className="grid  gap-6 grid-cols-2 lg:grid-cols-4">
+        <div className="grid  gap-6 grid-cols-2 lg:grid-cols-5">
           {visibleCategories.map((item, index) => (
-            <Link
+            <div
               key={item._id}
               ref={(element) => {
                 cardRefs.current[index] = element;
               }}
-              href={`/products?category=${item.slug}`}
+              // href={'/products'}
+              // href={`/products?category=${item.slug}`}
               className="group block will-change-transform"
             >
               <div className="relative aspect-square overflow-hidden bg-[#f8f4f1]">
@@ -278,7 +279,7 @@ const Collection = () => {
                 />
 
  
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#530509]/25 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#530509]/25 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               </div>
 
               <div className="relative overflow-hidden py-4 text-center">
@@ -288,7 +289,7 @@ const Collection = () => {
 
                 <span className="absolute bottom-2 left-1/2 h-px w-0 -translate-x-1/2 bg-p transition-all duration-500 group-hover:w-16" />
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       )}

@@ -23,14 +23,6 @@ import { addinCart } from "@/components/store/userSlice";
 import { toggleWishlist } from "@/components/store/wishlistslice";
 axios.defaults.withCredentials=true
 
-
-
-
-
-
-
-
-
 gsap.registerPlugin(useGSAP);
 
 const ProductPage = () => {
@@ -577,11 +569,11 @@ else{
                     Select size
                   </h2>
 
-                  {selectedVariant?.sku && (
+                  {/* {selectedVariant?.sku && (
                     <span className="text-[10px] text-neutral-500 sm:text-xs">
                       SKU: {selectedVariant.sku}
                     </span>
-                  )}
+                  )} */}
                 </div>
 
                 <div className="flex flex-wrap gap-2 sm:gap-3">
@@ -616,7 +608,7 @@ else{
                           }`}
                         >
                           {variant.attributes?.value ||
-                            variant.sku}
+                            'Standard'}
 
                           {isSelected && (
                             <FiCheck className="absolute -right-2 -top-2 rounded-full bg-white/40 p-1 text-[#52070a] shadow-md" />

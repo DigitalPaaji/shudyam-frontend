@@ -11,7 +11,7 @@ const Whyshudyam = () => {
  <div className='grid  lg:grid-cols-2 gap-14'>
 
 <div>
-<Image src={"/images/craft1.png"} alt='craft'  width={500} height={500} className='rounded-md w-full h-[30rem] object-cover' />
+<Image src={"/images/craft.webp"} alt='craft'  width={500} height={500} className='rounded-md w-full h-auto md:h-[30rem] object-contain md:object-cover' />
 </div>
 
 <div className='flex flex-col gap-3 justify-center'>

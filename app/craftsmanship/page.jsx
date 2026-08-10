@@ -28,7 +28,7 @@ const processSteps = [
     title: "Choosing the Brass",
     description:
       "Our process begins with carefully selected brass sheets chosen for their finish, consistency and suitability for each design.",
-    image: "/images/craftsmanship/selecting-brass.jpeg",
+    image: "/images/craftsmanship/craft1.webp",
     points: [
       "Material inspection",
       "Thickness verification",
@@ -41,7 +41,7 @@ const processSteps = [
     title: "Formed by Skilled Hands",
     description:
       "The metal is gradually shaped into its intended form through controlled pressure, traditional tools and experienced craftsmanship.",
-    image: "/images/craftsmanship/shaping-brass.jpeg",
+    image: "/images/craftsmanship/craft2.webp",
     points: [
       "Measured proportions",
       "Balanced construction",
@@ -54,7 +54,7 @@ const processSteps = [
     title: "A Rhythm in Every Mark",
     description:
       "Each hammer impression contributes to the vessel’s character, creating subtle patterns that make every handcrafted piece distinct.",
-    image: "/images/craftsmanship/hammering-brass.jpeg",
+    image: "/images/craftsmanship/craft3.webp",
     points: [
       "Hand-applied texture",
       "Individual character",
@@ -67,7 +67,7 @@ const processSteps = [
     title: "Polished with Patience",
     description:
       "The shaped product is refined, cleaned and polished to reveal the warm, luminous appearance associated with brass.",
-    image: "/images/craftsmanship/polishing-brass.webp",
+    image: "/images/craftsmanship/craft4.webp",
     points: [
       "Surface refinement",
       "Edge smoothing",
@@ -80,7 +80,7 @@ const processSteps = [
     title: "Checked Before It Reaches You",
     description:
       "Every completed product is reviewed for construction, balance, finish and overall presentation before being carefully packed.",
-    image: "/images/craftsmanship/quality-check.jpeg",
+    image: "/images/craftsmanship/craft5.webp",
     points: [
       "Finish inspection",
       "Construction review",
@@ -125,19 +125,19 @@ const details = [
     title: "Texture",
     description:
       "Small variations and hammer marks preserve the unmistakable character of work shaped by hand.",
-    image: "/images/craftsmanship/detail-texture.webp",
+    image: "/images/banner/glass.webp",
   },
   {
     title: "Form",
     description:
       "Curves, walls and bases are developed to create a balanced relationship between function and beauty.",
-    image: "/images/craftsmanship/detail-form.webp",
+    image: "/images/banner/masalabox.png",
   },
   {
     title: "Finish",
     description:
       "Every surface is carefully refined to reveal brass’s rich, warm and naturally reflective appearance.",
-    image: "/images/craftsmanship/detail-finish.webp",
+    image: "/images/banner/kadhri.webp",
   },
 ];
 
@@ -277,7 +277,7 @@ export default function CraftsmanshipPage() {
           <div className="relative min-h-[480px] sm:min-h-[580px] ">
             <div className="absolute bottom-0 left-0 h-[82%] w-[94%] overflow-hidden rounded-3xl">
               <Image
-                src="/images/craftsmanship/artisan-at-work.jpg"
+                src="/images/craftsmanship/craft0.webp"
                 alt="Shudyam artisan working on a brass product"
                 fill
                 sizes="(max-width: 1024px) 90vw, 45vw"
@@ -288,7 +288,7 @@ export default function CraftsmanshipPage() {
 
             <div className="absolute right-0 top-0 h-[48%] w-[58%] overflow-hidden rounded-3xl border-[6px] border-[#FFF9E6] shadow-xl">
               <Image
-                src="/images/craftsmanship/brass-detail.webp"
+                src="/images/cat1.png"
                 alt="Close-up of handcrafted brass texture"
                 fill
                 sizes="(max-width: 1024px) 45vw, 22vw"
@@ -443,7 +443,7 @@ export default function CraftsmanshipPage() {
                     index % 2 === 1 ? "lg:order-2" : ""
                   }`}
                 >
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-stone-200 sm:aspect-[5/4] lg:aspect-[4/5]">
+                  <div className="relative aspect-square overflow-hidden rounded-3xl bg-stone-200">
                     <Image
                       src={step.image}
                       alt={step.title}
@@ -451,7 +451,7 @@ export default function CraftsmanshipPage() {
                       sizes="(max-width: 1024px) 90vw, 45vw"
                       className="object-cover transition duration-700 hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/55 via-transparent to-transparent" />
                     <div className="absolute bottom-5 left-5 rounded-full border border-white/25 bg-black/20 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] text-white backdrop-blur-md">
                       {step.label}
                     </div>
@@ -528,7 +528,7 @@ export default function CraftsmanshipPage() {
                   index === 1 ? "lg:translate-y-10" : ""
                 }`}
               >
-                <div className="relative aspect-[4/5]">
+                <div className="relative aspect-square">
                   <Image
                     src={detail.image}
                     alt={detail.title}

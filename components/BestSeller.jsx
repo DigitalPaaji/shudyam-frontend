@@ -301,7 +301,7 @@ useEffect(()=>{
         </div>
 
         <div ref={rightHeadingRef} className="w-full md:w-auto">
-          <p className= "  md:max-w-[230px] text-sm leading-relaxed text-[#760209] md:text-right md:text-base">
+          <p className= "md:max-w-[230px] text-sm leading-relaxed text-[#760209] md:text-right md:text-base">
             Indian households have used brass vessels for centuries.
           </p>
 
