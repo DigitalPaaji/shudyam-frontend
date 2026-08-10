@@ -79,17 +79,21 @@ const ReviewSection = ({ productid }) => {
     );
   }
 
+  // if (!reviews || reviews.length === 0) {
+  //   return (
+  //     <div className="flex flex-col items-center justify-center py-16 px-4 text-center">
+  //       <div className="flex h-16 w-16 items-center justify-center rounded-full bg-neutral-100 text-neutral-400">
+  //         <FaQuoteLeft size={24} />
+  //       </div>
+  //       <h3 className="mt-4 text-lg font-semibold text-neutral-900">No reviews yet</h3>
+  //       <p className="mt-2 text-sm text-neutral-500">Be the first to share your experience!</p>
+  //     </div>
+  //   );
+  // }
+
   if (!reviews || reviews.length === 0) {
-    return (
-      <div className="flex flex-col items-center justify-center py-16 px-4 text-center">
-        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-neutral-100 text-neutral-400">
-          <FaQuoteLeft size={24} />
-        </div>
-        <h3 className="mt-4 text-lg font-semibold text-neutral-900">No reviews yet</h3>
-        <p className="mt-2 text-sm text-neutral-500">Be the first to share your experience!</p>
-      </div>
-    );
-  }
+  return null;
+}
 
   return (
     <section className="py-16">

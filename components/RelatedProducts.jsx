@@ -103,7 +103,7 @@ const RelatedProducts = ({ categoryId, currentProductId }) => {
 
   return (
     <section className="overflow-hidden  py-16 md:py-24">
-      <div className="mx-auto  px-4 md:px-10 lg:px-16">
+      <div className="mx-auto">
         <div className="mb-10 flex items-end justify-between gap-5">
           <div>
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#52070a]">
@@ -115,7 +115,7 @@ const RelatedProducts = ({ categoryId, currentProductId }) => {
             </h2>
           </div>
 
-          <div className="hidden items-center gap-2 sm:flex">
+          {/* <div className="hidden items-center gap-2 sm:flex">
             <button
               type="button"
               aria-label="Previous product"
@@ -131,7 +131,7 @@ const RelatedProducts = ({ categoryId, currentProductId }) => {
             >
               <FiChevronRight size={21} />
             </button>
-          </div>
+          </div> */}
         </div>
 
         <Swiper

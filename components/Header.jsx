@@ -124,7 +124,7 @@ setProducts(data.products)
                       <Link
                         key={item._id}
                         href={`/product/${item.slug}`}
-                        className="block border-b border-[#d9bd72]/10 px-4 py-3 text-xs text-[#fff9e6] transition last:border-none hover:bg-white/5 hover:text-[#e5c66f]"
+                        className="block border-b font-sans border-[#d9bd72]/10 px-4 py-3 text-sm text-[#fff9e6] transition last:border-none hover:bg-white/5 hover:text-[#e5c66f]"
                       >
                         {item.name}
                       </Link>
