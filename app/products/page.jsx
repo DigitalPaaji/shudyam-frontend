@@ -491,7 +491,8 @@ const FilterSection = ({
                             : "border-black/10  text-gray-600 hover:border-p/40 hover:text-p"
                         }`}
                       >
-                        {categoryName}
+                        {categoryName?.toLowerCase()
+  .replace(/\b\w/g, (char) => char.toUpperCase())}
                       </button>
                     );
                   })}

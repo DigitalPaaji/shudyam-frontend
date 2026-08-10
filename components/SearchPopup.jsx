@@ -236,7 +236,8 @@ const SearchPopup = ({ setOpenSearch }) => {
 
                     <div className="min-w-0 flex-1">
                       <h3 className="truncate text-sm font-medium text-neutral-900 sm:text-base">
-                        {item.name}
+                        {item.name?.toLowerCase()
+  .replace(/\b\w/g, (char) => char.toUpperCase())}
                       </h3>
 
                       <p className="mt-1 text-xs text-neutral-400">

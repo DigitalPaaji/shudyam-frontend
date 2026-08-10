@@ -143,7 +143,8 @@ className={`absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center
         <div className="flex items-center justify-between gap-2">
           <div className="min-w-0 xl:max-w-[48%]">
             <h3 className="truncate text-xs font-medium sm:text-sm">
-              {product.name}
+             {product.name?.toLowerCase()
+  .replace(/\b\w/g, (char) => char.toUpperCase())}
             </h3>
 
             <div className="mt-1 flex flex-wrap items-center gap-1.5 text-[11px] sm:text-xs">

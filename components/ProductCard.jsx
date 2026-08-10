@@ -136,7 +136,8 @@ const dispatch = useDispatch()
               title={product.name}
               className=" mb-1    text-sm font-medium text-[#650006]"
             >
-              {product.name}
+              {product.name?.toLowerCase()
+  .replace(/\b\w/g, (char) => char.toUpperCase())}
             </h3>
 
         <div className="mb-3 flex items-end justify-between gap-4">

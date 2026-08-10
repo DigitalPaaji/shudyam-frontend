@@ -115,7 +115,8 @@ const Blogsection = () => {
                 </p>
 
                 <h3 className="my-2 line-clamp-2 font-p text-xl font-medium leading-7 text-[#310104] transition group-hover:text-[#760209]">
-                  {item.title}
+                  {item.title?.toLowerCase()
+  .replace(/\b\w/g, (char) => char.toUpperCase())}
                 </h3>
 
               

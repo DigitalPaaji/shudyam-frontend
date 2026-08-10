@@ -257,7 +257,8 @@ const cartParam = encodeURIComponent(JSON.stringify(localCart));
                           href={`/product/${item.slug}`}
                           className="line-clamp-2 text-base font-semibold text-gray-950 transition hover:text-[#8b5e3c] sm:text-lg"
                         >
-                          {item.name}
+                          {item.name?.toLowerCase()
+  .replace(/\b\w/g, (char) => char.toUpperCase())}
                         </Link>
 
                         <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-gray-500 sm:text-sm">

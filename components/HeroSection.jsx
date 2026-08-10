@@ -135,9 +135,9 @@ export default function ToonHubCarousel() {
           <h3
             className="
               relative inline-block
-              text-[28px]
-              lg:text-[34px]
-              2xl:text-[40px]
+              text-[26px]
+              lg:text-[32px]
+              2xl:text-[38px]
               leading-tight
               bg-gradient-to-r
               from-[#F8E7A1]
@@ -148,7 +148,7 @@ export default function ToonHubCarousel() {
               animate-[shine_3s_linear_infinite]
               drop-shadow-md
               tracking-[0.6px]
-              roboto-slab
+              font-p
             "
           >
             {IMAGES[currentIndex].title}

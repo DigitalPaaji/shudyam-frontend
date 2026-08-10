@@ -101,7 +101,7 @@ useEffect(()=>{
           <UnderlineText text="Featured" />
 
           <HeadLine
-            text="Get Your Kitchen Essentials"
+            text="Discover Our Featured Collection"
             styles="mt-4 text-[#650006]"
           />
         </div>

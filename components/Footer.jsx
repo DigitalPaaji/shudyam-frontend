@@ -213,7 +213,8 @@ const Footer = () => {
 
                 <div className="grid  gap-x-5 gap-y-4">
                   {collectionLinks.map((item) => (
-                    <FooterLink key={item._id} href={`/products?category=${item.slug}`} >{item.name}</FooterLink>
+                    <FooterLink key={item._id} href={`/products?category=${item.slug}`} >{item.name?.toLowerCase()
+  .replace(/\b\w/g, (char) => char.toUpperCase())}</FooterLink>
                   ))}
                 </div>
               </div>
