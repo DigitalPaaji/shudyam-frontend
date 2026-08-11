@@ -56,7 +56,7 @@ const VideoStory = () => {
 
         <video
           ref={videoRef}
-          src="/video/aboutus.mp4"
+          src="/video/aboutus1.mp4"
           className="md:w-2/3"
           autoPlay
           loop
