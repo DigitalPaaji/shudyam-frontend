@@ -30,12 +30,30 @@ export default function ScrollToTopButton() {
   if (!showScrollTop) return null;
 
   return (
-    <button
-      onClick={scrollToTop}
-      aria-label="Scroll to top"
-      className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#150102] text-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-[#570207] active:scale-95 cursor-pointer"
-    >
-      <BsArrowUp size={20} strokeWidth={0.5} />
-    </button>
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-3">
+      {/* Scroll To Top */}
+      <button
+        onClick={scrollToTop}
+        aria-label="Scroll to top"
+        className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-[#150102] text-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-[#570207] active:scale-95"
+      >
+        <BsArrowUp size={20} strokeWidth={0.5} />
+      </button>
+
+      {/* WhatsApp GIF */}
+      <a
+        href="https://wa.me/918699640752"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with us on WhatsApp"
+        className="block transition-transform duration-300 hover:scale-110"
+      >
+        <img
+          src="/images/whatsapp.gif"
+          alt="WhatsApp"
+          className="h-14 w-14 object-contain"
+        />
+      </a>
+    </div>
   );
 }

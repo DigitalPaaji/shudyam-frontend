@@ -108,6 +108,10 @@ setProducts(data.products)
 
           {/* Desktop Left Nav */}
           <nav className="header-item hidden flex-1 items-center gap-8 lg:flex">
+                   <Link href="/" className={navClass}>
+             Home
+            </Link>
+
             <div className="group relative">
               <button
                 type="button"
@@ -244,7 +248,18 @@ setProducts(data.products)
               : "invisible -translate-y-3 pointer-events-none opacity-0"
           }`}
         >
+
+                  <Link
+            href="/"
+            onClick={closeMenu}
+            className="block border-b border-[#d9bd72]/15 py-4 text-sm text-[#fff9e6]"
+          >
+            Home
+          </Link>
+
           <div className="border-b border-[#d9bd72]/15">
+        
+
             <button
               type="button"
               onClick={() => setCollectionOpen((previous) => !previous)}

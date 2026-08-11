@@ -152,9 +152,14 @@ className={`absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center
                 Rs. {selectedVariant.mrp}
               </span>
 
-              <span className="text-[#760209]/50 line-through">
+              {/* <span className="text-[#760209]/50 line-through">
                 Rs. {selectedVariant.basePrice}
-              </span>
+              </span> */}
+              {selectedVariant?.basePrice > 0 && (
+  <span className="text-[#760209]/50 line-through">
+    Rs. {selectedVariant.basePrice}
+  </span>
+)}
             </div>
           </div>
 

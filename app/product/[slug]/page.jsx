@@ -768,7 +768,7 @@ else{
           </div>
         </div>
 
-        <div className="product-bottom-section mt-12 grid gap-7 border-t border-neutral-200 pt-9 sm:mt-16 sm:gap-8 sm:pt-12 lg:grid-cols-[1fr_0.72fr]">
+        <div className="product-bottom-section mt-12 grid gap-7 border-t border-neutral-200 pt-9 sm:mt-16 sm:gap-8 sm:pt-12 lg:grid-cols-[1fr_0.72fr] px-2">
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#7b2528] sm:text-xs">
               About the product
