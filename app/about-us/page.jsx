@@ -115,7 +115,7 @@ const AboutUsPage = () => {
           transition={{ duration: 2, ease: "easeOut" }}
         >
           <Image
-            src="/images/banner.webp"
+            src="/images/banner1.webp"
             alt="Traditional Shudyam brass utensils"
             fill
             priority

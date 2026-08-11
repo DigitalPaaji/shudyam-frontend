@@ -891,7 +891,7 @@ const ProductsPageContent = () => {
       {/* Banner */}
       <section className="relative  overflow-hidden h-[48vh] lg:h-[665px]">
         <img
-          src="/images/banner.webp"
+          src="/images/banner1.webp"
           alt="Premium brass products"
           className="h-full w-full object-cover"
         />
