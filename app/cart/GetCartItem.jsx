@@ -344,7 +344,7 @@ const [actionLoadingId, setActionLoadingId] = useState("");
                               </span>
                             )}
 
-                            {variant?.sku && <span>SKU: {variant.sku}</span>}
+                            {/* {variant?.sku && <span>SKU: {variant.sku}</span>} */}
 
                             {/* {variant?.stock !== undefined && (
                               <span className="text-green-600">

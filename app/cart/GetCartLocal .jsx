@@ -274,11 +274,11 @@ const cartParam = encodeURIComponent(JSON.stringify(localCart));
                             </span>
                           )}
 
-                          {item.variant?.sku && (
+                          {/* {item.variant?.sku && (
                             <span>
                               SKU: {item.variant.sku}
                             </span>
-                          )}
+                          )} */}
                         </div>
                       </div>
 

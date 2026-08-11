@@ -813,7 +813,6 @@ const ProductsPageContent = () => {
   const clearAllFilters = () => {
     setMinValue(PRICE_MIN);
     setMaxValue(PRICE_MAX);
-
     router.push(pathname, {
       scroll: false,
     });
