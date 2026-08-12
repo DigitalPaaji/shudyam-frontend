@@ -218,7 +218,7 @@ const handleSubmitPayment = async () => {
 
   return (
     <div className='min-h-screen'>
-              <div className=" bg-gradient-to-r from-[#210102] via-[#62080d] to-[#210102] h-[75px]" />
+              <div className=" bg-linear-to-r from-[#210102] via-[#62080d] to-[#210102] h-[75px]" />
 
 
 

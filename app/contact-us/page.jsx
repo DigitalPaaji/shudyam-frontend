@@ -45,9 +45,9 @@ const ContactUsPage = () => {
     {
       id: 1,
       title: "Call us",
-      value: "+91 98765 43210",
+      value: "+91 9050334488",
       description: "Monday to Saturday, 10:00 AM to 7:00 PM",
-      href: "tel:+919876543210",
+      href: "tel:+919050334488",
       icon: FaPhone,
     },
     {

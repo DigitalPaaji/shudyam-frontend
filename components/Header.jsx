@@ -99,7 +99,7 @@ setProducts(data.products)
     <>
       <header
         ref={headerRef}
-        className="absolute font-p left-0 top-0 z-50 w-full px-4 md:px-12 lg:px-24 xl:px-40"
+        className="absolute font-p left-0 top-0 z-50 w-full px-4 md:px-12 lg:px-24 xl:px-40 bg-gradient-to-bottom from-black/60 via-black/40 to-transparent"
       >
         {showLogin && <LoginPopUp />}
 

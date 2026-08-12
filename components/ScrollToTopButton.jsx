@@ -42,7 +42,7 @@ export default function ScrollToTopButton() {
 
       {/* WhatsApp GIF */}
       <a
-        href="https://wa.me/918699640752"
+        href="https://wa.me/9050334488"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"
