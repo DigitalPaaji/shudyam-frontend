@@ -7,14 +7,26 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 const slides = [
   {
     id: 1,
-    image: "/images/banner1.webp",
-    mobileImage: "/images/banner/1.webp",
+    image: "/images/banner2.webp",
+    mobileImage: "/images/banner2.webp",
     alt: "Shudyam New Launch",
   },
   {
     id: 2,
-    image: "/images/banner.png",
-    mobileImage: "/images/banner/2.webp",
+    image: "/images/banner2.webp",
+    mobileImage: "/images/banner2.webp",
+    alt: "Shudyam Traditional Collection",
+  },
+    {
+    id: 3,
+    image: "/images/banner2.webp",
+    mobileImage: "/images/banner2.webp",
+    alt: "Shudyam New Launch",
+  },
+  {
+    id: 4,
+    image: "/images/banner2.webp",
+    mobileImage: "/images/banner2.webp",
     alt: "Shudyam Traditional Collection",
   },
 ];
@@ -149,7 +161,7 @@ function HeroSection() {
           {slides.map((slide, index) => (
             <div
               key={slide.id}
-              className="relative w-full shrink-0 aspect-[1920/600] min-h-[300px] max-h-[600px] "
+              className="relative w-full shrink-0 aspect-[1920/600] min-h-[600px] max-h-[600px] "
             >
               {/* Desktop */}
               <Image
@@ -179,64 +191,64 @@ function HeroSection() {
         {/* -------------------------------- */}
         {/* PREVIOUS ARROW */}
         {/* -------------------------------- */}
-        <button
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation();
-            prevSlide();
-          }}
-          aria-label="Previous banner"
-          className="
-            absolute left-4 top-1/2 z-20
-            flex h-10 w-10 -translate-y-1/2
-            items-center justify-center
-            rounded-full
-            bg-white/90
-            text-gray-800
-            shadow-md
-            backdrop-blur-sm
-            transition-all duration-300
-            hover:scale-105 hover:bg-white
-            active:scale-95
-            sm:left-5
-            sm:h-11 sm:w-11
-            md:left-6
-            md:h-12 md:w-12
-          "
-        >
-          <FiChevronLeft className="text-xl md:text-2xl" />
-        </button>
+<button
+  type="button"
+  onPointerDown={(e) => e.stopPropagation()}
+  onClick={(e) => {
+    e.stopPropagation();
+    prevSlide();
+  }}
+  aria-label="Previous banner"
+  className="
+    absolute left-4 top-1/2 z-20
+    flex h-10 w-10 -translate-y-1/2
+    items-center justify-center
+    rounded-full
+    text-[#250103cb]
+    bg-gray-100/40
+    shadow-md
+    backdrop-blur-3xl
+    transition-all duration-300
+    active:scale-95
+    sm:left-5
+    sm:h-11 sm:w-11
+    md:left-6
+    md:h-12 md:w-12
+  "
+>
+  <FiChevronLeft className="text-xl md:text-2xl" />
+</button>
 
         {/* -------------------------------- */}
         {/* NEXT ARROW */}
         {/* -------------------------------- */}
-        <button
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation();
-            nextSlide();
-          }}
-          aria-label="Next banner"
-          className="
-            absolute right-4 top-1/2 z-20
-            flex h-10 w-10 -translate-y-1/2
-            items-center justify-center
-            rounded-full
-            bg-white/90
-            text-gray-800
-            shadow-md
-            backdrop-blur-sm
-            transition-all duration-300
-            hover:scale-105 hover:bg-white
-            active:scale-95
-            sm:right-5
-            sm:h-11 sm:w-11
-            md:right-6
-            md:h-12 md:w-12
-          "
-        >
-          <FiChevronRight className="text-xl md:text-2xl" />
-        </button>
+  <button
+  type="button"
+  onPointerDown={(e) => e.stopPropagation()}
+  onClick={(e) => {
+    e.stopPropagation();
+    nextSlide();
+  }}
+  aria-label="Next banner"
+  className="
+    absolute right-4 top-1/2 z-20
+    flex h-10 w-10 -translate-y-1/2
+    items-center justify-center
+    rounded-full
+    text-[#250103cb]
+    bg-gray-100/40
+    shadow-md
+    backdrop-blur-3xl
+    transition-all duration-300
+    active:scale-95
+    sm:right-5
+    sm:h-11 sm:w-11
+    md:right-6
+    md:h-12 md:w-12
+  "
+>
+  <FiChevronRight className="text-xl md:text-2xl" />
+</button>
 
         {/* -------------------------------- */}
         {/* DOTS */}
@@ -250,20 +262,21 @@ function HeroSection() {
           "
         >
           {slides.map((slide, index) => (
-            <button
-              key={slide.id}
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                goToSlide(index);
-              }}
-              aria-label={`Go to banner ${index + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                index === currentSlide
-                  ? "w-7 bg-gray-800"
-                  : "w-1.5 bg-gray-400/70 hover:bg-gray-600"
-              }`}
-            />
+          <button
+  key={`${slide.id}-${index}`}
+  type="button"
+  onPointerDown={(e) => e.stopPropagation()}
+  onClick={(e) => {
+    e.stopPropagation();
+    goToSlide(index);
+  }}
+  aria-label={`Go to banner ${index + 1}`}
+  className={`h-1.5 rounded-full transition-all duration-300 ${
+    index === currentSlide
+      ? "w-4 bg-[#250103]"
+      : "w-2 bg-[#cfbcbd]"
+  }`}
+/>
           ))}
         </div>
       </div>

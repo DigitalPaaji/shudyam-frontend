@@ -1,3 +1,4 @@
+import BannerBottom from "@/components/BannerBottom";
 import BestProduct from "@/components/BestProduct";
 import BestSeller from "@/components/BestSeller";
 import Blogsection from "@/components/Blogsection";
@@ -19,7 +20,7 @@ export default function Home() {
 
     </div> */}
 <HeroSection />
-
+<BannerBottom/>
 <Collection />
 
 <BestProduct />

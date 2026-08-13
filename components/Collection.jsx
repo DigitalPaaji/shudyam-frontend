@@ -212,11 +212,11 @@ const Collection = () => {
       className="overflow-hidden px-4 py-16 sm:px-6 md:px-12 md:py-20 lg:px-24 lg:py-24 xl:px-40"
     >
       {/* Heading */}
-      <div ref={underlineRef} className="mb-5 flex justify-center">
+      <div className="mb-5 flex justify-center">
         <UnderlineText text="Collections" />
       </div>
 
-      <div ref={headlineRef} className="mb-10 flex justify-center md:mb-14">
+      <div  className="mb-10 flex justify-center md:mb-14">
         <HeadLine text="Traditional Indian Craftsmanship" />
       </div>
 

@@ -89,7 +89,7 @@ setProducts(data.products)
   }, [isUser, user?.cartCount, cart?.length]);
 
   const navClass =
-    "relative py-2 text-xs  2xl:text-base text-[#fff9e6] transition duration-300 after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#e5c66f] after:transition-all after:duration-300 hover:text-[#e5c66f] hover:after:w-full";
+    "relative py-2 text-xs  2xl:text-base text-[#150102] transition duration-300 after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#e5c66f] after:transition-all after:duration-300 hover:after:w-full";
 
   // Slightly adjusted for mobile to prevent overlapping with the logo
   const iconClass =
@@ -99,7 +99,7 @@ setProducts(data.products)
     <>
       <header
         ref={headerRef}
-        className="absolute font-p left-0 top-0 z-50 w-full px-4 md:px-12 lg:px-24 xl:px-40 bg-gradient-to-bottom from-black/60 via-black/40 to-transparent"
+        className="font-p z-[9999] w-full px-4 md:px-12 lg:px-24 xl:px-40 py-2 text-[#150102]"
       >
         {showLogin && <LoginPopUp />}
 
@@ -121,7 +121,7 @@ setProducts(data.products)
                 <FaAngleDown className="text-[9px] transition group-hover:rotate-180" />
               </button>
 
-              <div className="invisible absolute left-0 top-full z-50 w-[25rem] translate-y-3 pt-4 opacity-0 transition duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+              <div className="invisible absolute left-0 top-full z-[9999] w-[25rem] translate-y-3 pt-4 opacity-0 transition duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                 <div className="border grid grid-cols-2 w-full  border-[#d9bd72]/25 bg-[#1b0102] p-2 shadow-2xl">
                   {products?.length > 0 &&
                     products.map((item) => (
@@ -181,7 +181,7 @@ setProducts(data.products)
                 mask: "url('/logo.webp') center / contain no-repeat",
               }}
             /> */}
-            <img src="/images/logo.png" alt="" className=" cursor-pointer w-32 md:w-36" />
+            <img src="/images/logo1.webp" alt="" className=" cursor-pointer w-32 md:w-36 pb-2" />
           </Link>
 
           {/* Right Nav Icons */}
@@ -336,7 +336,7 @@ setProducts(data.products)
           type="button"
           aria-label="Close menu"
           onClick={closeMenu}
-          className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 lg:hidden ${
+          className={`fixed inset-0 z-[9999] bg-black/50 transition-opacity duration-300 lg:hidden ${
             menuOpen ? "visible opacity-100" : "invisible pointer-events-none opacity-0"
           }`}
         />
