@@ -513,7 +513,7 @@ const AddressCompo = ({selectedAddressId,setSelectedAddressId}) => {
                   required
                 />
 
-                <InputField
+                {/* <InputField
                   label="State"
                   name="state"
                   value={formData.state}
@@ -523,7 +523,95 @@ const AddressCompo = ({selectedAddressId,setSelectedAddressId}) => {
                   error={errors.state}
                   inputClass={inputClasses("state")}
                   required
-                />
+                /> */}
+
+
+                <div>
+      <label
+        htmlFor={"state"}
+        className="mb-2 block text-sm font-medium text-gray-800"
+      >
+      State
+
+     
+          <span className="ml-1 text-red-500">
+            *
+          </span>
+      
+      </label>
+
+      <div className="relative">
+        <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-lg text-gray-400">
+       <IoMapOutline />
+        </span>
+
+
+<select name="state" id="state"  value={formData.state}   onChange={handleChange}   className={inputClasses("state")} >
+
+{
+
+[
+  // "Andaman and Nicobar Islands",
+  "Andhra Pradesh",
+  "Arunachal Pradesh",
+  "Assam",
+  "Bihar",
+  "Chandigarh",
+  "Chhattisgarh",
+  "Dadra and Nagar Haveli and Daman and Diu",
+  "Delhi",
+  "Goa",
+  "Gujarat",
+  "Haryana",
+  "Himachal Pradesh",
+  "Jammu and Kashmir",
+  "Jharkhand",
+  "Karnataka",
+  "Kerala",
+  "Ladakh",
+  "Lakshadweep",
+  "Madhya Pradesh",
+  "Maharashtra",
+  "Manipur",
+  "Meghalaya",
+  "Mizoram",
+  "Nagaland",
+  "Odisha",
+  "Puducherry",
+  "Punjab",
+  "Rajasthan",
+  "Sikkim",
+  "Tamil Nadu",
+  "Telangana",
+  "Tripura",
+  "Uttar Pradesh",
+  "Uttarakhand",
+  "West Bengal"
+].map((item,index)=><option value={item} key={index}>{item}</option>)
+
+}
+
+</select>
+
+        {/* <input
+          id={name}
+          name={name}
+          type={type}
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder}
+          maxLength={maxLength}
+          inputMode={inputMode}
+          className={inputClass}
+        /> */}
+      </div>
+
+      {errors.state && (
+        <p className="mt-1 text-xs text-red-500">
+          {errors.state}
+        </p>
+      )}
+    </div>
 
                 <InputField
                   label="City"

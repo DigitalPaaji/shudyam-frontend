@@ -278,7 +278,7 @@ const handelCouponCode = async()=>{
           setCouponError(
       error.response?.data?.message || "Invalid coupon code."
     );
-      toast.error(error.responsedata.message)
+      toast.error(error?.response?.data?.message)
   }
 }
 
