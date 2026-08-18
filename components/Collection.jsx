@@ -209,7 +209,7 @@ const Collection = () => {
     <section
       ref={sectionRef}
       id="collections"
-      className="overflow-hidden px-4 py-16 sm:px-6 md:px-12 md:py-20 lg:px-24 lg:py-24 xl:px-40"
+      className="overflow-hidden px-4 py-16 sm:px-6 md:px-12 lg:px-24 xl:py-24 xl:px-40"
     >
       {/* Heading */}
       <div className="mb-5 flex justify-center">

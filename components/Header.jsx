@@ -104,7 +104,7 @@ const Header = () => {
           {openSearch && <SearchPopup setOpenSearch={setOpenSearch} />}
 
           {/* Desktop Left Nav */}
-          <nav className="header-item hidden flex-1 items-center gap-8 lg:flex">
+          <nav className="header-item hidden flex-1 items-center gap-8 xl:flex">
             <Link href="/" className={navClass}>
               Home
             </Link>
@@ -200,7 +200,7 @@ const Header = () => {
           </nav>
 
           {/* Mobile Hamburger */}
-          <div className="header-item flex flex-1 lg:hidden">
+          <div className="header-item flex flex-1 xl:hidden">
             <button
               type="button"
               onClick={() => setMenuOpen((previous) => !previous)}
@@ -225,8 +225,8 @@ const Header = () => {
           </Link>
 
           {/* Right Nav Icons */}
-          <div className="header-item flex flex-1 items-center justify-end gap-1 sm:gap-2 lg:gap-7">
-            <nav className="hidden items-center gap-8 lg:flex">
+          <div className="header-item flex flex-1 items-center justify-end gap-1 sm:gap-2 xl:gap-7">
+            <nav className="hidden items-center gap-8 xl:flex">
               <Link href="/blog" className={navClass}>
                 Our Blogs
               </Link>
@@ -279,7 +279,7 @@ const Header = () => {
 
         {/* Mobile Menu Drawer */}
         <nav
-          className={`absolute z-20 left-0 top-full w-full border-t border-[#d9bd72]/20 bg-[#1b0102] px-5 py-4 transition-all duration-300 lg:hidden ${
+          className={`absolute z-20 left-0 top-full w-full border-t border-[#d9bd72]/20 bg-[#1b0102] px-5 py-4 transition-all duration-300 xl:hidden ${
             menuOpen
               ? "visible translate-y-0 opacity-100 pointer-events-auto"
               : "invisible -translate-y-3 pointer-events-none opacity-0"
@@ -427,7 +427,7 @@ const Header = () => {
         type="button"
         aria-label="Close menu"
         onClick={closeMenu}
-        className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 lg:hidden ${
+        className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 xl:hidden ${
           menuOpen ? "visible opacity-100 pointer-events-auto" : "invisible opacity-0 pointer-events-none"
         }`}
       />
