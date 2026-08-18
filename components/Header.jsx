@@ -171,7 +171,8 @@ const Header = () => {
                           {/* CATEGORY INFO */}
                           <div className="flex-1 min-w-0">
                             <p className="text-sm font-medium text-black text-wrap">
-                              {item.name}
+                             {item.name?.toLowerCase()
+  .replace(/\b\w/g, (char) => char.toUpperCase())}
                             </p>
                             <p className="mt-1 text-[11px] text-black/40">
                               Explore collection
