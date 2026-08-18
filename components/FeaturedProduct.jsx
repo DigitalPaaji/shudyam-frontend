@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-
+import { Autoplay, Navigation } from "swiper/modules";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import "swiper/css";
-
+import 'swiper/css/navigation';
 import UnderlineText from "./UnderlineText";
 import HeadLine from "./HeadLine";
 import ProductCard from "./ProductCard";
@@ -75,7 +75,7 @@ import { base_url } from "./utile";
 const FeaturedProduct = () => {
 
 const [products,setProducts]=useState([ ])
-
+const sliderRef = useRef(null);
   const fetchFeatured = async()=>{
     try {
       const response = await axios.get(`${base_url}/cache/product/featured`)
@@ -105,13 +105,25 @@ useEffect(()=>{
             styles="mt-4 text-[#650006]"
           />
         </div>
-
+<div  className="relative group">
+        <button className="best-seller-prev absolute p-2 left-0 top-[40%] z-10 -translate-x-1/3 -translate-y-1/2 flex  items-center justify-center rounded-full bg-white/60 text-[#760209] shadow-lg transition-all hover:bg-[#760209] hover:text-white xl:-translate-x-full">
+              
+                <IoIosArrowBack className="text-xl" /> 
+              </button>
       
+              <button className="best-seller-next p-2  absolute right-0 top-[40%] z-10 translate-x-1/3 -translate-y-1/2 flex  items-center justify-center rounded-full bg-white/60 text-[#760209] shadow-lg transition-all hover:bg-[#760209] hover:text-white xl:translate-x-full">
+              
+                <IoIosArrowForward  className="text-xl"  />
+              </button>
         <Swiper
-          modules={[Autoplay]}
+          modules={[Autoplay,Navigation]}
           loop={products.length > 3}
           grabCursor
           spaceBetween={18}
+           navigation={{
+            nextEl: ".best-seller-next",
+            prevEl: ".best-seller-prev",
+          }}
           slidesPerView={1.08}
           speed={750}
           autoplay={{
@@ -141,6 +153,7 @@ useEffect(()=>{
             </SwiperSlide>
           ))}
         </Swiper>
+        </div>
       </div>
     </section>
   );

@@ -7,7 +7,7 @@ import UnderlineText from "./UnderlineText";
 import { GoHeart, GoPlus } from "react-icons/go";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -15,71 +15,15 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import 'swiper/css/navigation';
 import axios from "axios";
 import { base_url, img_url } from "./utile";
 import { useDispatch, useSelector } from "react-redux";
 import { FiHeart } from "react-icons/fi";
 import { toggleWishlist } from "./store/wishlistslice";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
-
-// const products = [
-//   {
-//     id: 1,
-//     image: "p1.png",
-//     hoverimg: "hi.png",
-//     title: "Brass Saucepan with Insulated Handle",
-//     variants: [
-//       { size: 14, mrp: "10,500", basePrice: "19,500" },
-//       { size: 16, mrp: "12,500", basePrice: "21,500" },
-//       { size: 18, mrp: "13,500", basePrice: "23,500" },
-//     ],
-//   },
-//   {
-//     id: 2,
-//       image: "p1.png",
-//     hoverimg: "hi.png",
-//     title: "Brass Frying Pan",
-//     variants: [
-//       { size: 14, mrp: "15,400", basePrice: "24,400" },
-//       { size: 16, mrp: "17,400", basePrice: "27,400" },
-//       { size: 18, mrp: "19,400", basePrice: "29,400" },
-//     ],
-//   },
-//   {
-//     id: 3,
-//      image: "p1.png",
-//     hoverimg: "hi.png",
-//     title: "Brass Kadhri",
-//     variants: [
-//       { size: 14, mrp: "23,400", basePrice: "35,000" },
-//       { size: 16, mrp: "26,400", basePrice: "39,000" },
-//       { size: 18, mrp: "29,400", basePrice: "43,000" },
-//     ],
-//   },
-//   {
-//     id: 4,
-//      image: "p1.png",
-//     hoverimg: "hi.png",
-//     title: "Brass Saute Pan",
-//     variants: [
-//       { size: 14, mrp: "14,500", basePrice: "22,500" },
-//       { size: 16, mrp: "16,500", basePrice: "25,500" },
-//       { size: 18, mrp: "18,500", basePrice: "28,500" },
-//     ],
-//   },
-//   {
-//     id: 5,
-//      image: "p1.png",
-//     hoverimg: "hi.png",
-//     title: "Traditional Brass Frypan",
-//     variants: [
-//       { size: 14, mrp: "13,500", basePrice: "21,500" },
-//       { size: 16, mrp: "15,500", basePrice: "24,500" },
-//       { size: 18, mrp: "17,500", basePrice: "27,500" },
-//     ],
-//   },
-// ];
 
 const ProductCard = ({ product ,wishlist,dispatch}) => {
   const [selectedVariant, setSelectedVariant] = useState(
@@ -193,15 +137,15 @@ className={`absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center
     </Link>
   );
 };
-
+ 
 const BestSeller = () => {
   const sectionRef = useRef(null);
   const leftHeadingRef = useRef(null);
   const rightHeadingRef = useRef(null);
   const sliderRef = useRef(null);
-  const [products,setProducts]=useState([ ])
- const  wishlist = useSelector(state=>state.wishlist) 
-const dispatch = useDispatch()
+  const [products, setProducts] = useState([]);
+  const wishlist = useSelector((state) => state.wishlist);
+  const dispatch = useDispatch();
 
   useGSAP(
     () => {
@@ -212,12 +156,10 @@ const dispatch = useDispatch()
           trigger: sectionRef.current,
           start: "top 75%",
           toggleActions: "play none none reverse",
-          // markers: true,
         },
       });
 
       timeline
-        // Left heading comes from left
         .from(leftHeadingRef.current, {
           x: -80,
           y: 25,
@@ -225,8 +167,6 @@ const dispatch = useDispatch()
           duration: 0.9,
           ease: "power3.out",
         })
-
-        // Right description comes from right
         .from(
           rightHeadingRef.current,
           {
@@ -238,8 +178,6 @@ const dispatch = useDispatch()
           },
           "<"
         )
-
-        // Slider reveal
         .from(
           sliderRef.current,
           {
@@ -250,8 +188,6 @@ const dispatch = useDispatch()
           },
           "-=0.35"
         )
-
-        // Product card stagger
         .from(
           productCards,
           {
@@ -272,23 +208,22 @@ const dispatch = useDispatch()
     }
   );
 
-
-  const fetchBestseller = async()=>{
+  const fetchBestseller = async () => {
     try {
-      const response = await axios.get(`${base_url}/cache/product/bestseller`)
-      const data =await response.data;
-     
-if(data.success){
-  setProducts(data.products)
-}
+      const response = await axios.get(`${base_url}/cache/product/bestseller`);
+      const data = await response.data;
+
+      if (data.success) {
+        setProducts(data.products);
+      }
     } catch (error) {
-      
+      console.error(error);
     }
-  }
-       
-useEffect(()=>{
-  fetchBestseller()
-},[])
+  };
+
+  useEffect(() => {
+    fetchBestseller();
+  }, []);
 
   return (
     <section
@@ -307,7 +242,7 @@ useEffect(()=>{
         </div>
 
         <div ref={rightHeadingRef} className="w-full md:w-auto">
-          <p className= "md:max-w-[230px] text-sm leading-relaxed text-[#760209] md:text-right md:text-base">
+          <p className="md:max-w-[230px] text-sm leading-relaxed text-[#760209] md:text-right md:text-base">
             Indian households have used brass vessels for centuries.
           </p>
 
@@ -321,9 +256,26 @@ useEffect(()=>{
       </div>
 
       {/* Products slider */}
-      <div ref={sliderRef}>
+      <div ref={sliderRef} className="relative group">
+        
+        {/* Custom Navigation Buttons */}
+        <button className="best-seller-prev absolute p-2 left-0 top-[40%] z-10 -translate-x-1/3 -translate-y-1/2 flex  items-center justify-center rounded-full bg-white/60 text-[#760209] shadow-lg transition-all hover:bg-[#760209] hover:text-white xl:-translate-x-full">
+        
+          <IoIosArrowBack className="text-xl" /> 
+        </button>
+
+        <button className="best-seller-next p-2  absolute right-0 top-[40%] z-10 translate-x-1/3 -translate-y-1/2 flex  items-center justify-center rounded-full bg-white/60 text-[#760209] shadow-lg transition-all hover:bg-[#760209] hover:text-white xl:translate-x-full">
+        
+          <IoIosArrowForward  className="text-xl"  />
+        </button>
+
         <Swiper
-          modules={[Pagination, Autoplay]}
+          modules={[Pagination, Autoplay, Navigation]}
+          // Map Swiper navigation to custom classes
+          navigation={{
+            nextEl: ".best-seller-next",
+            prevEl: ".best-seller-prev",
+          }}
           spaceBetween={30}
           slidesPerView={1.08}
           speed={700}
@@ -353,11 +305,12 @@ useEffect(()=>{
           }}
           className="best-seller-swiper !pb-12"
         >
-          { products.length >0 && products.map((product) => (
-            <SwiperSlide key={product.id} className="h-auto">
-              <ProductCard product={product}  wishlist={wishlist} dispatch={dispatch}/>
-            </SwiperSlide>
-          ))}
+          {products.length > 0 &&
+            products.map((product) => (
+              <SwiperSlide key={product.id} className="h-auto">
+                <ProductCard product={product} wishlist={wishlist} dispatch={dispatch} />
+              </SwiperSlide>
+            ))}
         </Swiper>
       </div>
 
@@ -366,6 +319,7 @@ useEffect(()=>{
           height: auto;
         }
 
+        /* Pagination Styling */
         .best-seller-swiper .swiper-pagination-bullet {
           width: 7px;
           height: 7px;
@@ -381,6 +335,14 @@ useEffect(()=>{
           width: 22px;
           border-radius: 999px;
           background: #760209;
+        }
+
+        /* Swiper sets these disabled classes automatically */
+        .best-seller-prev.swiper-button-disabled,
+        .best-seller-next.swiper-button-disabled {
+          opacity: 0.3;
+          cursor: not-allowed;
+          pointer-events: none;
         }
       `}</style>
     </section>

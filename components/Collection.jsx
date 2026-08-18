@@ -14,8 +14,8 @@ import { img_url } from "./utile";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-const INITIAL_COUNT = 5;
-const LOAD_COUNT = 5;
+const INITIAL_COUNT = 4;
+const LOAD_COUNT = 4;
 
 const Collection = () => {
   const [catCount, setCatCount] = useState(INITIAL_COUNT);
@@ -222,7 +222,7 @@ const Collection = () => {
 
       {/* Loading Skeleton */}
       {loading && (
-        <div className="grid  gap-6 grid-cols-2 lg:grid-cols-5">
+        <div className="grid  gap-6 grid-cols-2 lg:grid-cols-4">
           {Array.from({ length: INITIAL_COUNT }).map((_, index) => (
             <div key={index} className="animate-pulse">
               <div className="aspect-square bg-[#f1e9e5]" />       
@@ -257,7 +257,7 @@ const Collection = () => {
 
       {/* Category Grid */}
       {!loading && !error && categories.length > 0 && (
-        <div className="grid  gap-6 grid-cols-2 lg:grid-cols-5">
+        <div className="grid  gap-6 grid-cols-2 lg:grid-cols-4">
           {visibleCategories.map((item, index) => (
             <div
               key={item._id}

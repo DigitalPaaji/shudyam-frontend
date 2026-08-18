@@ -20,7 +20,8 @@ import { getUser } from "./store/userSlice";
 import { loadCart } from "./store/AddtoCartLocal";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import { base_url } from "./utile";
+import { base_url, img_url } from "./utile";
+import { FiChevronRight, FiGrid } from "react-icons/fi";
 
 gsap.registerPlugin(useGSAP);
 
@@ -38,22 +39,19 @@ const Header = () => {
   const { showLogin } = useSelector((state) => state.toggleUser);
   const { isUser, user } = useSelector((state) => state.user);
   const { cart } = useSelector((state) => state.LocalCart);
-  const [products,setProducts]= useState([ ])
+  const [products, setProducts] = useState([]);
 
- const fetchRadnomproduct = async()=>{
-  try {
-    const response = await axios.get(`${base_url}/cache/products/random`)
-    const data = await response.data;
-    if(data.success){
-setProducts(data.products)
+  const fetchRadnomproduct = async () => {
+    try {
+      const response = await axios.get(`${base_url}/cache/products/random`);
+      const data = await response.data;
+      if (data.success) {
+        setProducts(data.products);
+      }
+    } catch (error) {
+      setProducts([]);
     }
-  } catch (error) {
-    setProducts([ ])
-  }
- }
-
-
-
+  };
 
   useGSAP(
     () => {
@@ -74,7 +72,7 @@ setProducts(data.products)
   };
 
   useEffect(() => {
-    fetchRadnomproduct()
+    fetchRadnomproduct();
     dispatch(getCategory());
     dispatch(loadCart());
     dispatch(getUser());
@@ -91,25 +89,24 @@ setProducts(data.products)
   const navClass =
     "relative py-2 text-xs  2xl:text-base text-[#150102] transition duration-300 after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#e5c66f] after:transition-all after:duration-300 hover:after:w-full";
 
-  // Slightly adjusted for mobile to prevent overlapping with the logo
   const iconClass =
-    "flex h-8 w-8  text-lg items-center justify-center text-[#fff9e6] transition hover:bg-white/10 hover:text-[#e5c66f]";
+    "flex h-8 w-8  text-lg items-center justify-center text-[#150102] ";
 
   return (
     <>
       <header
         ref={headerRef}
-        className="font-p z-[9999] w-full px-4 md:px-12 lg:px-24 xl:px-40 py-2 text-[#150102]"
+        className="relative z-50 bg-[#fff9e7] font-p w-full px-4 md:px-12 lg:px-24 xl:px-40 py-2 text-[#150102]"
       >
         {showLogin && <LoginPopUp />}
 
-        <div className="relative  mx-auto flex h-[75px]  md:h-[70px] items-center justify-between">
+        <div className="relative mx-auto flex h-[75px] md:h-[70px] items-center justify-between">
           {openSearch && <SearchPopup setOpenSearch={setOpenSearch} />}
 
           {/* Desktop Left Nav */}
           <nav className="header-item hidden flex-1 items-center gap-8 lg:flex">
-                   <Link href="/" className={navClass}>
-             Home
+            <Link href="/" className={navClass}>
+              Home
             </Link>
 
             <div className="group relative">
@@ -117,27 +114,78 @@ setProducts(data.products)
                 type="button"
                 className={`${navClass} flex items-center gap-1.5`}
               >
-                <Link href="/products">Products  </Link>
+                <span>Collections </span>
                 <FaAngleDown className="text-[9px] transition group-hover:rotate-180" />
               </button>
 
-              <div className="invisible absolute left-0 top-full z-[9999] w-[25rem] translate-y-3 pt-4 opacity-0 transition duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                <div className="border grid grid-cols-2 w-full  border-[#d9bd72]/25 bg-[#1b0102] p-2 shadow-2xl">
-                  {products?.length > 0 &&
-                    products.map((item) => (
-                      <Link
-                        key={item._id}
-                        href={`/product/${item.slug}`}
-                        className="block border-b font-sans border-[#d9bd72]/10 px-4 py-3 text-sm text-[#fff9e6] transition last:border-none hover:bg-white/5 hover:text-[#e5c66f]"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
+              <div className="hidden -translate-x-1/5 absolute top-full left-0 pt-5 translate-y-3 opacity-0 group-hover:block group-hover:translate-y-0 duration-300 group-hover:opacity-100">
+                <div className="mt-3 w-[500px] rounded-2xl bg-white border border-black/10 shadow-2xl overflow-hidden p-4">
+                  {/* SHOP ALL */}
+                  <Link
+                    href="/products"
+                    className="group flex items-center gap-4 p-3 mb-2 rounded-xl bg-p text-white transition-all duration-300"
+                  >
+                    <div className="w-14 h-14 shrink-0 rounded-lg overflow-hidden bg-white/10 flex items-center justify-center">
+                      <FiGrid size={22} />
+                    </div>
 
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold ">
+                        Shop All Products
+                      </p>
+                      <p className="text-xs opacity-60 mt-0.5">
+                        Explore our complete collection
+                      </p>
+                    </div>
 
+                    <FiChevronRight
+                      size={20}
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                  </Link>
 
+                  {/* CATEGORIES */}
+                  {categories?.length > 0 && (
+                    <div className="grid grid-cols-2 gap-2 mt-2">
+                      {categories.map((item) => (
+                        <Link
+                          href={`/products?category=${item.slug}`}
+                          key={item._id}
+                          className="group flex items-center gap-3 p-2.5 rounded-xl hover:bg-black/5 transition-all duration-300"
+                        >
+                          {/* CATEGORY IMAGE */}
+                          <div className="relative w-16 h-16 shrink-0 overflow-hidden rounded-xl bg-black/5">
+                            {item?.image ? (
+                              <img
+                                src={`${img_url}${item.image}`}
+                                alt={item?.name || "Category"}
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                              />
+                            ) : (
+                              <div className="w-full h-full flex items-center justify-center text-black/30">
+                                <FiGrid size={20} />
+                              </div>
+                            )}
+                          </div>
 
+                          {/* CATEGORY INFO */}
+                          <div className="flex-1 min-w-0">
+                            <p className="text-sm font-medium text-black truncate">
+                              {item.name}
+                            </p>
+                            <p className="mt-1 text-[11px] text-black/40">
+                              Explore collection
+                            </p>
+                          </div>
 
+                          <FiChevronRight
+                            size={17}
+                            className="shrink-0 text-black/30 transition-all duration-300 group-hover:text-black group-hover:translate-x-1"
+                          />
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -168,20 +216,12 @@ setProducts(data.products)
           </div>
 
           {/* Center Logo */}
-          <Link
-            href="/"
-            
-            className="cursor-pointer mt-4"
-          >
-            {/* <Link
-             href="/"
-              className="h-14 cursor-pointer w-36  bg-[#e5c66f] "
-              style={{
-                WebkitMask: "url('/logo.webp') center / contain no-repeat",
-                mask: "url('/logo.webp') center / contain no-repeat",
-              }}
-            /> */}
-            <img src="/images/logo1.webp" alt="" className=" cursor-pointer w-32 md:w-36 pb-2" />
+          <Link href="/" className="cursor-pointer mt-4 z-10">
+            <img
+              src="/images/logo1.webp"
+              alt=""
+              className="cursor-pointer w-32 md:w-36 pb-2"
+            />
           </Link>
 
           {/* Right Nav Icons */}
@@ -196,7 +236,6 @@ setProducts(data.products)
             </nav>
 
             <div className="flex items-center">
-              {/* Search Icon - Visible on all screens */}
               <button
                 type="button"
                 onClick={() => setOpenSearch(true)}
@@ -205,7 +244,6 @@ setProducts(data.products)
                 <IoSearchOutline className="text-lg" />
               </button>
 
-              {/* User Icon - Visible on all screens */}
               {isUser ? (
                 <Link
                   href="/account"
@@ -223,7 +261,6 @@ setProducts(data.products)
                 </div>
               )}
 
-              {/* Cart Icon - Visible on all screens */}
               <Link
                 href="/cart"
                 aria-label="Cart"
@@ -242,14 +279,13 @@ setProducts(data.products)
 
         {/* Mobile Menu Drawer */}
         <nav
-          className={`absolute left-0 top-full w-full border-t border-[#d9bd72]/20 bg-[#1b0102] px-5 py-4 transition-all duration-300 lg:hidden ${
+          className={`absolute z-20 left-0 top-full w-full border-t border-[#d9bd72]/20 bg-[#1b0102] px-5 py-4 transition-all duration-300 lg:hidden ${
             menuOpen
-              ? "visible translate-y-0 opacity-100"
+              ? "visible translate-y-0 opacity-100 pointer-events-auto"
               : "invisible -translate-y-3 pointer-events-none opacity-0"
           }`}
         >
-
-                  <Link
+          <Link
             href="/"
             onClick={closeMenu}
             className="block border-b border-[#d9bd72]/15 py-4 text-sm text-[#fff9e6]"
@@ -258,20 +294,23 @@ setProducts(data.products)
           </Link>
 
           <div className="border-b border-[#d9bd72]/15">
-        
-
-            <button
-              type="button"
-              onClick={() => setCollectionOpen((previous) => !previous)}
-              className="flex w-full items-center justify-between py-4 text-sm text-[#fff9e6]"
-            >
-             <Link href="/products">Products  </Link>
-              <FaAngleDown
-                className={`text-xs transition-transform duration-300 ${
-                  collectionOpen ? "rotate-180" : ""
-                }`}
-              />
-            </button>
+            <div className="flex w-full items-center justify-between py-4 text-sm text-[#fff9e6]">
+              {/* Changed from "Products" to "Collections" here */}
+              <span onClick={closeMenu} className="flex-1">
+                Collections
+              </span>
+              <button
+                type="button"
+                onClick={() => setCollectionOpen((previous) => !previous)}
+                className="pl-4 py-2"
+              >
+                <FaAngleDown
+                  className={`text-xs transition-transform duration-300 ${
+                    collectionOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+            </div>
 
             <div
               className={`grid transition-all duration-300 ${
@@ -280,17 +319,71 @@ setProducts(data.products)
             >
               <div className="overflow-hidden">
                 <div className="border-l border-[#d9bd72]/25 pl-4">
-                 {products?.length > 0 &&
-                    products.map((item) => (
-                      <Link
-                        key={item._id}
-                         onClick={() => setMenuOpen(false)}
-                        href={`/product/${item.slug}`}
-                        className="block border-b border-[#d9bd72]/10 px-4 py-3 text-xs text-[#fff9e6] transition last:border-none hover:bg-white/5 hover:text-[#e5c66f]"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
+                  <Link
+                    href="/products"
+                    className="group flex items-center gap-4 p-3 mb-2 rounded-xl bg-p text-white transition-all duration-300"
+                  >
+                    <div className="w-14 h-14 shrink-0 rounded-lg overflow-hidden bg-white/10 flex items-center justify-center">
+                      <FiGrid size={22} />
+                    </div>
+
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold ">
+                        Shop All Products
+                      </p>
+                      <p className="text-xs opacity-60 mt-0.5">
+                        Explore our complete collection
+                      </p>
+                    </div>
+
+                    <FiChevronRight
+                      size={20}
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                  </Link>
+
+                  {/* CATEGORIES */}
+                  {categories?.length > 0 && (
+                    <div className="grid grid-cols-1 gap-2 mt-2">
+                      {categories.map((item) => (
+                        <Link
+                          href={`/products?category=${item.slug}`}
+                          key={item._id}
+                          className="group flex items-center gap-3 p-2.5 rounded-xl hover:bg-white/95 transition-all duration-300"
+                        >
+                          {/* CATEGORY IMAGE */}
+                          <div className="relative w-16 h-16 shrink-0 overflow-hidden rounded-xl bg-white/95">
+                            {item?.image ? (
+                              <img
+                                src={`${img_url}${item.image}`}
+                                alt={item?.name || "Category"}
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                              />
+                            ) : (
+                              <div className="w-full h-full flex items-center justify-center text-white/60">
+                                <FiGrid size={20} />
+                              </div>
+                            )}
+                          </div>
+
+                          {/* CATEGORY INFO */}
+                          <div className="flex-1 min-w-0">
+                            <p className="text-sm font-medium text-white ">
+                              {item.name}
+                            </p>
+                            <p className="mt-1 text-[11px] text-white/60">
+                              Explore collection
+                            </p>
+                          </div>
+
+                          <FiChevronRight
+                            size={17}
+                            className="shrink-0 text-white/60 transition-all duration-300 group-hover:text-white group-hover:translate-x-1"
+                          />
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -304,7 +397,7 @@ setProducts(data.products)
             About Us
           </Link>
 
-          <Link 
+          <Link
             href="/craftsmanship"
             onClick={closeMenu}
             className="block border-b border-[#d9bd72]/15 py-4 text-sm text-[#fff9e6]"
@@ -330,17 +423,14 @@ setProducts(data.products)
         </nav>
       </header>
 
-      {/* Mobile Menu Overlay overlay */}
-      {menuOpen && (
-        <button
-          type="button"
-          aria-label="Close menu"
-          onClick={closeMenu}
-          className={`fixed inset-0 z-[9999] bg-black/50 transition-opacity duration-300 lg:hidden ${
-            menuOpen ? "visible opacity-100" : "invisible pointer-events-none opacity-0"
-          }`}
-        />
-      )}
+      <button
+        type="button"
+        aria-label="Close menu"
+        onClick={closeMenu}
+        className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 lg:hidden ${
+          menuOpen ? "visible opacity-100 pointer-events-auto" : "invisible opacity-0 pointer-events-none"
+        }`}
+      />
     </>
   );
 };
