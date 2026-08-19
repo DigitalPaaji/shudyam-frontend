@@ -108,7 +108,8 @@ className={`absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center
           </div>
 
           <div className="flex shrink-0 items-stretch gap-1.5">
-            <select
+      
+      {product.variants[0]?.attributes?.value ?       <select
               value={selectedVariant.size}
               onChange={handleVariantChange}
               onClick={(e)=>e.preventDefault()}
@@ -120,8 +121,12 @@ className={`absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center
                   {variant.attributes.value} 
                 </option>
               ))}
-            </select>
+            </select> :
+          <div className="cursor-pointer rounded-md border border-[#eee4ce] bg-[#f5edda] px-1.5 py-1 text-xs text-[#790007] outline-none transition hover:border-[#790007]/30 focus:border-[#790007]">
 
+Standard
+            </div>
+} 
             <button
               type="button"
               className="flex cursor-pointer shrink-0 items-center justify-center gap-1 rounded-md bg-[#760209] px-2.5 py-2 text-[10px] font-medium text-white transition duration-300 hover:bg-[#150102] sm:px-3 sm:text-xs"

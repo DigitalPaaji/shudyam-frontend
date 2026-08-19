@@ -184,7 +184,7 @@ const dispatch = useDispatch()
 
 Standard
             </div>
-}
+}   
         </div>
 
         <button
