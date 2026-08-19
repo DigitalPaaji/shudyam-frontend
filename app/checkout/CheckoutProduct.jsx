@@ -393,7 +393,7 @@ const removeCoupon = () => {
   {!appliedCoupon ? (
     <>
       <div className="flex gap-2">
-        {/* <input
+        <input
           type="text"
           value={couponCode}
           onChange={(e) => {
@@ -401,8 +401,8 @@ const removeCoupon = () => {
             setCouponError("");
           }}
           placeholder="Enter Coupon Code"
-          className=" rounded-lg border border-gray-300 px-4 py-2.5 text-base uppercase outline-none focus:border-green-600"
-        /> */}
+          className=" w-fit rounded-lg border border-gray-300 px-4 py-2.5 text-base uppercase outline-none focus:border-green-600"
+        />
 
         <button
           onClick={handelCouponCode}
