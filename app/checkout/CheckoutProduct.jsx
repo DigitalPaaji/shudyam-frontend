@@ -318,8 +318,8 @@ const removeCoupon = () => {
         <div className="">
          
 
-        <aside className="rounded-3xl border border-gray-200  p-5 shadow-sm lg:sticky lg:top-24 sm:p-6">
-            {/* <div className="flex items-center justify-between border-b border-gray-100 pb-5">
+        <aside className="rounded-3xl border border-gray-200  p-5 shadow-sm lg:sticky lg:top-24 ">
+            <div className="flex items-center justify-between border-b border-gray-100 pb-5">
               <div className="flex items-center gap-3">
                 <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#f4e9e4] text-[#7c2d32]">
                   <FiPackage className="text-xl" />
@@ -380,9 +380,9 @@ const removeCoupon = () => {
                   </span>
                 </div>
               )}
-            </div> */}
+            </div>
            
-
+{/* 
     <div className="border-t border-gray-200 pt-5">
 
   {!appliedCoupon ? (
@@ -520,7 +520,7 @@ const removeCoupon = () => {
             <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-400">
               <FiLock />
               Secure and encrypted checkout
-            </div>
+            </div> */}
           </aside> 
 
           
