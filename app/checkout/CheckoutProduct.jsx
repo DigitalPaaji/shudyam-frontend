@@ -469,7 +469,7 @@ const removeCoupon = () => {
   )}
 
 </div>
-
+*/}
 
 
             <div className="flex items-end justify-between border-t border-gray-200 pt-5">
@@ -489,7 +489,7 @@ const removeCoupon = () => {
 
 
               
-            </div>*/}
+            </div>
 
             {formError && (
               <div className="mt-5 flex gap-2 rounded-xl border border-red-200 bg-red-50 p-3 text-xs leading-5 text-red-600">
