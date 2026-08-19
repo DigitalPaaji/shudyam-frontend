@@ -401,7 +401,7 @@ const removeCoupon = () => {
             setCouponError("");
           }}
           placeholder="Enter Coupon Code"
-          className=" w-[20rem]  md:w-fit rounded-lg border border-gray-300 px-4 py-2.5 text-base uppercase outline-none focus:border-green-600"
+          className=" w-[16rem]  md:w-fit rounded-lg border border-gray-300 px-4 py-2.5 text-base uppercase outline-none focus:border-green-600"
         />
 
         <button
