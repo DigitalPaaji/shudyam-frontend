@@ -36,6 +36,10 @@ const sortArray = [
     value: "oldest",
   },
   {
+    name: "Best seller",
+    value: "bestseller",
+  },
+  {
     name: "Price: Low to High",
     value: "price-low",
   },
