@@ -381,6 +381,11 @@ const removeCoupon = () => {
                 </div>
               )}
             </div>
+
+
+
+
+
            
 {/* 
     <div className="border-t border-gray-200 pt-5">
@@ -484,7 +489,7 @@ const removeCoupon = () => {
 
 
               
-            </div>
+            </div>*/}
 
             {formError && (
               <div className="mt-5 flex gap-2 rounded-xl border border-red-200 bg-red-50 p-3 text-xs leading-5 text-red-600">
@@ -520,7 +525,13 @@ const removeCoupon = () => {
             <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-400">
               <FiLock />
               Secure and encrypted checkout
-            </div> */}
+            </div> 
+
+
+
+
+
+
           </aside> 
 
           
