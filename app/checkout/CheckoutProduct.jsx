@@ -387,7 +387,7 @@ const removeCoupon = () => {
 
 
            
-{/* 
+
     <div className="border-t border-gray-200 pt-5">
 
   {!appliedCoupon ? (
@@ -469,7 +469,7 @@ const removeCoupon = () => {
   )}
 
 </div>
-*/}
+
 
 
             <div className="flex items-end justify-between border-t border-gray-200 pt-5">
