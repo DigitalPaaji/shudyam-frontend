@@ -318,7 +318,7 @@ const removeCoupon = () => {
         <div className="">
          
 
-          <aside className="rounded-3xl border border-gray-200  p-5 shadow-sm lg:sticky lg:top-24 sm:p-6">
+          {/* <aside className="rounded-3xl border border-gray-200  p-5 shadow-sm lg:sticky lg:top-24 sm:p-6">
             <div className="flex items-center justify-between border-b border-gray-100 pb-5">
               <div className="flex items-center gap-3">
                 <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#f4e9e4] text-[#7c2d32]">
@@ -408,11 +408,7 @@ const removeCoupon = () => {
         </button>
       </div>
 
-      {/* {couponError && (
-        <p className="mt-2 text-sm text-red-600">
-          {couponError}
-        </p>
-      )} */}
+     
     </>
   ) : (
     <div className="rounded-xl border border-green-200 bg-green-50 p-4">
@@ -525,7 +521,7 @@ const removeCoupon = () => {
               <FiLock />
               Secure and encrypted checkout
             </div>
-          </aside>
+          </aside> */}
 
           
         </div>

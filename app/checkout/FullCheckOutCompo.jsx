@@ -238,9 +238,9 @@ const handleSubmitPayment = async () => {
     </div>
 
 
-    {/* <div className=' lg:col-span-1 '>
+    <div className=' lg:col-span-1 '>
       <CheckoutProduct handelSubmitPayment={handleSubmitPayment} product={cartParam} checkoutData={checkoutData}   setCheckoutData={(item)=>setCheckoutData(prev=>({...prev,...item}))}/>
-    </div> */}
+    </div>
 
 
 
