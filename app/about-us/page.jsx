@@ -102,6 +102,33 @@ const AboutUsPage = () => {
     },
   ];
 
+  const generations = [
+    {
+      number: "1",
+      name: "Mehtab Singh",
+      gen: "1st Generation (1942)",
+      desc: "The beginning of a family legacy.",
+    },
+    {
+      number: "2",
+      name: "Raghunandan Lal",
+      gen: "2nd Generation",
+      desc: "Building trust through dedication and craftsmanship.",
+    },
+    {
+      number: "3",
+      name: "Achru Ram",
+      gen: "3rd Generation",
+      desc: "Preserving tradition while embracing change.",
+    },
+    {
+      number: "4",
+      name: "SHUDYAM",
+      gen: "4th Generation",
+      desc: "Bringing timeless brass and copper craftsmanship into modern homes.",
+    },
+  ];
+
   return (
     <main className="overflow-hidden bg-[#FFF9E6] text-[#211714]">
       
@@ -125,7 +152,6 @@ const AboutUsPage = () => {
 
         
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-        {/* <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-[#faf8f5]" /> */}
 
         <div className="relative  mx-auto flex min-h-[70vh]  items-center px-4 md:px-12 lg:px-24 xl:px-40 py-24">
           <motion.div
@@ -145,24 +171,6 @@ const AboutUsPage = () => {
               Purity shaped <br />
               <span className="italic text-[#d79461]">into tradition.</span>
             </h1>
-
-            {/* <p className="mt-8 max-w-xl text-base font-light leading-relaxed text-white/90 ">
-              Shudyam brings the warmth of traditional Indian brassware into modern homes through thoughtful design, skilled craftsmanship, and a deep respect for purity.
-            </p> */}
-
-            {/* <div className="mt-12 flex flex-wrap items-center gap-6">
-              <Link
-                href="/products"
-                className="group relative overflow-hidden bg-[#b76a3e] px-9 py-4 text-sm font-medium tracking-wide text-white transition-all hover:bg-[#9d5733]"
-              >
-                <span className="relative z-10 flex items-center gap-3">
-                  Explore Collection
-                  <FaArrowRight className="transition-transform duration-500 group-hover:translate-x-2" />
-                </span>
-              </Link>
-
-             
-            </div> */}
           </motion.div>
         </div>
       </section>
@@ -233,6 +241,63 @@ const AboutUsPage = () => {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Our Legacy (Added Section based on PDF data) */}
+      <section className="bg-[#1a110e] py-24 text-white relative overflow-hidden">
+        {/* Subtle background glow */}
+        <div className="absolute top-0 right-0 h-[500px] w-[500px] bg-[#b76a3e]/10 blur-[150px] rounded-full pointer-events-none" />
+        
+        <div className="mx-auto px-4 md:px-12 lg:px-24 xl:px-40 relative z-10">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-sm font-semibold uppercase text-[#d79461]">
+              Crafted Since 1942[cite: 1]
+            </p>
+            <h2 className="mt-6 font-serif text-4xl font-light md:text-5xl">
+              Four Generations of <span className="italic text-[#d79461]">Tradition.</span>[cite: 1]
+            </h2>
+            <div className="mt-8 space-y-6 font-light leading-relaxed text-white/80 text-lg">
+              <p>
+                Some stories are not written in books. They are passed down through families, carried through generations, and preserved through the work of skilled hands[cite: 1].
+              </p>
+              <p>
+                Our story began in 1942, when Mehtab Singh, the first generation of our family, started a humble journey in the world of traditional metalware[cite: 1]. The legacy was then carried forward by his son, Raghunandan Lal, who strengthened the foundation of the family business through hard work, honesty, and an unwavering commitment to quality[cite: 1].
+              </p>
+              <p>
+                The third generation, led by Achru Ram, continued to protect the traditional knowledge of crafting and selecting authentic brass and copper utensils while adapting to the changing needs of a new era[cite: 1]. Today, we proudly stand as the fourth generation behind SHUDYAM[cite: 1].
+              </p>
+            </div>
+          </div>
+
+          {/* Generational Timeline */}
+          <div className="mt-20 grid gap-8 md:grid-cols-4 relative">
+            <div className="hidden md:block absolute top-10 left-0 w-full h-[1px] bg-[#d79461]/30 z-0"></div>
+
+            {generations.map((gen, index) => (
+              <motion.div 
+                key={gen.number}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="relative z-10 flex flex-col items-center text-center"
+              >
+                <div className={`w-20 h-20 rounded-full flex items-center justify-center font-serif text-2xl mb-6 transition-all duration-500 ${index === 3 ? 'bg-[#d79461] text-[#1a110e] border-[4px] border-[#1a110e] shadow-[0_0_0_2px_#d79461]' : 'bg-[#2a1c18] border border-[#d79461]/50 text-[#d79461]'}`}>
+                  {gen.number}
+                </div>
+                <h3 className={`font-serif text-2xl ${index === 3 ? 'text-white' : 'text-[#d79461]'}`}>
+                  {gen.name}[cite: 1]
+                </h3>
+                <p className="text-xs text-white/50 uppercase tracking-widest mt-2 mb-4">
+                  {gen.gen}[cite: 1]
+                </p>
+                <p className="text-sm font-light text-white/70 px-4">
+                  {gen.desc}[cite: 1]
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -445,23 +510,6 @@ const AboutUsPage = () => {
         </div>
       </section>
 
-      {/* Founder note */}
-      {/* <section className="bg-[#FFF9E6] py-24 md:py-32">
-        <div className="mx-auto max-w-4xl px-5 text-center md:px-10">
-          <FaQuoteLeft className="mx-auto text-4xl text-[#e5ddd4]" />
-          
-          <blockquote className="mt-10 font-serif text-3xl font-light leading-relaxed text-[#2b1d18] md:text-5xl">
-            “We are not simply creating utensils. We are preserving the warmth, care, and beauty that have always made Indian kitchens feel like home.”
-          </blockquote>
-          
-          <div className="mx-auto mt-12 h-px w-20 bg-[#b76a3e]" />
-          
-          <p className="mt-8 text-sm font-semibold uppercase  text-[#a75d36]">
-            A Note from Team Shudyam
-          </p>
-        </div>
-      </section> */}
-
       {/* CTA */}
       <section className="bg-[#FFF9E6] px-5 pb-24 md:px-10 md:pb-32 lg:px-16">
         <div className="relative mx-auto max-w-[1450px] overflow-hidden bg-[#1a110e] px-6 py-20 text-center text-white md:px-12 md:py-28">
@@ -496,6 +544,3 @@ const AboutUsPage = () => {
 };
 
 export default AboutUsPage;
-
-// Note: Ensure you import FaQuoteLeft from react-icons/fa6 at the top of your file:
-// import { FaCheck, FaHeart, FaLeaf, FaShieldHalved, FaHandsHoldingCircle, FaArrowRight, FaQuoteLeft } from "react-icons/fa6";

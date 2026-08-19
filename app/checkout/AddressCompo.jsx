@@ -27,6 +27,119 @@ import { toast } from "react-toastify";
 
 axios.defaults.withCredentials = true;
 
+
+const indianCities = [
+  "Ahmedabad",
+  "Agra",
+  "Ajmer",
+  "Aligarh",
+  "Allahabad",
+  "Amritsar",
+  "Anand",
+  "Asansol",
+  "Aurangabad",
+  "Bareilly",
+  "Belgaum",
+  "Bengaluru",
+  "Bharatpur",
+  "Bhilai",
+  "Bhopal",
+  "Bhubaneswar",
+  "Bikaner",
+  "Bilaspur",
+  "Bokaro",
+  "Chandigarh",
+  "Chennai",
+  "Coimbatore",
+  "Cuttack",
+  "Dehradun",
+  "Delhi",
+  "Dhanbad",
+  "Dharamshala",
+  "Durg",
+  "Durgapur",
+  "Erode",
+  "Faridabad",
+  "Gandhinagar",
+  "Ghaziabad",
+  "Gorakhpur",
+  "Gurugram",
+  "Guwahati",
+  "Gwalior",
+  "Haridwar",
+  "Hisar",
+  "Hubli",
+  "Hyderabad",
+  "Imphal",
+  "Indore",
+  "Jabalpur",
+  "Jaipur",
+  "Jalandhar",
+  "Jammu",
+  "Jamnagar",
+  "Jamshedpur",
+  "Jhansi",
+  "Jodhpur",
+  "Kanpur",
+  "Karnal",
+  "Kochi",
+  "Kolhapur",
+  "Kolkata",
+  "Kota",
+  "Kozhikode",
+  "Lucknow",
+  "Ludhiana",
+  "Madurai",
+  "Mangalore",
+  "Meerut",
+  "Moradabad",
+  "Mumbai",
+  "Mysuru",
+  "Nagpur",
+  "Nainital",
+  "Nanded",
+  "Nashik",
+  "Navi Mumbai",
+  "Noida",
+  "Panipat",
+  "Patiala",
+  "Patna",
+  "Pimpri-Chinchwad",
+  "Pondicherry",
+  "Prayagraj",
+  "Pune",
+  "Raipur",
+  "Rajkot",
+  "Ranchi",
+  "Rishikesh",
+  "Rohtak",
+  "Rourkela",
+  "Saharanpur",
+  "Salem",
+  "Sangli",
+  "Shillong",
+  "Shimla",
+  "Siliguri",
+  "Srinagar",
+  "Surat",
+  "Thane",
+  "Thiruvananthapuram",
+  "Thrissur",
+  "Tiruchirappalli",
+  "Tirunelveli",
+  "Udaipur",
+  "Ujjain",
+  "Vadodara",
+  "Varanasi",
+  "Vasai-Virar",
+  "Vellore",
+  "Vijayawada",
+  "Visakhapatnam",
+  "Warangal"
+];
+
+
+
 const initialForm = {
   firstName: "",
   lastName: "",
@@ -613,7 +726,49 @@ const AddressCompo = ({selectedAddressId,setSelectedAddressId}) => {
       )}
     </div>
 
-                <InputField
+
+
+
+<div>
+      <label
+        htmlFor={"city"}
+        className="mb-2 block text-sm font-medium text-gray-800"
+      >
+        City
+
+      
+          <span className="ml-1 text-red-500">
+            *
+          </span>
+      
+      </label>
+
+      <div className="relative">
+        <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-lg text-gray-400">
+       <IoBusinessOutline />
+        </span>
+
+       <select name="city" id="City"  value={formData.city}   onChange={handleChange}   className={inputClasses("City")} >
+
+{
+
+indianCities.map((item,index)=><option value={item} key={index}>{item}</option>)
+
+}
+
+</select>
+      </div>
+
+      {errors.city && (
+        <p className="mt-1 text-xs text-red-500">
+          {errors.city}
+        </p>
+      )}
+    </div>
+
+
+
+                {/* <InputField
                   label="City"
                   name="city"
                   value={formData.city}
@@ -623,7 +778,8 @@ const AddressCompo = ({selectedAddressId,setSelectedAddressId}) => {
                   error={errors.city}
                   inputClass={inputClasses("city")}
                   required
-                />
+                  indianCities
+                /> */}
 
                 <InputField
                   label="House / Flat Number"

@@ -179,7 +179,8 @@ const Footer = () => {
               </Link>
 
               <Link
-                href="#"
+                href="https://www.instagram.com/shudyam.india?igsh=MTFxejYyemRlM2ZtbA=="
+                target="_blank"
                 aria-label="Instagram"
                 className="flex h-6 w-6 items-center justify-center  text-[#fff1c9] transition-all duration-300 hover:-translate-y-1 hover:border-[#fff1c9] hover:bg-[#fff1c9] hover:text-[#4b0808]"
               >

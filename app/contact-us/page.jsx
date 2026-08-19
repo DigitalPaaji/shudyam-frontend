@@ -126,10 +126,18 @@ const ContactUsPage = () => {
       setErrorMessage("");
       setSuccessMessage("");
 
-      const response = await axios.post(`${base_url}/contact`, formData);
+const sendData ={formdata:formData,sendto:["jontypundir12@gmail.com"],subject:"Contact Website Query "}
 
+      const response = await fetch(`https://sendmail.digitalpaaji.com/sendmail`,{
+        method:"POST",
+        headers:{
+      "Content-Type": "application/json",
+        },
+        body:JSON.stringify(sendData)
+      } );
+const data =  await response.json()
       setSuccessMessage(
-        response.data?.message ||
+        data?.message ||
           "Thank you for contacting Shudyam. Our team will get back to you soon."
       );
       setFormData(initialFormData);
@@ -288,7 +296,7 @@ const ContactUsPage = () => {
             </div>
 
             <a
-              href="https://wa.me/919876543210"
+              href="https://wa.me/919050334488"
               target="_blank"
               rel="noopener noreferrer"
               className="group mt-6 inline-flex items-center gap-4 bg-[#52070a] px-9 py-4 text-sm font-medium tracking-wide text-white transition-all hover:bg-[#1a110e]"

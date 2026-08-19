@@ -7,12 +7,39 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Ordercompo from "./Ordercompo";
 import AddressCompo2 from "./AddressCompo2";
-
+import axios from "axios"
+import { base_url } from "@/components/utile";
+import { toast } from "react-toastify";
 const Page = () => {
   const { isUser, user, isLoading } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const router = useRouter();
   const [showingData,setShowingData]=useState("profile")
+
+ const handelLogout = async()=>{
+  try{
+const response = await  axios.get(`${base_url}/auth/logout`,{
+  withCredentials:true
+})
+const data = await response.data;
+if(data.success){
+  toast.success(data.message)
+  
+  location.href="/"
+
+}
+else{
+toast.error(data.message)
+}
+
+
+  }
+  catch(error){
+toast.error(error?.response?.data?.message)
+
+  }
+ }
+
 
   useEffect(() => {
     if (!isLoading && !isUser) {
@@ -46,7 +73,7 @@ const Page = () => {
 
   return (
     <div className="min-h-screen bg-[#faf7f2] text-[#2b1512]">
-      <div className=" bg-gradient-to-r from-[#210102] via-[#62080d] to-[#210102] h-[75px]" />
+      {/* <div className=" bg-gradient-to-r from-[#210102] via-[#62080d] to-[#210102] h-[75px]" /> */}
 
       <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="mb-8">
@@ -111,6 +138,11 @@ const Page = () => {
       <span className="text-[#62080d]">→</span>
     </Link>
 
+   <button onClick={()=>handelLogout()} className="flex w-full bg-p text-white items-center justify-between rounded-2xl border border-[#f0e4d9] px-4 py-3 text-sm font-medium  transition hover:border-[#62080d] hover:bg-[#fff8f2]"
+    >
+      <span>Logout</span>
+      <span className="text-white">→</span>
+    </button>
 
           
             </div>
@@ -209,12 +241,12 @@ const ProfieCompo=({user,setShowingData})=>{
                   </p>
                 </div>
 
-                <Link
+                {/* <Link
                   href="/profile/edit"
                   className="w-fit rounded-full bg-[#62080d] px-5 py-2 text-sm font-medium text-white transition hover:bg-[#210102]"
                 >
                   Edit Profile
-                </Link>
+                </Link> */}
               </div>
 
               <div className="mt-6 grid gap-4 sm:grid-cols-2">

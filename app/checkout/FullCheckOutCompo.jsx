@@ -24,7 +24,7 @@ const [checkoutData,setCheckoutData] =useState({
   couponCode:"",
 
 })
-console.log("Razorpay loaded:", checkoutData);
+
 
   
 const loadRazorpay = () => {
@@ -67,12 +67,14 @@ const loadRazorpay = () => {
 
 const handleSubmitPayment = async () => {
   try {
-    console.log("Payment started");
+
   
     const scriptLoaded = await loadRazorpay();
 
-    console.log("Razorpay loaded:", checkoutData);
-    console.log("window.Razorpay:", window.Razorpay);
+  if(!checkoutData.address){
+    toast.warn("Address required")
+    return
+  }
 
     if (!scriptLoaded || !window.Razorpay) {
       toast.error("Razorpay SDK failed to load");
@@ -89,7 +91,7 @@ const handleSubmitPayment = async () => {
 
     const data = orderResponse.data;
 
-    console.log("Order create response:", data);
+    
 
     if (!data.success) {
       toast.error(data.message || "Failed to create payment order");
@@ -98,19 +100,19 @@ const handleSubmitPayment = async () => {
 
     if (!data.key) {
       toast.error("Razorpay key missing");
-      console.log("Missing key:", data);
+  
       return;
     }
 
     if (!data.order?.id) {
       toast.error("Razorpay order id missing");
-      console.log("Missing order id:", data);
+ 
       return;
     }
 
     if (!data.order?.amount) {
       toast.error("Razorpay amount missing");
-      console.log("Missing amount:", data);
+   
       return;
     }
 
@@ -193,16 +195,16 @@ const handleSubmitPayment = async () => {
     const razorpay = new window.Razorpay(options);
 
     razorpay.on("payment.failed", function (response) {
-      console.error("Payment failed:", response.error);
+  
 
       toast.error(response.error?.description || "Payment failed");
     });
 
-    console.log("Opening Razorpay popup");
+
 
     razorpay.open();
   } catch (error) {
-    console.error("Payment error:", error);
+
 
     toast.error(
       error.response?.data?.message ||
@@ -218,7 +220,7 @@ const handleSubmitPayment = async () => {
 
   return (
     <div className='min-h-screen'>
-              <div className=" bg-linear-to-r from-[#210102] via-[#62080d] to-[#210102] h-[75px]" />
+              {/* <div className=" bg-linear-to-r from-[#210102] via-[#62080d] to-[#210102] h-[75px]" /> */}
 
 
 

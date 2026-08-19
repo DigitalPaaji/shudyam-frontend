@@ -114,7 +114,7 @@ const Header = () => {
                 type="button"
                 className={`${navClass} flex items-center gap-1.5`}
               >
-                <span>Collections </span>
+                <span>Collections</span>
                 <FaAngleDown className="text-[9px] transition group-hover:rotate-180" />
               </button>
 
@@ -295,14 +295,14 @@ const Header = () => {
           </Link>
 
           <div className="border-b border-[#d9bd72]/15">
-            <div className="flex w-full items-center justify-between py-4 text-sm text-[#fff9e6]">
+            <div className="flex w-full items-center justify-between py-4 text-sm text-[#fff9e6]" onClick={() => setCollectionOpen((previous) => !previous)}>
               {/* Changed from "Products" to "Collections" here */}
-              <span onClick={closeMenu} className="flex-1">
+              <span  className="flex-1">
                 Collections
               </span>
               <button
                 type="button"
-                onClick={() => setCollectionOpen((previous) => !previous)}
+                
                 className="pl-4 py-2"
               >
                 <FaAngleDown
@@ -322,6 +322,7 @@ const Header = () => {
                 <div className="border-l border-[#d9bd72]/25 pl-4">
                   <Link
                     href="/products"
+                    onClick={closeMenu}
                     className="group flex items-center gap-4 p-3 mb-2 rounded-xl bg-p text-white transition-all duration-300"
                   >
                     <div className="w-14 h-14 shrink-0 rounded-lg overflow-hidden bg-white/10 flex items-center justify-center">
@@ -349,8 +350,9 @@ const Header = () => {
                       {categories.map((item) => (
                         <Link
                           href={`/products?category=${item.slug}`}
+                          onClick={closeMenu}
                           key={item._id}
-                          className="group flex items-center gap-3 p-2.5 rounded-xl hover:bg-white/95 transition-all duration-300"
+                          className="group flex items-center gap-3 p-2.5 rounded-xl  transition-all duration-300"
                         >
                           {/* CATEGORY IMAGE */}
                           <div className="relative w-16 h-16 shrink-0 overflow-hidden rounded-xl bg-white/95">

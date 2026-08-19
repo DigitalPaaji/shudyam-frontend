@@ -333,9 +333,10 @@ const cartParam = encodeURIComponent(JSON.stringify(localCart));
                       </div>
 
                       <div className="text-right">
-                        <p className="text-xs text-gray-500">
+                   {cartData.length > 1 &&      <p className="text-xs text-gray-500">
                           {formatPrice(item.price)} each
                         </p>
+}
 
                         <p className="mt-1 text-lg font-semibold text-gray-950">
                           {formatPrice(item.total)}
@@ -424,34 +425,40 @@ const cartParam = encodeURIComponent(JSON.stringify(localCart));
 
 const EmptyCart = ({ onBack }) => {
   return (
-    <div className="flex min-h-[75vh] items-center justify-center  px-4">
-      <div className="max-w-md text-center">
-        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-sm">
-          <FiShoppingBag className="text-3xl text-[#8b5e3c]" />
-        </div>
-<button
+    <div className="min-h-[75vh] px-4 py-8">
+      <div className="mx-auto max-w-7xl">
+        <button
           type="button"
           onClick={onBack}
           className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition hover:border-gray-900 hover:text-gray-950"
         >
           <FiArrowLeft /> Back
         </button>
-        <h2 className="mt-6 text-2xl font-semibold text-gray-950">
-          Your cart is empty
-        </h2>
+      </div>
 
-        <p className="mt-2 text-sm leading-6 text-gray-500">
-          Add some beautiful brass products to your cart and
-          they will appear here.
-        </p>
+      <div className="mx-auto flex min-h-[60vh] max-w-md items-center justify-center text-center">
+        <div>
+          <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-sm">
+            <FiShoppingBag className="text-3xl text-[#8b5e3c]" />
+          </div>
 
-        <Link
-          href="/products"
-          className="mt-7 inline-flex items-center gap-2 rounded-full bg-gray-950 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#8b5e3c]"
-        >
-          Start Shopping
-          <FiArrowRight />
-        </Link>
+          <h2 className="mt-6 text-2xl font-semibold text-gray-950">
+            Your cart is empty
+          </h2>
+
+          <p className="mt-2 text-sm leading-6 text-gray-500">
+            Add some beautiful brass products to your cart and they will appear
+            here.
+          </p>
+
+          <Link
+            href="/products"
+            className="mt-7 inline-flex items-center gap-2 rounded-full bg-p px-7 py-3.5 text-sm font-semibold text-white"
+          >
+            Start Shopping
+            <FiArrowRight />
+          </Link>
+        </div>
       </div>
     </div>
   );

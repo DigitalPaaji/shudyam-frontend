@@ -566,7 +566,8 @@ else{
               <div className="product-fade-item">
                 <div className="mb-3 flex items-center justify-between gap-3 sm:mb-4">
                   <h2 className="text-sm font-semibold">
-                    Select size
+                    Select {product?.variants[0]?.attributes?.itemtype || "size"}
+                    
                   </h2>
 
                   {/* {selectedVariant?.sku && (

@@ -164,7 +164,7 @@ const dispatch = useDispatch()
               
             </div>
           </div>
-
+{product.variants[0]?.attributes?.value ? 
           <div className="shrink-0">
             <select
               value={activeVariant.size}
@@ -179,7 +179,12 @@ const dispatch = useDispatch()
                 </option>
               ))}
             </select>
-          </div>
+          </div>:
+          <div className="cursor-pointer rounded-md border border-[#eee4ce] bg-[#f5edda] px-1.5 py-1 text-xs text-[#790007] outline-none transition hover:border-[#790007]/30 focus:border-[#790007]">
+
+Standard
+            </div>
+}
         </div>
 
         <button

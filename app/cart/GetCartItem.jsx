@@ -406,9 +406,10 @@ const [actionLoadingId, setActionLoadingId] = useState("");
                         </div>
 
                         <div className="text-right">
-                          <p className="text-xs text-gray-500">
+                        {cartData.length > 1 &&  <p className="text-xs text-gray-500">
                             {formatPrice(item.price)} each
                           </p>
+            }
 
                           <p className="mt-1 text-lg font-semibold text-gray-950">
                             {formatPrice(item.total)}
