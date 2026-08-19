@@ -220,7 +220,6 @@ const handleSubmitPayment = async () => {
 
   return (
     <div className='min-h-screen'>
-              {/* <div className=" bg-linear-to-r from-[#210102] via-[#62080d] to-[#210102] h-[75px]" /> */}
 
 
 
@@ -228,10 +227,10 @@ const handleSubmitPayment = async () => {
 
 
         
-        <div className=' bg-[#f8f7f4] px-4 md:px-12 lg:px-24 xl:px-40 py-24 grid lg:grid-cols-3 gap-5'>
+        <div className='  px-4 md:px-12 lg:px-24 xl:px-40 py-24 grid lg:grid-cols-3 gap-5'>
 <div className='col-span-2'>
 
-<AddressCompo  selectedAddressId={checkoutData.address} setSelectedAddressId={(itm)=>setCheckoutData(prev=>({...prev,address:itm}))}    />
+{/* <AddressCompo  selectedAddressId={checkoutData.address} setSelectedAddressId={(itm)=>setCheckoutData(prev=>({...prev,address:itm}))}    /> */}
 
 
 
