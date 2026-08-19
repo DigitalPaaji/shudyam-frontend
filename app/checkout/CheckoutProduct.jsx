@@ -198,7 +198,7 @@ handelSubmitPayment()
   if (error) {
     return (
       <div className="flex min-h-[70vh] items-center justify-center bg-[#f7f5f1] px-4">
-        <div className="w-full max-w-md rounded-3xl border border-red-200 bg-white p-8 text-center shadow-sm">
+        <div className="w-full  rounded-3xl border border-red-200 bg-white p-8 text-center shadow-sm">
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-red-50">
             <FiAlertCircle className="text-3xl text-red-500" />
           </div>
@@ -226,7 +226,7 @@ handelSubmitPayment()
   if (!cartData.cart.length) {
     return (
       <div className="flex min-h-[70vh] items-center justify-center bg-[#f7f5f1] px-4">
-        <div className="max-w-md text-center">
+        <div className=" text-center">
           <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-sm">
             <FiShoppingBag className="text-3xl text-[#7c2d32]" />
           </div>
@@ -345,7 +345,7 @@ const removeCoupon = () => {
               </Link>
             </div>
 
-            <div className="max-h-[390px] space-y-5 overflow-y-auto py-5 pr-1">
+            <div className="space-y-5 overflow-y-auto py-5 pr-1">
               {cartData.cart.map((item) => (
                 <CheckoutItem
                   key={`${item.productid}-${item.variantid}`}
@@ -583,7 +583,7 @@ const CheckoutItem = ({ item }) => {
 const CheckoutLoading = () => {
   return (
     <div className="min-h-screen bg-[#f7f5f1] px-4 py-10 sm:px-6 lg:px-12">
-      <div className="mx-auto max-w-7xl animate-pulse">
+      <div className="mx-auto  animate-pulse">
         <div className="mb-8 h-10 w-72 rounded-lg bg-gray-200" />
 
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_410px]">

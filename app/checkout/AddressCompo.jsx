@@ -453,7 +453,7 @@ const AddressCompo = ({selectedAddressId,setSelectedAddressId}) => {
 
   return (
     <div className="w-full">
-      <div className="mx-auto max-w-5xl rounded-2xl border border-gray-200 bg- p-5 shadow-sm sm:p-7">
+      <div className="mx-auto  rounded-2xl border border-gray-200  p-5 shadow-sm sm:p-7">
      
 
         {isUser && (
