@@ -17,7 +17,7 @@ const slides = [
     mobileImage: "/images/banner/bannerM2.webp",
     alt: "Shudyam Traditional Collection",
   },
-    {
+  {
     id: 3,
     image: "/images/banner/bannerD3.webp",
     mobileImage: "/images/banner/bannerM3.webp",
@@ -31,271 +31,293 @@ const slides = [
   },
 ];
 
+// Clone last slide at beginning and first slide at end
+const sliderSlides = [
+  slides[slides.length - 1],
+  ...slides,
+  slides[0],
+];
+
 function HeroSection() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(1);
   const [isDragging, setIsDragging] = useState(false);
+  const [transitionEnabled, setTransitionEnabled] = useState(true);
+  const [dragOffset, setDragOffset] = useState(0);
 
   const sliderRef = useRef(null);
   const startX = useRef(0);
   const currentX = useRef(0);
+  const isAnimating = useRef(false);
 
-  // ---------------------------------------
+  // -----------------------------------
   // AUTOPLAY
-  // ---------------------------------------
+  // -----------------------------------
   useEffect(() => {
+    if (isDragging) return;
+
     const interval = setInterval(() => {
-      if (!isDragging) {
-        setCurrentSlide((prev) => (prev + 1) % slides.length);
-      }
+      nextSlide();
     }, 5000);
 
     return () => clearInterval(interval);
   }, [isDragging]);
 
-  // ---------------------------------------
+  // -----------------------------------
   // NEXT SLIDE
-  // ---------------------------------------
+  // -----------------------------------
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    if (isAnimating.current) return;
+
+    isAnimating.current = true;
+    setTransitionEnabled(true);
+    setCurrentSlide((prev) => prev + 1);
   };
 
-  // ---------------------------------------
+  // -----------------------------------
   // PREVIOUS SLIDE
-  // ---------------------------------------
+  // -----------------------------------
   const prevSlide = () => {
-    setCurrentSlide(
-      (prev) => (prev - 1 + slides.length) % slides.length
-    );
+    if (isAnimating.current) return;
+
+    isAnimating.current = true;
+    setTransitionEnabled(true);
+    setCurrentSlide((prev) => prev - 1);
   };
 
-  // ---------------------------------------
-  // DOT CLICK
-  // ---------------------------------------
+  // -----------------------------------
+  // GO TO SLIDE
+  // -----------------------------------
   const goToSlide = (index) => {
-    setCurrentSlide(index);
+    if (isAnimating.current) return;
+
+    isAnimating.current = true;
+    setTransitionEnabled(true);
+    setCurrentSlide(index + 1);
   };
 
-  // ---------------------------------------
+  // -----------------------------------
+  // AFTER TRANSITION
+  // -----------------------------------
+  const handleTransitionEnd = (e) => {
+    if (e.target !== e.currentTarget) return;
+
+    isAnimating.current = false;
+
+    // Reached cloned FIRST slide
+    if (currentSlide === slides.length + 1) {
+      setTransitionEnabled(false);
+      setCurrentSlide(1);
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setTransitionEnabled(true);
+        });
+      });
+    }
+
+    // Reached cloned LAST slide
+    if (currentSlide === 0) {
+      setTransitionEnabled(false);
+      setCurrentSlide(slides.length);
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setTransitionEnabled(true);
+        });
+      });
+    }
+  };
+
+  // -----------------------------------
   // DRAG START
-  // ---------------------------------------
+  // -----------------------------------
   const handlePointerDown = (e) => {
-    // Only allow left mouse button
-    if (e.pointerType === "mouse" && e.button !== 0) return;
+    if (isAnimating.current) return;
+
+    if (e.pointerType === "mouse" && e.button !== 0) {
+      return;
+    }
 
     setIsDragging(true);
+    setTransitionEnabled(false);
 
     startX.current = e.clientX;
     currentX.current = e.clientX;
 
-    sliderRef.current?.setPointerCapture(e.pointerId);
+    sliderRef.current?.setPointerCapture?.(e.pointerId);
   };
 
-  // ---------------------------------------
+  // -----------------------------------
   // DRAG MOVE
-  // ---------------------------------------
+  // -----------------------------------
   const handlePointerMove = (e) => {
     if (!isDragging) return;
 
     currentX.current = e.clientX;
+
+    const diff = currentX.current - startX.current;
+
+    setDragOffset(diff);
   };
 
-  // ---------------------------------------
+  // -----------------------------------
   // DRAG END
-  // ---------------------------------------
+  // -----------------------------------
   const handlePointerUp = (e) => {
     if (!isDragging) return;
 
-    const diff = startX.current - currentX.current;
+    const diff = currentX.current - startX.current;
+    const containerWidth =
+      sliderRef.current?.offsetWidth || window.innerWidth;
+
+    const swipeThreshold = containerWidth * 0.15;
 
     setIsDragging(false);
-
-    // Minimum swipe distance
-    const swipeThreshold = 60;
+    setDragOffset(0);
+    setTransitionEnabled(true);
 
     if (Math.abs(diff) > swipeThreshold) {
-      if (diff > 0) {
-        // Dragged left → next
-        nextSlide();
+      isAnimating.current = true;
+
+      if (diff < 0) {
+        setCurrentSlide((prev) => prev + 1);
       } else {
-        // Dragged right → previous
-        prevSlide();
+        setCurrentSlide((prev) => prev - 1);
       }
     }
 
-    sliderRef.current?.releasePointerCapture?.(e.pointerId);
+    try {
+      sliderRef.current?.releasePointerCapture?.(e.pointerId);
+    } catch {}
   };
 
   const handlePointerCancel = () => {
     setIsDragging(false);
+    setDragOffset(0);
+    setTransitionEnabled(true);
   };
 
+  // -----------------------------------
+  // REAL ACTIVE SLIDE FOR DOTS
+  // -----------------------------------
+  const realSlide =
+    currentSlide === 0
+      ? slides.length
+      : currentSlide === slides.length + 1
+      ? 1
+      : currentSlide;
+
   return (
-    <section className="relative w-full overflow-hidden ">
-      {/* Slider */}
+    <section className="relative w-full overflow-hidden">
       <div
         ref={sliderRef}
-        className={`relative w-full overflow-hidden select-none touch-pan-y  ${
+        className={`relative w-full overflow-hidden select-none touch-pan-y ${
           isDragging ? "cursor-grabbing" : "cursor-grab"
         }`}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerCancel}
-        onPointerLeave={(e) => {
-          if (isDragging) {
-            handlePointerUp(e);
-          }
-        }}
       >
-
-        {/* Slides */}
-<div
-  className={`flex w-full ${
-    isDragging
-      ? "transition-none"
-      : "transition-transform duration-700 ease-in-out"
-  }`}
-  style={{
-    transform: `translateX(-${currentSlide * 100}%)`,
-  }}
->
-  {slides.map((slide, index) => (
-    <div
-      key={slide.id}
-      className="w-full shrink-0"
-    >
-      {/* Desktop */}
-      <Image
-        src={slide.image}
-        alt={slide.alt}
-        width={1920}
-        height={600}
-        priority={index === 0}
-        sizes="100vw"
-        draggable={false}
-        className="hidden h-auto w-full md:block"
-      />
-
-      {/* Mobile */}
-      <Image
-        src={slide.mobileImage || slide.image}
-        alt={slide.alt}
-        width={750}
-        height={1000}
-        priority={index === 0}
-        sizes="100vw"
-        draggable={false}
-        className="block h-auto w-full md:hidden"
-      />
-    </div>
-  ))}
-</div>
-
-
-        {/* Slides */}
-        {/* <div
+        {/* SLIDER */}
+        <div
+          onTransitionEnd={handleTransitionEnd}
           className={`flex w-full ${
-            isDragging
-              ? "transition-none"
-              : "transition-transform duration-700 ease-in-out"
+            transitionEnabled
+              ? "transition-transform duration-700 ease-in-out"
+              : "transition-none"
           }`}
           style={{
-            transform: `translateX(-${currentSlide * 100}%)`,
+            transform: `translateX(calc(-${currentSlide * 100}% + ${dragOffset}px))`,
           }}
         >
-          {slides.map((slide, index) => (
+          {sliderSlides.map((slide, index) => (
             <div
-              key={slide.id}
-              className="relative w-full shrink-0 aspect-[1920/600] h-[555px] max-h-[600px] "
+              key={`${slide.id}-${index}`}
+              className="w-full shrink-0"
             >
+              {/* Desktop */}
               <Image
                 src={slide.image}
                 alt={slide.alt}
-                fill
-                priority={index === 0}
+                width={1920}
+                height={600}
+                priority={index === 1}
                 sizes="100vw"
                 draggable={false}
-                className="hidden object-cover md:block"
+                className="hidden h-auto w-full pointer-events-none md:block"
               />
 
+              {/* Mobile */}
               <Image
                 src={slide.mobileImage || slide.image}
                 alt={slide.alt}
-                fill
-                priority={index === 0}
+                width={750}
+                height={1000}
+                priority={index === 1}
                 sizes="100vw"
                 draggable={false}
-                className="block object-cover md:hidden"
+                className="block h-auto w-full pointer-events-none md:hidden"
               />
             </div>
           ))}
-        </div> */}
+        </div>
 
-        {/* -------------------------------- */}
-        {/* PREVIOUS ARROW */}
-        {/* -------------------------------- */}
-<button
-  type="button"
-  onPointerDown={(e) => e.stopPropagation()}
-  onClick={(e) => {
-    e.stopPropagation();
-    prevSlide();
-  }}
-  aria-label="Previous banner"
-  className="
-    absolute left-4 top-1/2 z-20
-    flex h-10 w-10 -translate-y-1/2
-    items-center justify-center
-    rounded-full
-    text-[#250103cb]
-    bg-white/40
-    shadow-md
-    backdrop-blur-3xl
-    transition-all duration-300
-    active:scale-95
-    sm:left-5
-    sm:h-11 sm:w-11
-    md:left-6
-    md:h-12 md:w-12
-  "
->
-  <FiChevronLeft className="text-xl md:text-2xl" />
-</button>
+        {/* PREVIOUS */}
+        <button
+          type="button"
+          onPointerDown={(e) => e.stopPropagation()}
+          onClick={(e) => {
+            e.stopPropagation();
+            prevSlide();
+          }}
+          aria-label="Previous banner"
+          className="
+            absolute left-4 bottom-4 z-20
+            flex h-10 w-10 -translate-y-1/2
+            items-center justify-center
+            rounded-full
+            bg-white/40
+            text-[#250103cb]
+            shadow-md
+            backdrop-blur-xl
+            transition-all
+            active:scale-95
+            sm:left-5 sm:h-11 sm:w-11
+            md:left-6 md:h-12 md:w-12
+          "
+        >
+          <FiChevronLeft className="text-xl md:text-2xl" />
+        </button>
 
-        {/* -------------------------------- */}
-        {/* NEXT ARROW */}
-        {/* -------------------------------- */}
-  <button
-  type="button"
-  onPointerDown={(e) => e.stopPropagation()}
-  onClick={(e) => {
-    e.stopPropagation();
-    nextSlide();
-  }}
-  aria-label="Next banner"
-  className="
-    absolute right-4 top-1/2 z-20
-    flex h-10 w-10 -translate-y-1/2
-    items-center justify-center
-    rounded-full
-    text-[#250103cb]
-    bg-white/40
-    shadow-md
-    backdrop-blur-3xl
-    transition-all duration-300
-    active:scale-95
-    sm:right-5
-    sm:h-11 sm:w-11
-    md:right-6
-    md:h-12 md:w-12
-  "
->
-  <FiChevronRight className="text-xl md:text-2xl" />
-</button>
+        {/* NEXT */}
+        <button
+          type="button"
+          onPointerDown={(e) => e.stopPropagation()}
+          onClick={(e) => {
+            e.stopPropagation();
+            nextSlide();
+          }}
+          aria-label="Next banner"
+          className="
+            absolute right-4 bottom-4 z-20
+            flex h-10 w-10 -translate-y-1/2
+            items-center justify-center
+            rounded-full
+            bg-white/40
+            text-[#250103cb]
+            shadow-md
+            backdrop-blur-xl
+            transition-all
+            active:scale-95
+            sm:right-5 sm:h-11 sm:w-11
+            md:right-6 md:h-12 md:w-12
+          "
+        >
+          <FiChevronRight className="text-xl md:text-2xl" />
+        </button>
 
-        {/* -------------------------------- */}
         {/* DOTS */}
-        {/* -------------------------------- */}
         <div
           className="
             absolute bottom-3 left-1/2 z-20
@@ -305,21 +327,21 @@ function HeroSection() {
           "
         >
           {slides.map((slide, index) => (
-          <button
-  key={`${slide.id}-${index}`}
-  type="button"
-  onPointerDown={(e) => e.stopPropagation()}
-  onClick={(e) => {
-    e.stopPropagation();
-    goToSlide(index);
-  }}
-  aria-label={`Go to banner ${index + 1}`}
-  className={`h-1.5 rounded-full transition-all duration-300 ${
-    index === currentSlide
-      ? "w-4 bg-[#250103]"
-      : "w-2 bg-[#cfbcbd]"
-  }`}
-/>
+            <button
+              key={slide.id}
+              type="button"
+              onPointerDown={(e) => e.stopPropagation()}
+              onClick={(e) => {
+                e.stopPropagation();
+                goToSlide(index);
+              }}
+              aria-label={`Go to banner ${index + 1}`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                realSlide === index + 1
+                  ? "w-4 bg-[#250103]"
+                  : "w-2 bg-[#cfbcbd]"
+              }`}
+            />
           ))}
         </div>
       </div>
@@ -328,7 +350,6 @@ function HeroSection() {
 }
 
 export default HeroSection;
-
 
 // "use client";
 
