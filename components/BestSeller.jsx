@@ -72,24 +72,20 @@ className={`absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center
           className="object-contain  object-center  aspect-square   "
         />
 
-        {/* Hover img */}
-        {/* <img
-          src={`${img_url}${product.images[0]}`}
-          alt={`${product.name} alternate view`}
-          fill
-          sizes="(max-width: 640px) 90vw, (max-width: 1024px) 48vw, 33vw"
-          className="object-cover opacity-0 transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-100"
-        /> */}
+     
       </div>
 
       {/* Product details */}
       <div className="mt-2  rounded-md border border-[#760209] bg-[#fff9e7] p-2.5 text-[#760209] sm:p-3">
-        <div className="flex items-center justify-between gap-2">
-          <div className="min-w-0 xl:max-w-[48%]">
-            <h3 className=" text-wrap text-xs font-medium sm:text-sm">
+        <div className="">
+
+ <h3 className=" text-wrap text-xs font-medium sm:text-sm">
              {product.name?.toLowerCase()
   .replace(/\b\w/g, (char) => char.toUpperCase())}
             </h3>
+<div className="flex items-center justify-between gap-2">
+          <div className="min-w-0 xl:max-w-[48%]">
+           
 
             <div className="mt-1 flex flex-wrap items-center gap-1.5 text-[11px] sm:text-xs">
               <span className="font-semibold">
@@ -136,6 +132,7 @@ Standard
               <span className="hidden xl:inline">Add To Cart</span>
               <span className="xl:hidden">Add</span>
             </button>
+          </div>
           </div>
         </div>
       </div>
