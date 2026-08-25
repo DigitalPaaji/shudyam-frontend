@@ -45,7 +45,7 @@ const ProductCard = ({ product ,wishlist,dispatch}) => {
   return (
     <Link href={`/product/${product.slug}`} className="best-seller-card group h-full will-change-transform">
       {/* Product image */}
-      <div className="relative aspect-square overflow-hidden border border-[#760209]/30 bg-[#fff9e7]">
+      <div className="relative  overflow-hidden border border-[#760209]/30 bg-[#fff9e7]">
      
 
                       <button
@@ -67,7 +67,9 @@ className={`absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center
         <img
           src={`${img_url}${product.thumbnail}`}
           alt={product.name}
-          className="object-contain  object-center  aspect-square w-full h-auto  "
+       
+        
+          className="object-contain  object-center  aspect-square   "
         />
 
      
