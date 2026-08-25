@@ -259,13 +259,13 @@ const Collection = () => {
       {!loading && !error && categories.length > 0 && (
         <div className="grid  gap-6 grid-cols-2 lg:grid-cols-4">
           {visibleCategories.map((item, index) => (
-            <div
+            <Link
               key={item._id}
               ref={(element) => {
                 cardRefs.current[index] = element;
               }}
               // href={'/products'}
-              // href={`/products?category=${item.slug}`}
+              href={`/products?category=${item.slug}`}
               className="group block will-change-transform"
             >
               <div className="relative aspect-square overflow-hidden bg-[#f8f4f1]">
@@ -285,12 +285,12 @@ const Collection = () => {
               <div className="relative overflow-hidden py-4 text-center">
                 <p className=" font-p text-base font-medium text-p transition-transform duration-300 group-hover:-translate-y-1 sm:text-lg">
                    {item.name?.toLowerCase()
-  .replace(/\b\w/g, (char) => char.toUpperCase())}
+                  .replace(/\b\w/g, (char) => char.toUpperCase())}
                 </p>
 
                 <span className="absolute bottom-2 left-1/2 h-px w-0 -translate-x-1/2 bg-p transition-all duration-500 group-hover:w-16" />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       )}

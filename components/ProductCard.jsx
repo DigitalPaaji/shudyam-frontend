@@ -124,12 +124,9 @@ const dispatch = useDispatch()
        <img
                src={`${img_url}${product.thumbnail}`}
                alt={product.name}
-             
-               
-               className="object-contain  object-center  aspect-square"
+               className="object-contain object-center w-full h-auto aspect-square"
              />
       </div>
-
       {/* Product Details */}
       <div className="flex flex-1 flex-col pt-4">
  <h3
