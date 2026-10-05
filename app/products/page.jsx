@@ -894,7 +894,7 @@ const ProductsPageContent = () => {
     const bannerImageDesktop =  category ? `${img_url}${categories?.find((item)=>item.slug==category)?.desktop || "/images/banner1.webp"}` :"/images/banner1.webp"
     const bannerImagemobile =  category ? `${img_url}${categories?.find((item)=>item.slug==category)?.mobile}` || "/images/banner1.webp" :"/images/banner1.webp"
     
-    console.log(bannerImageDesktop,bannerImagemobile)
+
   return (
     <div className="min-h-screen bg-[#FFF9E6]">
       {/* Banner */}
