@@ -1,7 +1,7 @@
 "use client";
 
 import ProductCard from "@/components/ProductCard";
-import { base_url } from "@/components/utile";
+import { base_url, img_url } from "@/components/utile";
 import axios from "axios";
 import {
   usePathname,
@@ -889,12 +889,45 @@ const ProductsPageContent = () => {
     )?.title ||
     category;
 
+
+    
+    const bannerImageDesktop =  category ? `${img_url}${categories?.find((item)=>item.slug==category)?.desktop || "/images/banner1.webp"}` :"/images/banner1.webp"
+    const bannerImagemobile =  category ? `${img_url}${categories?.find((item)=>item.slug==category)?.mobile}` || "/images/banner1.webp" :"/images/banner1.webp"
+    
+    console.log(bannerImageDesktop,bannerImagemobile)
   return (
     <div className="min-h-screen bg-[#FFF9E6]">
       {/* Banner */}
-      <section className="relative  overflow-hidden h-[48vh] lg:h-[665px]">
+      <section className="relative  hidden md:block  overflow-hidden h-[48vh] lg:h-[665px]">
         <img
-          src="/images/banner1.webp"
+          src={bannerImageDesktop}
+          alt="Premium brass products"
+          className="h-full w-full object-cover"
+        />
+
+        <div className="absolute inset-0 bg-linear-to-r from-black/65 via-black/25 to-transparent" />
+
+        {/* <div className="absolute inset-0 flex items-center px-4 sm:px-8 md:px-12 lg:px-24 xl:px-40">
+          <div className="max-w-xl text-white">
+            <p className="mb-3 text-xs uppercase tracking-[0.25em] text-[#F4C86A] sm:text-sm">
+              Premium Collection
+            </p>
+
+            <h1 className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-7xl">
+              Timeless Brass Essentials
+            </h1>
+
+            <p className="mt-4 max-w-lg text-sm leading-6 text-white/80 sm:text-base">
+              Explore premium brass products designed for
+              traditional and modern living.
+            </p>
+          </div>
+        </div> */}
+      </section>
+
+       <section className="relative   md:hidden  overflow-hidden h-[48vh]">
+        <img
+          src={bannerImagemobile}
           alt="Premium brass products"
           className="h-full w-full object-cover"
         />
